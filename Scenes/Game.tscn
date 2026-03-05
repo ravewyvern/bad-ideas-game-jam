@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://bfx0pae068feh"]
 
+[ext_resource type="PackedScene" uid="uid://bxncbsqm60ce2" path="res://Scenes/Maps/Test.tscn" id="1_gl6un"]
 [ext_resource type="PackedScene" uid="uid://dyslkmujlojtn" path="res://Scenes/Player.tscn" id="1_iukft"]
 
 [node name="Game" type="Node3D" unique_id=1578828073]
 
+[node name="World Element" parent="." unique_id=1382773176 instance=ExtResource("1_gl6un")]
+
 [node name="CharacterBody3D" parent="." unique_id=819093483 instance=ExtResource("1_iukft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

@@ -1,7 +1,6 @@
-res://Scenes/Game.tscn
-res://Scenes/Player_Attack.tscn
-res://Scenes/area_3d.gd
 res://Scenes/Player.tscn
+res://Scenes/WorldElement.tscn
+res://Scenes/Test.tscn
+res://Scenes/Game.tscn
 res://player.gd
 res://Scenes/Bullet.tscn
-res://Scenes/bullet.gd

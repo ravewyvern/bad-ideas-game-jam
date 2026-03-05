@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btvchhbuy1n5p"]
 
-[ext_resource type="Script" uid="uid://crgjp3bod45mn" path="res://Scenes/bullet.gd" id="1_vlxeq"]
+[ext_resource type="Script" uid="uid://crgjp3bod45mn" path="res://Scripts/bullet.gd" id="1_vlxeq"]
 [ext_resource type="PackedScene" uid="uid://b5kqrcsnu3uvq" path="res://Assets/Models/dart_projectile.glb" id="2_14k46"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qvus8"]

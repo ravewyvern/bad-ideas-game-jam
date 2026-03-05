@@ -2,11 +2,11 @@ extends CharacterBody3D
 
 @export var Bullet : PackedScene
 @export var BulletSpawnPoint : Node3D
-@onready var Camera = $Head/Camera3D
+@onready var Camera = $Head
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-const sensitivity = 0.03
+const sensitivity = 0.01
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -15,6 +15,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * sensitivity)
 		Camera.rotate_x(-event.relative.y * sensitivity)
+		Camera.rotation.x = clamp(Camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.

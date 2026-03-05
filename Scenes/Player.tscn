@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dyslkmujlojtn"]
 
-[ext_resource type="Script" uid="uid://dni4ymdcqd65b" path="res://player.gd" id="1_xhfnw"]
+[ext_resource type="Script" uid="uid://dni4ymdcqd65b" path="res://Scripts/player.gd" id="1_xhfnw"]
 [ext_resource type="PackedScene" uid="uid://btvchhbuy1n5p" path="res://Scenes/Bullet.tscn" id="2_kyqiw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
@@ -9,7 +9,8 @@ height = 1.9
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xhfnw"]
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=819093483 node_paths=PackedStringArray("BulletSpawnPoint")]
+[node name="Player" type="CharacterBody3D" unique_id=819093483 node_paths=PackedStringArray("BulletSpawnPoint")]
+floor_constant_speed = true
 script = ExtResource("1_xhfnw")
 Bullet = ExtResource("2_kyqiw")
 BulletSpawnPoint = NodePath("BulletSpawnPoint")
