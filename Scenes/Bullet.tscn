@@ -1,16 +1,17 @@
 [gd_scene format=3 uid="uid://btvchhbuy1n5p"]
 
 [ext_resource type="Script" uid="uid://crgjp3bod45mn" path="res://Scenes/bullet.gd" id="1_vlxeq"]
+[ext_resource type="PackedScene" uid="uid://b5kqrcsnu3uvq" path="res://Assets/Models/dart_projectile.glb" id="2_14k46"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_14k46"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_qvus8"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_qvus8"]
+size = Vector3(1.2893066, 0.20758057, 0.17016602)
 
 [node name="Area3D" type="Area3D" unique_id=824319216]
 script = ExtResource("1_vlxeq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1220154731]
-shape = SubResource("SphereShape3D_14k46")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08728027, -0.007232666, -0.00036621094)
+shape = SubResource("BoxShape3D_qvus8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=787181244]
-mesh = SubResource("SphereMesh_qvus8")
+[node name="blockbench_export" parent="." unique_id=1398169011 instance=ExtResource("2_14k46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04465723, -0.5298346, 0)
