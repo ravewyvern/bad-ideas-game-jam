@@ -1,9 +1,10 @@
-CollisionShape3D
 MeshInstance3D
+CollisionShape3D
+RigidBody3D
+StaticBody3D
 CharacterBody3D
 WorldEnvironment
 Node3D
-StaticBody3D
 Area3D
 Marker3D
 MultiMeshInstance3D

@@ -1,7 +1,3 @@
-res://Scenes/Bullet.tscn
-res://Scenes/Player.tscn
-res://Scripts/bullet.gd
-res://Scenes/Enemy.tscn
-res://Scenes/enemy.gd
-res://Scripts/enemy.gd
 res://Scenes/Game.tscn
+res://Test-Obstical.tscn
+res://Tower_Test.tscn

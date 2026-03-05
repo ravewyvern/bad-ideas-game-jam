@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cgg8mcye1045r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_y81yl"]
+
+[sub_resource type="Skin" id="Skin_y81yl"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_y81yl"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_y81yl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q3uqq"]
+
+[node name="StaticBody3D" type="RigidBody3D" unique_id=1800772031]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1745960302]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 19.254192, 0)
+mesh = SubResource("BoxMesh_y81yl")
+skin = SubResource("Skin_y81yl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=2144725105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4638109, 0)
+mesh = SubResource("CylinderMesh_y81yl")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=2043078684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.981874, 0)
+mesh = SubResource("PrismMesh_y81yl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1290173625]
+shape = SubResource("BoxShape3D_q3uqq")
