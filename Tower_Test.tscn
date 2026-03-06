@@ -2,28 +2,27 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_y81yl"]
 
-[sub_resource type="Skin" id="Skin_y81yl"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_y81yl"]
-
-[sub_resource type="PrismMesh" id="PrismMesh_y81yl"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_q3uqq"]
+size = Vector3(1, 1.8632202, 5.4002686)
 
-[node name="StaticBody3D" type="RigidBody3D" unique_id=1800772031]
+[sub_resource type="CylinderMesh" id="CylinderMesh_7uk3e"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1745960302]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 19.254192, 0)
+[sub_resource type="PrismMesh" id="PrismMesh_ugfur"]
+
+[node name="RigidBody3D" type="RigidBody3D" unique_id=1244042777]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1436378224]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("BoxMesh_y81yl")
-skin = SubResource("Skin_y81yl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=2144725105]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4638109, 0)
-mesh = SubResource("CylinderMesh_y81yl")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=2043078684]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.981874, 0)
-mesh = SubResource("PrismMesh_y81yl")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1290173625]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1516343149]
+transform = Transform3D(10, 0, 0, 0, 20.065224, 0, 0, 0, 1.8557396, 0, -6.3518705, 0)
 shape = SubResource("BoxShape3D_q3uqq")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=614044160]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -12.953764, 0)
+mesh = SubResource("CylinderMesh_7uk3e")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=483391594]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 7.5050874, 0)
+mesh = SubResource("PrismMesh_ugfur")

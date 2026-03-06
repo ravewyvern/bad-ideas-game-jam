@@ -2,10 +2,10 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_br0es"]
 
-[node name="Node3D" type="RigidBody3D" unique_id=831979517]
+[node name="RigidBody3D" type="RigidBody3D" unique_id=1549961045]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2104533036]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=793656462]
-transform = Transform3D(10.841076, 0, 0, 0, 0.1879719, 0, 0, 0, 1, 0.46353936, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1986140525]
+transform = Transform3D(13.022273, 0, 0, 0, 0.13653642, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_br0es")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1600653831]
