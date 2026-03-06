@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dyslkmujlojtn"]
+
+[ext_resource type="Script" uid="uid://dni4ymdcqd65b" path="res://Scripts/player.gd" id="1_xhfnw"]
+[ext_resource type="PackedScene" uid="uid://btvchhbuy1n5p" path="res://Scenes/Bullet.tscn" id="2_kyqiw"]
+[ext_resource type="Script" uid="uid://bqbduwj8wmxvg" path="res://Scripts/menus/Hp.gd" id="3_gntrk"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
+radius = 0.45
+height = 1.9
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xhfnw"]
+
+[node name="Player" type="CharacterBody3D" unique_id=819093483 node_paths=PackedStringArray("BulletSpawnPoint")]
+floor_constant_speed = true
+script = ExtResource("1_xhfnw")
+Bullet = ExtResource("2_kyqiw")
+BulletSpawnPoint = NodePath("BulletSpawnPoint")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1405198158]
+shape = SubResource("CapsuleShape3D_0rwas")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1219032974]
+mesh = SubResource("CapsuleMesh_xhfnw")
+
+[node name="Head" type="Node3D" parent="." unique_id=581162870]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1573948731]
+fov = 110.0
+
+[node name="BulletSpawnPoint" type="Marker3D" parent="." unique_id=1708627793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.56431794)
+
+[node name="Label" type="Label" parent="." unique_id=1196850859]
+offset_right = 302.0
+offset_bottom = 117.0
+script = ExtResource("3_gntrk")

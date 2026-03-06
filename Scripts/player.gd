@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@export var hp : int = 100
 @export var Bullet : PackedScene
 @export var BulletSpawnPoint : Node3D
 @onready var Camera = $Head
@@ -8,7 +9,10 @@ const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const sensitivity = 0.01
 
+var fallheight : int
+
 func _ready() -> void:
+	hp = 100
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 func _unhandled_input(event: InputEvent) -> void:
@@ -18,8 +22,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		Camera.rotation.x = clamp(Camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Add the gravity and counts fall length to determine fall damage
 	if not is_on_floor():
+		fallheight += 1
 		velocity += get_gravity() * delta
 
 	# Handle jump.
@@ -36,6 +41,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0
 		velocity.z = 0
+	
+	#fall damage
+	if is_on_floor() :
+		if fallheight > 100 :
+			@warning_ignore("narrowing_conversion")
+			hp -= 0.2 * fallheight
+		fallheight = 0
 
 	move_and_slide()
 
