@@ -2,6 +2,8 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_br0es"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_br0es"]
+
 [node name="RigidBody3D" type="RigidBody3D" unique_id=1549961045]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1986140525]
@@ -9,3 +11,5 @@ transform = Transform3D(13.022273, 0, 0, 0, 0.13653642, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_br0es")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1600653831]
+transform = Transform3D(13.059295, 0, 0, 0, 0.15567535, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_br0es")
