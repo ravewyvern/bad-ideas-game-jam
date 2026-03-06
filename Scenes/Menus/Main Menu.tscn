@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://djp8ugh3coxpn"]
+
+[ext_resource type="Texture2D" uid="uid://yigwgs7sj56v" path="res://Assets/Textures/mainlogo.png" id="1_a8511"]
+[ext_resource type="Script" uid="uid://dwjdskdf3qjfx" path="res://Scripts/menus/main_menu.gd" id="1_iepif"]
+[ext_resource type="FontFile" uid="uid://b36imdbak2j3f" path="res://Assets/Fonts/Minecraft.ttf" id="1_ow5ef"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=321974716]
+anchors_preset = -1
+anchor_left = -0.020000001
+anchor_top = -0.029000001
+anchor_right = -0.020000001
+anchor_bottom = -0.029000001
+offset_left = 39.04
+offset_top = 299.792
+offset_right = 182.70667
+offset_bottom = 442.192
+scale = Vector2(2.5, 2.5)
+alignment = 1
+script = ExtResource("1_iepif")
+
+[node name="level" type="Button" parent="." unique_id=488819268]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ow5ef")
+theme_override_font_sizes/font_size = 16
+text = "Level Selector"
+
+[node name="options" type="Button" parent="." unique_id=455910083]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ow5ef")
+theme_override_font_sizes/font_size = 16
+text = "Options"
+
+[node name="credits" type="Button" parent="." unique_id=1058687148]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ow5ef")
+theme_override_font_sizes/font_size = 16
+text = "Credits"
+
+[node name="quit" type="Button" parent="." unique_id=1261950415]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ow5ef")
+theme_override_font_sizes/font_size = 16
+text = "Quit"
+
+[node name="Mainlogo" type="Sprite2D" parent="." unique_id=917326785]
+position = Vector2(218, -74.4)
+scale = Vector2(0.21438622, 0.22657895)
+texture = ExtResource("1_a8511")
+
+[connection signal="button_down" from="level" to="." method="_on_level_button_down"]
+[connection signal="button_down" from="options" to="." method="_on_options_button_down"]
+[connection signal="button_down" from="credits" to="." method="_on_credits_button_down"]
+[connection signal="button_down" from="quit" to="." method="_on_quit_button_down"]

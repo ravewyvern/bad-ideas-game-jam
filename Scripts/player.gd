@@ -51,5 +51,9 @@ func shoot():
 	# Bullet position.
 	bullet.global_transform.origin = BulletSpawnPoint.global_transform.origin
 	
+	var shoot_direction = -Camera.global_transform.basis.x
+	bullet.look_at(bullet.global_position + shoot_direction, Camera.global_transform.basis.y)
+	bullet.direction = shoot_direction
+	
 	# Bullet spawns at the front of the camera.
 	bullet.direction = -Camera.global_transform.basis.z

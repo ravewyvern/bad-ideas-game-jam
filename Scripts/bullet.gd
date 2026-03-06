@@ -12,7 +12,7 @@ func _ready():
 	queue_free()
 
 func _physics_process(delta):
-	translate(direction * speed * delta)
+	global_translate(direction * speed * delta)
 
 func _on_body_entered(body):
 	if body.has_method("take_damage"):
