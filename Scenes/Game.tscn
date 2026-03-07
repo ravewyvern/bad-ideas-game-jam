@@ -3,9 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bxncbsqm60ce2" path="res://Scenes/Maps/Test.tscn" id="1_gl6un"]
 [ext_resource type="PackedScene" uid="uid://dyslkmujlojtn" path="res://Scenes/Player.tscn" id="1_iukft"]
 [ext_resource type="PackedScene" uid="uid://bnyeoqhth7m02" path="res://Scenes/Enemy.tscn" id="3_j5yw3"]
-[ext_resource type="PackedScene" uid="uid://cs6eq0y3clcge" path="res://Test-Obstical.tscn" id="4_b2bpf"]
-[ext_resource type="PackedScene" uid="uid://cgg8mcye1045r" path="res://Tower_Test.tscn" id="5_7lihs"]
-[ext_resource type="PackedScene" uid="uid://mxb5i818y2a" path="res://Bridge_Test.tscn" id="5_fgofq"]
+[ext_resource type="PackedScene" uid="uid://cs6eq0y3clcge" path="res://Assets/Models/Test-Obstical.tscn" id="4_b2bpf"]
+[ext_resource type="PackedScene" uid="uid://mxb5i818y2a" path="res://Assets/Models/Bridge_Test.tscn" id="5_fgofq"]
 
 [node name="Game" type="Node3D" unique_id=1578828073]
 transform = Transform3D(0.99997985, -0.005666307, -0.0028541835, 0.0056724614, 0.9999815, 0.0021514683, 0.0028419334, -0.002167624, 0.9999936, 0, 0, 0)
@@ -93,11 +92,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.189877, -0.2764758, -12.40
 [node name="Obstical_test4" parent="Obstical_test/Obstical_test7" unique_id=166633873 instance=ExtResource("4_b2bpf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.451809, -0.2764758, -8.417074)
 
-[node name="Bridge_Test" parent="." unique_id=1549961045 instance=ExtResource("5_fgofq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.887289, 2.4015288, 16.192675)
+[node name="Bridge_Test" parent="Obstical_test" unique_id=1549961045 instance=ExtResource("5_fgofq")]
+transform = Transform3D(1, -4.9021764e-10, -2.3283064e-10, 1.4097168e-11, 1, -2.3283064e-10, 2.3283064e-10, -2.3283064e-10, 1, 6.8872886, 0.72044814, 36.66487)
 
-[node name="Bridge_Test" parent="Bridge_Test" unique_id=1795060140 instance=ExtResource("5_fgofq")]
+[node name="Bridge_Test" parent="Obstical_test/Bridge_Test" unique_id=1795060140 instance=ExtResource("5_fgofq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80628633, -0.0093096495, 7.5089464)
-
-[node name="Towe_test" parent="." unique_id=167462115 instance=ExtResource("5_7lihs")]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8.544, 17.670994, 9.949934, 20.408684)
