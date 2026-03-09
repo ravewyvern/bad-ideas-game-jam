@@ -6,12 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cs6eq0y3clcge" path="res://Assets/Models/Test-Obstical.tscn" id="4_b2bpf"]
 [ext_resource type="PackedScene" uid="uid://mxb5i818y2a" path="res://Assets/Models/Bridge_Test.tscn" id="5_fgofq"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_b2bpf"]
-size = Vector3(10, 1, 20)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_7lihs"]
-size = Vector3(1, 20, 10)
-
 [node name="Game" type="Node3D" unique_id=1578828073]
 transform = Transform3D(0.99997985, -0.005666307, -0.0028541835, 0.0056724614, 0.9999815, 0.0021514683, 0.0028419334, -0.002167624, 0.9999936, 0, 0, 0)
 
@@ -103,13 +97,3 @@ transform = Transform3D(1, -4.9021764e-10, -2.3283064e-10, 1.4097168e-11, 1, -2.
 
 [node name="Bridge_Test" parent="Obstical_test/Bridge_Test" unique_id=1795060140 instance=ExtResource("5_fgofq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80628633, -0.0093096495, 7.5089464)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1569609628]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=2097244769]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, -7.166818e-10, 1.0599072, -4.176561)
-mesh = SubResource("BoxMesh_b2bpf")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=693182449]
-transform = Transform3D(-0.061628427, -0.061628427, 0.9961947, -0.7071067, 0.7071067, 0, -0.704416, -0.704416, -0.08715577, -1.8920427e-07, 1.1399236, -4.327491)
-shape = SubResource("BoxShape3D_7lihs")

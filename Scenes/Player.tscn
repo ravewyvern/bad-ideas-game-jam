@@ -58,6 +58,4 @@ grow_vertical = 0
 step = 1.0
 value = 100.0
 show_percentage = false
-indeterminate = true
-editor_preview_indeterminate = false
 script = SubResource("GDScript_kyqiw")
