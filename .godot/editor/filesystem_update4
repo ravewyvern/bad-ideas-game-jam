@@ -1,1 +1,2 @@
-res://Scenes/Maps/Game.tscn
+res://Scripts/menus/main_menu.gd
+res://Scenes/Menus/Main Menu.tscn
