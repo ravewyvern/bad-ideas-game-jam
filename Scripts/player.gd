@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var Bullet : PackedScene
 @export var BulletSpawnPoint : Node3D
 @onready var Camera = $Head
+@onready var hpbar = $HpBar
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -22,6 +23,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		Camera.rotation.x = clamp(Camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 
 func _physics_process(delta: float) -> void:
+	
+	#sets hp bar to hp value
+	hpbar.value = hp
+	
 	# Add the gravity and counts fall length to determine fall damage
 	if not is_on_floor():
 		fallheight += 1
