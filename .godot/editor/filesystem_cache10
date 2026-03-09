@@ -1,4 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
+<<<<<<< Updated upstream
 ::res://::1773092393
 icon.svg::CompressedTexture2D::5351679731990098842::1772667260::1772750512::1::::<><><>0<>0<>921279a2e71f78c91ebe6d5dd18a9c7a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1772667260::0::1::::<><><>0<>0<><>::
@@ -33,3 +34,14 @@ enemy.gd::GDScript::572432937376623985::1772908414::0::1::::<>CharacterBody3D<><
 player.gd::GDScript::8090036327277169297::1773092203::0::1::::<>CharacterBody3D<><>0<>0<><>::
 ::res://Scripts/menus/::1772909306
 main_menu.gd::GDScript::8722210836304289797::1772809161::0::1::::<>VBoxContainer<><>0<>0<><>::
+=======
+::res://::1772668342
+icon.svg::CompressedTexture2D::5351679731990098842::1772667260::1772667930::1::::<><><>0<>0<>921279a2e71f78c91ebe6d5dd18a9c7a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+player.gd::GDScript::8090036327277169297::1772667260::0::1::::<>CharacterBody3D<><>0<>0<><>::
+README.md::TextFile::-1::1772667260::0::1::::<><><>0<>0<><>::
+::res://Scenes/::1772667260
+bullet.gd::GDScript::5979012688440471221::1772667260::0::1::::<>Area3D<><>0<>0<><>::
+Bullet.tscn::PackedScene::3763494950343912783::1772667260::0::1::::<><><>0<>0<><>::uid://crgjp3bod45mn::::res://Scenes/bullet.gd
+Game.tscn::PackedScene::2786390309312205499::1772667260::0::1::::<><><>0<>0<><>::uid://dyslkmujlojtn::::res://Scenes/Player.tscn
+Player.tscn::PackedScene::8881639504425106295::1772667260::0::1::::<><><>0<>0<><>::uid://dni4ymdcqd65b::::res://player.gd<>uid://btvchhbuy1n5p::::res://Scenes/Bullet.tscn
+>>>>>>> Stashed changes
