@@ -1,2 +1,3 @@
-res://Scenes/Maps/Level_1.tscn
+res://Scenes/Maps/Game.tscn
 res://Scripts/menus/main_menu.gd
+res://Assets/Models/stack_game.tscn

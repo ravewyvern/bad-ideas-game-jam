@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bnyeoqhth7m02" path="res://Scenes/Enemy.tscn" id="3_01cpk"]
 [ext_resource type="PackedScene" uid="uid://cs6eq0y3clcge" path="res://Assets/Models/Test-Obstical.tscn" id="4_h5rip"]
 [ext_resource type="PackedScene" uid="uid://mxb5i818y2a" path="res://Assets/Models/Bridge_Test.tscn" id="5_r13up"]
+[ext_resource type="PackedScene" uid="uid://bylwlafm4f32a" path="res://Assets/Models/stack_game.tscn" id="6_fgv2n"]
 
 [node name="Game" type="Node3D" unique_id=1578828073]
 transform = Transform3D(0.99997985, -0.005666307, -0.0028541835, 0.0056724614, 0.9999815, 0.0021514683, 0.0028419334, -0.002167624, 0.9999936, 0, 0, 0)
@@ -97,3 +98,6 @@ transform = Transform3D(1, -4.9021764e-10, -2.3283064e-10, 1.4097168e-11, 1, -2.
 
 [node name="Bridge_Test" parent="Obstical_test/Bridge_Test" unique_id=1795060140 instance=ExtResource("5_r13up")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80628633, -0.0093096495, 7.5089464)
+
+[node name="Stack Game" parent="." unique_id=768094112 instance=ExtResource("6_fgv2n")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 18.413847, 2.7811975, 20.532808)
