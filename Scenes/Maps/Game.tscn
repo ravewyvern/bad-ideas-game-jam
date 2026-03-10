@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cs6eq0y3clcge" path="res://Assets/Models/Test-Obstical.tscn" id="4_h5rip"]
 [ext_resource type="PackedScene" uid="uid://mxb5i818y2a" path="res://Assets/Models/Bridge_Test.tscn" id="5_r13up"]
 [ext_resource type="PackedScene" uid="uid://bylwlafm4f32a" path="res://Assets/Models/stack_game.tscn" id="6_fgv2n"]
+[ext_resource type="PackedScene" uid="uid://c51e164i646x0" path="res://Assets/Models/jack.tscn" id="7_01cpk"]
+[ext_resource type="PackedScene" uid="uid://doq1n4d7uq7tg" path="res://Assets/Models/ball.tscn" id="8_h5rip"]
 
 [node name="Game" type="Node3D" unique_id=1578828073]
 transform = Transform3D(0.99997985, -0.005666307, -0.0028541835, 0.0056724614, 0.9999815, 0.0021514683, 0.0028419334, -0.002167624, 0.9999936, 0, 0, 0)
@@ -100,4 +102,16 @@ transform = Transform3D(1, -4.9021764e-10, -2.3283064e-10, 1.4097168e-11, 1, -2.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.80628633, -0.0093096495, 7.5089464)
 
 [node name="Stack Game" parent="." unique_id=768094112 instance=ExtResource("6_fgv2n")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 18.413847, 2.7811975, 20.532808)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 18.413847, 3.0331511, 21.478836)
+
+[node name="Jack" parent="." unique_id=346711695 instance=ExtResource("7_01cpk")]
+transform = Transform3D(1, 0, 0, 0, 0.9993354, 0.03645185, 0, -0.03645185, 0.9993354, -3.7999826e-09, 0.47765842, 11.574196)
+
+[node name="Jack" parent="Jack" unique_id=1323550411 instance=ExtResource("7_01cpk")]
+transform = Transform3D(1, 0, 0, 0, 0.9993354, 0.03645185, 0, -0.03645185, 0.9993354, -7.2250085, 0.10003713, -5.1920033)
+
+[node name="Jack2" parent="Jack" unique_id=1666270736 instance=ExtResource("7_01cpk")]
+transform = Transform3D(1, 0, 0, 0, 0.9993354, 0.03645185, 0, -0.03645185, 0.9993354, 3.1999059, 0.10003713, -5.1920033)
+
+[node name="Ball" parent="." unique_id=169447383 instance=ExtResource("8_h5rip")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.1065345, 0.5737765, 11.637596)
