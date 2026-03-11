@@ -1,0 +1,244 @@
+[gd_scene format=3 uid="uid://bc6hg3q4n80tw"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_njyfh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njyfh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_p545a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p545a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idkpr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22v06"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quu5m"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_idkpr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixjir"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njxyg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6nhwi"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_22v06"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqw3t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57urr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssdfh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4p3u7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2watb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dh8tp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u74bm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jb00f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxcc0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttt8w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gajrs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjrew"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3rgv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kqam"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrxla"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1g26v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpphs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tn67o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2xft"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rchfi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruoua"]
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_quu5m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rygje"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prc1o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hao33"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehsjv"]
+
+[node name="Block Castle" type="RigidBody3D" unique_id=2086897729]
+
+[node name="Triangle" type="CSGMesh3D" parent="." unique_id=526351971]
+transform = Transform3D(-2.1213202, 1.0606601, 0, -2.1213202, -1.0606601, 0, 0, 0, 1.5, 0, 0.4992119, 0)
+mesh = SubResource("PrismMesh_njyfh")
+material = SubResource("StandardMaterial3D_njyfh")
+
+[node name="Block" type="CSGMesh3D" parent="." unique_id=1367620472]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1.5, 1.024186, 1.4621731, 0)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_p545a")
+
+[node name="Block2" type="CSGMesh3D" parent="." unique_id=2066878491]
+transform = Transform3D(4, 0, 0, 0, 3, 0, 0, 0, 1.5, 3.5335398, 1.4621731, 0)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_idkpr")
+
+[node name="Block3" type="CSGMesh3D" parent="." unique_id=1473176349]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1.5, 6.0254955, 1.4621731, 0)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_22v06")
+
+[node name="Triangle2" type="CSGMesh3D" parent="." unique_id=368699492]
+transform = Transform3D(-2.1213202, -1.0606601, 0, 2.1213202, -1.0606601, 0, 0, 0, 1.5, 7.0577025, 0.48417124, -0.0020397902)
+mesh = SubResource("PrismMesh_njyfh")
+material = SubResource("StandardMaterial3D_quu5m")
+
+[node name="Front Top" type="CSGMesh3D" parent="." unique_id=353048425]
+transform = Transform3D(4, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.6048884, 3.71672, 0)
+mesh = SubResource("PrismMesh_idkpr")
+material = SubResource("StandardMaterial3D_ixjir")
+
+[node name="Block4" type="CSGMesh3D" parent="." unique_id=520990700]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, -2.5913634, 1.4621731, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_njxyg")
+
+[node name="Block5" type="CSGMesh3D" parent="." unique_id=436221649]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 9.632738, 1.4621731, -1.7839296)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_6nhwi")
+
+[node name="Cylinder" type="CSGMesh3D" parent="." unique_id=1605784416]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, -2.560618, 4.4724307, -1.7667205)
+mesh = SubResource("CylinderMesh_22v06")
+material = SubResource("StandardMaterial3D_hqw3t")
+
+[node name="Cylinder2" type="CSGMesh3D" parent="." unique_id=2007338943]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, 9.622485, 4.4695954, -1.7667205)
+mesh = SubResource("CylinderMesh_22v06")
+material = SubResource("StandardMaterial3D_57urr")
+
+[node name="Block6" type="CSGMesh3D" parent="." unique_id=2105802605]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 0.4250369, 2.461947, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_ssdfh")
+
+[node name="Block7" type="CSGMesh3D" parent="." unique_id=1674696496]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 0.4250369, 1.4566312, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_4p3u7")
+
+[node name="Block8" type="CSGMesh3D" parent="." unique_id=1004019939]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 0.4250369, 0.449358, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_2watb")
+
+[node name="Block9" type="CSGMesh3D" parent="." unique_id=1718883872]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 6.611895, 2.461947, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_dh8tp")
+
+[node name="Block10" type="CSGMesh3D" parent="." unique_id=335427343]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 6.611895, 1.4566312, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_u74bm")
+
+[node name="Block11" type="CSGMesh3D" parent="." unique_id=1693986598]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 6.611895, 0.449358, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_jb00f")
+
+[node name="Block14" type="CSGMesh3D" parent="." unique_id=1968889246]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, -0.030573249, 4.4830036, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_lxcc0")
+
+[node name="Block15" type="CSGMesh3D" parent="." unique_id=704015511]
+transform = Transform3D(4.956717, 0, 0, 0, 3, 0, 0, 0, 2, 3.4985378, 4.4830036, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_ttt8w")
+
+[node name="Block16" type="CSGMesh3D" parent="." unique_id=1346675752]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 7.038947, 4.4830036, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_gajrs")
+
+[node name="Top 1" type="CSGMesh3D" parent="." unique_id=657474249]
+transform = Transform3D(3, 0, 0, 0, 1.5, 0, 0, 0, 2, -2.590973, 6.755578, -1.7759367)
+mesh = SubResource("PrismMesh_idkpr")
+material = SubResource("StandardMaterial3D_pjrew")
+
+[node name="Top 2" type="CSGMesh3D" parent="." unique_id=2138003027]
+transform = Transform3D(3, 0, 0, 0, 1.5, 0, 0, 0, 2, 9.613543, 6.755578, -1.7759367)
+mesh = SubResource("PrismMesh_idkpr")
+material = SubResource("StandardMaterial3D_x3rgv")
+
+[node name="Cylinder3" type="CSGMesh3D" parent="." unique_id=971084706]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, -0.033741355, 7.493305, -1.7667205)
+mesh = SubResource("CylinderMesh_22v06")
+material = SubResource("StandardMaterial3D_8kqam")
+
+[node name="Cylinder4" type="CSGMesh3D" parent="." unique_id=193109287]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, 7.0362744, 7.493305, -1.7667205)
+mesh = SubResource("CylinderMesh_22v06")
+material = SubResource("StandardMaterial3D_mrxla")
+
+[node name="Block17" type="CSGMesh3D" parent="." unique_id=67989243]
+transform = Transform3D(5, 0, 0, 0, 3, 0, 0, 0, 2, 3.4985378, 7.5166936, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_1g26v")
+
+[node name="Block18" type="CSGMesh3D" parent="." unique_id=568964775]
+transform = Transform3D(2.5, 0, 0, 0, 1.5, 0, 0, 0, 2, 2.253334, 9.778656, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_fpphs")
+
+[node name="Block19" type="CSGMesh3D" parent="." unique_id=1577689752]
+transform = Transform3D(2.5, 0, 0, 0, 1.5, 0, 0, 0, 2, 2.253334, 11.287031, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_tn67o")
+
+[node name="Block20" type="CSGMesh3D" parent="." unique_id=914021006]
+transform = Transform3D(2.5, 0, 0, 0, 1.5, 0, 0, 0, 2, 4.7625303, 9.769596, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_d2xft")
+
+[node name="Block21" type="CSGMesh3D" parent="." unique_id=1506031438]
+transform = Transform3D(2.5, 0, 0, 0, 1.5, 0, 0, 0, 2, 4.7625303, 11.276591, -1.7957976)
+mesh = SubResource("BoxMesh_p545a")
+material = SubResource("StandardMaterial3D_rchfi")
+
+[node name="Front Top2" type="CSGMesh3D" parent="." unique_id=1086658070]
+transform = Transform3D(5, 0, 0, 0, 3, 0, 0, 0, 2, 3.5141048, 13.546735, -1.7778888)
+mesh = SubResource("PrismMesh_idkpr")
+material = SubResource("StandardMaterial3D_ruoua")
+
+[node name="Tube" type="CSGMesh3D" parent="." unique_id=1804347010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.029408753, 9.4914875, -1.7870357)
+mesh = SubResource("TubeTrailMesh_quu5m")
+material = SubResource("StandardMaterial3D_rygje")
+
+[node name="Tube2" type="CSGMesh3D" parent="." unique_id=1082750349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.070923, 9.4914875, -1.7870357)
+mesh = SubResource("TubeTrailMesh_quu5m")
+material = SubResource("StandardMaterial3D_prc1o")
+
+[node name="Top 3" type="CSGMesh3D" parent="." unique_id=1010739484]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 2, -0.00781554, 10.65669, -1.7903082)
+mesh = SubResource("PrismMesh_idkpr")
+material = SubResource("StandardMaterial3D_hao33")
+
+[node name="Top 4" type="CSGMesh3D" parent="." unique_id=1859303915]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 2, 7.125756, 10.65669, -1.7903082)
+mesh = SubResource("PrismMesh_idkpr")
+material = SubResource("StandardMaterial3D_ehsjv")

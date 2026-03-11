@@ -1,3 +1,34 @@
 [gd_scene format=3 uid="uid://bqx6272uvbio1"]
 
+[ext_resource type="PackedScene" uid="uid://bc6hg3q4n80tw" path="res://Assets/Models/block_castle.tscn" id="1_08vas"]
+[ext_resource type="PackedScene" uid="uid://dyslkmujlojtn" path="res://Scenes/Player.tscn" id="2_tfsxu"]
+[ext_resource type="PackedScene" uid="uid://c51e164i646x0" path="res://Assets/Models/jack.tscn" id="3_fpiv6"]
+[ext_resource type="PackedScene" uid="uid://doq1n4d7uq7tg" path="res://Assets/Models/ball.tscn" id="4_c5yqn"]
+[ext_resource type="PackedScene" uid="uid://bylwlafm4f32a" path="res://Assets/Models/stack_game.tscn" id="5_8hx5n"]
+[ext_resource type="PackedScene" uid="uid://bx86fguns3iqa" path="res://Assets/Models/floor.tscn" id="6_c5yqn"]
+
 [node name="Node3D" type="Node3D" unique_id=141912920]
+
+[node name="Block Castle" parent="." unique_id=2086897729 instance=ExtResource("1_08vas")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -8.635229, 0, -1.6289086)
+
+[node name="Player" parent="." unique_id=819093483 instance=ExtResource("2_tfsxu")]
+transform = Transform3D(-0.9519532, 0, 0.30624372, 0, 1, 0, -0.30624372, 0, -0.9519532, 3.364236, 0.92068696, 2.434347)
+
+[node name="Jack" parent="." unique_id=346711695 instance=ExtResource("3_fpiv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.880291, 0.1740298, 12.259317)
+
+[node name="Jack2" parent="Jack" unique_id=1744915127 instance=ExtResource("3_fpiv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.033567, 0, -2.9468307)
+
+[node name="Jack3" parent="Jack" unique_id=86447532 instance=ExtResource("3_fpiv6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.945536, 0, 5.5085316)
+
+[node name="Ball" parent="Jack" unique_id=169447383 instance=ExtResource("4_c5yqn")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.5021229, -0.1740298, -0.7972851)
+
+[node name="Stack Game" parent="." unique_id=768094112 instance=ExtResource("5_8hx5n")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 33.0372, 0, 36.587948)
+
+[node name="Floor" parent="." unique_id=1540816269 instance=ExtResource("6_c5yqn")]
+transform = Transform3D(100, 0, 0, 0, 1.23, 0, 0, 0, 200, 0, -0.6418867, 95.94361)

@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bx86fguns3iqa"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_paomk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cofhh"]
+vertex_color_use_as_albedo = true
+
+[node name="Floor" type="RigidBody3D" unique_id=1540816269]
+transform = Transform3D(20, 0, 0, 0, 0.246, 0, 0, 0, 20, 0, 0, 0)
+
+[node name="MeshInstance3D" type="CSGMesh3D" parent="." unique_id=719297359]
+use_collision = true
+mesh = SubResource("BoxMesh_paomk")
+material = SubResource("StandardMaterial3D_cofhh")
