@@ -1,2 +1,3 @@
 res://Scenes/Maps/Level_1.tscn
-res://Assets/Models/block_castle.tscn
+res://Scripts/player.gd
+res://Assets/Models/jack.tscn

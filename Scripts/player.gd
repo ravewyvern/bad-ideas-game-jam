@@ -6,7 +6,16 @@ extends CharacterBody3D
 @onready var Camera = $Head/Camera3D
 @onready var hpbar = $HpBar
 
-const SPEED = 5.0
+class StatusEffect :
+	var name : String
+	var duration : float
+	var magnitude : int
+
+var Effects : Array[StatusEffect]
+
+const SPEED = 4.5
+var base_speed : float
+var speed : float
 const JUMP_VELOCITY = 4.5
 const sensitivity = 0.01
 
@@ -24,6 +33,7 @@ var dragging : bool = false
 # stores the normal camera position and rotation
 var normal_camera_position : Vector3
 var normal_camera_rotation : Vector3
+var burning_cooldown : int
 
 
 func _ready() -> void:
@@ -51,11 +61,31 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	base_speed = SPEED
+	
+	# applies active status effects
+	burning_cooldown -= 1
+	for effect in Effects :
+		if effect.duration <= 0 :
+			Effects.erase(effect)
+		if effect.name == "burning" and burning_cooldown == 0: 
+			hp -= 4 + 1 * effect.magnitude
+		if burning_cooldown == 0 :
+			burning_cooldown = 60
+		if effect.name == "slow" :
+			base_speed = (0.95 - 0.05 * effect.magnitude) * SPEED
+	
 	# disables player movement when in aerial view
 	if top_view_enabled:
 		return
 	
-	#sets hp bar to hp value
+	# Sprints on spacebar held
+	if Input.is_action_pressed("Move.Jump") and is_on_floor():
+		speed = 1.35 * base_speed
+	else :
+		speed = base_speed
+	
+	# sets hp bar to hp value
 	hpbar.value = hp
 	
 	# Add the gravity and counts fall length to determine fall damage
@@ -64,21 +94,21 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("Move.Jump") and is_on_floor():
+	if Input.is_action_just_released("Move.Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
-	var input_dir := Input.get_vector("Move.Left", "Move.Right", "Move.Forward", "Move.Back")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var input_dir = Input.get_vector("Move.Left", "Move.Right", "Move.Forward", "Move.Back")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
 	else:
 		velocity.x = 0
 		velocity.z = 0
 	
-	#fall damage
+	# applies fall damage
 	if is_on_floor() :
 		if fallheight > 100 :
 			@warning_ignore("narrowing_conversion")
