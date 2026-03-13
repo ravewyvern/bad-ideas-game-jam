@@ -1,2 +1,4 @@
-res://Assets/Models/jack.tscn
+res://Scenes/Enemy.tscn
 res://Scripts/player.gd
+res://Scripts/enemy.gd
+res://Scenes/Maps/Game.tscn

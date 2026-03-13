@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bxncbsqm60ce2" path="res://Scenes/Maps/Test.tscn" id="1_o65xm"]
 [ext_resource type="PackedScene" uid="uid://dyslkmujlojtn" path="res://Scenes/Player.tscn" id="2_fgv2n"]
 [ext_resource type="PackedScene" uid="uid://bnyeoqhth7m02" path="res://Scenes/Enemy.tscn" id="3_01cpk"]
+[ext_resource type="PackedScene" uid="uid://cgg8mcye1045r" path="res://Assets/Models/Tower_Test.tscn" id="3_r13up"]
 [ext_resource type="PackedScene" uid="uid://cs6eq0y3clcge" path="res://Assets/Models/Test-Obstical.tscn" id="4_h5rip"]
 [ext_resource type="PackedScene" uid="uid://mxb5i818y2a" path="res://Assets/Models/Bridge_Test.tscn" id="5_r13up"]
 [ext_resource type="PackedScene" uid="uid://bylwlafm4f32a" path="res://Assets/Models/stack_game.tscn" id="6_fgv2n"]
@@ -17,11 +18,13 @@ transform = Transform3D(2.460349, -5.002221e-10, -9.313226e-10, 5.1841198e-11, 0
 
 [node name="Player" parent="." unique_id=819093483 instance=ExtResource("2_fgv2n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+TowerPlaceholder = ExtResource("3_r13up")
 
-[node name="Enemy" parent="." unique_id=2108781441 instance=ExtResource("3_01cpk")]
+[node name="Enemy" parent="." unique_id=2108781441 node_paths=PackedStringArray("Path_A") instance=ExtResource("3_01cpk")]
 transform = Transform3D(1, -1.8890205e-09, -9.313226e-10, 1.2732926e-11, 1, -9.313226e-10, 9.313226e-10, -9.313226e-10, 1, -8.181858, 2.2946174, -12.066156)
 collision_mask = 1
 floor_constant_speed = true
+Path_A = NodePath("../Enemy_Path/Path_A")
 
 [node name="Obstical_test" parent="." unique_id=1931087097 instance=ExtResource("4_h5rip")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2400643e-09, 1.6810807, -20.47219)
@@ -115,3 +118,19 @@ transform = Transform3D(1, 0, 0, 0, 0.9993354, 0.03645185, 0, -0.03645185, 0.999
 
 [node name="Ball" parent="." unique_id=169447383 instance=ExtResource("8_h5rip")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -4.1065345, 0.5737765, 11.637596)
+
+[node name="Enemy_Path" type="Node3D" parent="." unique_id=1410915385]
+
+[node name="Path_A" type="Node3D" parent="Enemy_Path" unique_id=1395458566]
+
+[node name="Marker3D" type="Marker3D" parent="Enemy_Path/Path_A" unique_id=500274181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 3.7252903e-09, -26.914675)
+
+[node name="Marker3D2" type="Marker3D" parent="Enemy_Path/Path_A" unique_id=1343180238]
+transform = Transform3D(1, -4.9021764e-10, -2.3283064e-10, 1.4097168e-11, 1, -2.3283064e-10, 2.3283064e-10, -2.3283064e-10, 1, 13.386168, 1.1921604e-08, -20.783035)
+
+[node name="Marker3D3" type="Marker3D" parent="Enemy_Path/Path_A" unique_id=1649669126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5426662, 3.3251126e-09, -13.290558)
+
+[node name="Marker3D4" type="Marker3D" parent="Enemy_Path/Path_A" unique_id=747553458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.154501, -4.3437467e-09, -11.277381)

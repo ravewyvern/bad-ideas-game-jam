@@ -3,6 +3,10 @@ extends CharacterBody3D
 @export var hp : int = 100
 @export var Bullet : PackedScene
 @export var BulletSpawnPoint : Node3D
+
+# placeholder tower scene
+@export var TowerPlaceholder : PackedScene
+
 @onready var Camera = $Head/Camera3D
 @onready var hpbar = $HpBar
 
@@ -12,6 +16,9 @@ class StatusEffect :
 	var magnitude : int
 
 var Effects : Array[StatusEffect]
+
+# preview tower instance
+var tower_preview : Node3D
 
 const SPEED = 4.5
 var base_speed : float
@@ -77,6 +84,13 @@ func _physics_process(delta: float) -> void:
 	
 	# disables player movement when in aerial view
 	if top_view_enabled:
+		
+		# moves preview tower to mouse position
+		if tower_preview:
+			var pos = get_mouse_world_position()
+			if pos:
+				tower_preview.global_position = pos
+		
 		return
 	
 	# Sprints on spacebar held
@@ -125,7 +139,17 @@ func _input(event):
 		
 		# starts dragging when mouse button is pressed
 		if event is InputEventMouseButton:
-			if event.button_index == MOUSE_BUTTON_LEFT:
+			
+			# places tower on left click
+			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+				
+				var pos = get_mouse_world_position()
+				
+				if pos:
+					place_tower(pos)
+			
+			# enables camera drag with right mouse button
+			if event.button_index == MOUSE_BUTTON_RIGHT:
 				dragging = event.pressed
 		
 		# moves camera while dragging (only on map plane X/Z)
@@ -156,13 +180,23 @@ func toggle_top_view():
 		# rotates camera to look straight down
 		Camera.rotation_degrees = Vector3(-90, 0, 0)
 		
-		# releases mouse so player can drag the camera
+		# releases mouse so player can interact with map
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
+		# creates tower preview
+		if TowerPlaceholder:
+			tower_preview = TowerPlaceholder.instantiate()
+			get_tree().current_scene.add_child(tower_preview)
 		
 	else:
 		
 		# stops dragging
 		dragging = false
+		
+		# removes preview tower
+		if tower_preview:
+			tower_preview.queue_free()
+			tower_preview = null
 		
 		# restores normal camera transform
 		Camera.position = normal_camera_position
@@ -170,6 +204,39 @@ func toggle_top_view():
 		
 		# captures mouse again for FPS control
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+
+# finds the world position under the mouse using a raycast
+func get_mouse_world_position():
+	
+	var mouse_pos = get_viewport().get_mouse_position()
+	
+	var from = Camera.project_ray_origin(mouse_pos)
+	var to = from + Camera.project_ray_normal(mouse_pos) * 1000
+	
+	var space = get_world_3d().direct_space_state
+	
+	var query = PhysicsRayQueryParameters3D.create(from, to)
+	
+	# ignores preview tower collision
+	if tower_preview:
+		query.exclude = [tower_preview]
+	
+	var result = space.intersect_ray(query)
+	
+	if result:
+		return result.position
+	
+	return null
+
+
+# places a tower at the given position
+func place_tower(pos: Vector3):
+	
+	var tower = TowerPlaceholder.instantiate()
+	get_tree().current_scene.add_child(tower)
+	
+	tower.global_position = pos
 
 
 func shoot():
