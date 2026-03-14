@@ -1,4 +1,2 @@
-res://Scenes/Enemy.tscn
-res://Scripts/player.gd
-res://Scripts/enemy.gd
-res://Scenes/Maps/Game.tscn
+res://Scenes/Maps/Level_1.tscn
+res://Assets/Models/block_gate.tscn

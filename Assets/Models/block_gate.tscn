@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://b82xppm12ln23"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5xqu1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bixtj"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yqe3s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n48cl"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_njd81"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fk751"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5xqu1"]
+size = Vector3(0.8937988, 1, 1)
+
+[node name="Block Gate" type="RigidBody3D" unique_id=1547261018]
+
+[node name="Large block2" type="CSGMesh3D" parent="." unique_id=2142499464]
+transform = Transform3D(4, 0, 0, 0, 3, 0, 0, 0, 1.5, 0, 4.990202, 0)
+mesh = SubResource("BoxMesh_5xqu1")
+material = SubResource("StandardMaterial3D_bixtj")
+
+[node name="Side" type="CSGMesh3D" parent="." unique_id=1500333139]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 1.5, 3.0135217, 1.5742702, 0)
+mesh = SubResource("BoxMesh_5xqu1")
+material = SubResource("StandardMaterial3D_bixtj")
+
+[node name="Side2" type="CSGMesh3D" parent="." unique_id=467247951]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 1.5, 3.0135217, 4.9793143, 0)
+mesh = SubResource("BoxMesh_5xqu1")
+material = SubResource("StandardMaterial3D_bixtj")
+
+[node name="Side3" type="CSGMesh3D" parent="." unique_id=1189650804]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 1.5, -2.993792, 1.5742702, 0)
+mesh = SubResource("BoxMesh_5xqu1")
+material = SubResource("StandardMaterial3D_bixtj")
+
+[node name="Side4" type="CSGMesh3D" parent="." unique_id=863341313]
+transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 1.5, -2.993792, 4.991595, 0)
+mesh = SubResource("BoxMesh_5xqu1")
+material = SubResource("StandardMaterial3D_bixtj")
+
+[node name="Large block3" type="CSGMesh3D" parent="." unique_id=1519848123]
+transform = Transform3D(8.002573, 0, 0, 0, 0.44296592, 0, 0, 0, 1.5, 0, 3.2695327, 0)
+mesh = SubResource("BoxMesh_5xqu1")
+material = SubResource("StandardMaterial3D_bixtj")
+
+[node name="Tower" type="CSGMesh3D" parent="." unique_id=402339004]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, -3.0397375, 7.9819694, 0)
+mesh = SubResource("CylinderMesh_yqe3s")
+material = SubResource("StandardMaterial3D_n48cl")
+
+[node name="Tower2" type="CSGMesh3D" parent="." unique_id=275045455]
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, 3.0663478, 7.9819694, 0)
+mesh = SubResource("CylinderMesh_yqe3s")
+material = SubResource("StandardMaterial3D_n48cl")
+
+[node name="Top" type="CSGMesh3D" parent="." unique_id=2139591883]
+transform = Transform3D(4, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 7.2374573, 0)
+mesh = SubResource("PrismMesh_njd81")
+material = SubResource("StandardMaterial3D_fk751")
+
+[node name="Top2" type="CSGMesh3D" parent="." unique_id=536088883]
+transform = Transform3D(3, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -3.0079298, 10.242135, 0)
+mesh = SubResource("PrismMesh_njd81")
+material = SubResource("StandardMaterial3D_fk751")
+
+[node name="Top3" type="CSGMesh3D" parent="." unique_id=1217412091]
+transform = Transform3D(3, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.0590973, 10.242135, 0)
+mesh = SubResource("PrismMesh_njd81")
+material = SubResource("StandardMaterial3D_fk751")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=71431222]
+transform = Transform3D(2.14, 0, 0, 0, 3.921, 0, 0, 0, 1.5, -3.019437, 2.0363972, 0)
+shape = SubResource("BoxShape3D_5xqu1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=2020096522]
+transform = Transform3D(2.14, 0, 0, 0, 3.921, 0, 0, 0, 1.5, 3.051957, 2.0363972, 0)
+shape = SubResource("BoxShape3D_5xqu1")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=2006879609]
+transform = Transform3D(6.825441, 0, 0, 0, 1.4599413, 0, 0, 0, 1.5235996, -0.0321317, 3.7790227, 0)
+shape = SubResource("BoxShape3D_5xqu1")

@@ -1,11 +1,11 @@
-Marker3D
-Node3D
-CSGMesh3D
 MeshInstance3D
 RigidBody3D
+CollisionShape3D
+CSGMesh3D
+Marker3D
+Node3D
 CSGBox3D
 CSGCylinder3D
-CollisionShape3D
 StaticBody3D
 ProgressBar
 TextureProgressBar
