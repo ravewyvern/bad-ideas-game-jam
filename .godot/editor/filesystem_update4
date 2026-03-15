@@ -1,2 +1,2 @@
 res://Scenes/Maps/Level_1.tscn
-res://Assets/Models/block_gate.tscn
+res://Scripts/menus/main_menu.gd

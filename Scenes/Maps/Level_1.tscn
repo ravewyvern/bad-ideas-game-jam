@@ -52,7 +52,7 @@
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -8.635229, 0, -1.6289086)
 
 [node name="Player" parent="." unique_id=819093483 instance=ExtResource("2_tfsxu")]
-transform = Transform3D(-0.9519532, 0, 0.30624372, 0, 1, 0, -0.30624372, 0, -0.9519532, 3.364236, 0.92068696, 2.434347)
+transform = Transform3D(-0.9519532, 0, 0.30624372, 0, 1, 0, -0.30624372, 0, -0.9519532, 2.5928838, 1.8369, 4.832082)
 
 [node name="Jack" parent="." unique_id=346711695 instance=ExtResource("3_fpiv6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.880291, 0.1740298, 12.259317)
