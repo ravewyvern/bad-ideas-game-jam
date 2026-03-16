@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://bylwlafm4f32a" path="res://Assets/Models/stack_game.tscn" id="5_8hx5n"]
 [ext_resource type="PackedScene" uid="uid://bx86fguns3iqa" path="res://Assets/Models/floor.tscn" id="6_c5yqn"]
 [ext_resource type="PackedScene" uid="uid://b82xppm12ln23" path="res://Assets/Models/block_gate.tscn" id="7_8hx5n"]
+[ext_resource type="PackedScene" uid="uid://d0sw8qgiroovj" path="res://Assets/Models/Rook.fbx" id="8_7l4iu"]
+[ext_resource type="PackedScene" uid="uid://bbwnpmiaed8hk" path="res://Assets/Models/Pawn.fbx" id="9_6jl7n"]
+[ext_resource type="PackedScene" uid="uid://dqdos0ge6byns" path="res://Assets/Models/King.fbx" id="10_tserq"]
+[ext_resource type="PackedScene" uid="uid://bo3wvst4l3bpy" path="res://Assets/Models/Queen.fbx" id="11_hldq7"]
+[ext_resource type="PackedScene" uid="uid://88bbi1h8asqn" path="res://Assets/Models/Bishop.fbx" id="12_gw16w"]
+[ext_resource type="PackedScene" uid="uid://dg8ttymo5r5fy" path="res://Assets/Models/Knight.fbx" id="13_enq7t"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0wpdb"]
 
@@ -77,6 +83,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 33.0372, 0, -16.839497)
 
 [node name="Floor" parent="." unique_id=1540816269 instance=ExtResource("6_c5yqn")]
 transform = Transform3D(100, 0, 0, 0, 1.23, 0, 0, 0, 200, 0, -0.6418867, 95.94361)
+disable_mode = 1
 
 [node name="Block Gate" parent="." unique_id=1547261018 instance=ExtResource("7_8hx5n")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.5263109, 198.99377)
@@ -192,3 +199,21 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
 transform = Transform3D(35.062878, 0, 0, 0, 2, 0, 0, 0, 6, -57.308975, 12.701352, 1.7050629)
 mesh = SubResource("BoxMesh_whd0v")
 surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
+
+[node name="Tower" parent="." unique_id=282655405 instance=ExtResource("8_7l4iu")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -0.1631198, 78.99584)
+
+[node name="Pawn" parent="Tower" unique_id=1613013594 instance=ExtResource("9_6jl7n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0016311979, -0.06544262)
+
+[node name="King" parent="Tower" unique_id=2025817652 instance=ExtResource("10_tserq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.12270004)
+
+[node name="Queen" parent="Tower" unique_id=2039765904 instance=ExtResource("11_hldq7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.046541594)
+
+[node name="Bishop" parent="Tower" unique_id=1289870624 instance=ExtResource("12_gw16w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.19450995)
+
+[node name="Knight" parent="Tower" unique_id=455603633 instance=ExtResource("13_enq7t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.26389503)

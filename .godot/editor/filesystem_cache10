@@ -1,13 +1,14 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1773603490
+::res://::1773695813
 icon.svg::CompressedTexture2D::5351679731990098842::1772667260::1772750512::1::::<><><>0<>0<>921279a2e71f78c91ebe6d5dd18a9c7a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1772667260::0::1::::<><><>0<>0<><>::
 ::res://Assets/::1772915212
 ::res://Assets/Fonts/::1772809282
 Minecraft.ttf::FontFile::4416211340532142105::1772809161::1772809282::1::::<><><>0<>0<>0cb8781569ae121ffc2c84e38a08d59d<>res://.godot/imported/Minecraft.ttf-5f6638f398155e2f47c5ecdd9b344f48.fontdata::
 ::res://Assets/Materials/::1772909501
-::res://Assets/Models/::1773501580
+::res://Assets/Models/::1773696037
 ball.tscn::PackedScene::8176539292502298892::1773182606::0::1::::<><><>0<>0<><>::
+Bishop.fbx::PackedScene::2384419269439597029::1773696037::1773696038::1::::<><><>0<>0<>f389cc8ad523b071229af2057180920d<>res://.godot/imported/Bishop.fbx-53b63c4bf7af6dff5d1099f24f94d495.scn::
 block_castle.tscn::PackedScene::2591231311764814456::1773267142::0::1::::<><><>0<>0<><>::
 block_gate.tscn::PackedScene::4759814808455741358::1773501580::0::1::::<><><>0<>0<><>::
 Bridge_Test.tscn::PackedScene::26172399270629950::1772829798::0::1::::<><><>0<>0<><>::
@@ -16,6 +17,11 @@ dart_projectile_0.png::CompressedTexture2D::4311933112859873524::1772750494::177
 explosion.tscn::PackedScene::2860798893983374450::1772915142::0::1::::<><><>0<>0<><>::
 floor.tscn::PackedScene::4070780055649117408::1773267633::0::1::::<><><>0<>0<><>::
 jack.tscn::PackedScene::6932471470174589755::1773182375::0::1::::<><><>0<>0<><>::
+King.fbx::PackedScene::8289360187314834980::1773696037::1773696038::1::::<><><>0<>0<>f79937059b088a706ca5e9deea18c8b6<>res://.godot/imported/King.fbx-ddac3c62699c79992cd53ec3f2779bdb.scn::
+Knight.fbx::PackedScene::7649708411513171426::1773696037::1773696038::1::::<><><>0<>0<>abbcddf861b90729f2c1594a34661351<>res://.godot/imported/Knight.fbx-782e38bc80ce5ee1a88c76f8e97a6756.scn::
+Pawn.fbx::PackedScene::2502842588379124692::1773696037::1773696038::1::::<><><>0<>0<>6effb1b90b88666ce4e39368d63fa7b1<>res://.godot/imported/Pawn.fbx-8441a46b7ce136a4f0d9183eda0eb026.scn::
+Queen.fbx::PackedScene::3428241323357108874::1773696037::1773696038::1::::<><><>0<>0<>e2675ebabcacdbd033dabebfc20b8b19<>res://.godot/imported/Queen.fbx-a9ba4428236a2a6c996e8bd0ed730654.scn::
+Rook.fbx::PackedScene::8952537496672109579::1773695895::1773695897::1::::<><><>0<>0<>b49ed949c0f94feaa69a617d9c86135a<>res://.godot/imported/Rook.fbx-6fd88db72e170f9f0aaa16d4cb5030d5.scn::
 stack_game.tscn::PackedScene::4095016512182582590::1773180605::0::1::::<><><>0<>0<><>::
 Test-Obstical.tscn::PackedScene::6100509055354541264::1772830721::0::1::::<><><>0<>0<><>::
 Tower_Test.tscn::PackedScene::5208385928366417001::1772830764::0::1::::<><><>0<>0<><>::
@@ -27,9 +33,9 @@ mainlogo.png::CompressedTexture2D::1701451203192719379::1772809161::1772809283::
 Bullet.tscn::PackedScene::3763494950343912783::1772750494::0::1::::<><><>0<>0<><>::uid://crgjp3bod45mn::::res://Scripts/bullet.gd<>uid://b5kqrcsnu3uvq::::res://Assets/Models/dart_projectile.glb
 Enemy.tscn::PackedScene::3348689438231824173::1772750494::0::1::::<><><>0<>0<><>::uid://ifj5fgta41yr::::res://Scripts/enemy.gd
 Player.tscn::PackedScene::8881639504425106295::1773092203::0::1::::<><><>0<>0<><>::uid://dni4ymdcqd65b::::res://Scripts/player.gd<>uid://btvchhbuy1n5p::::res://Scenes/Bullet.tscn
-::res://Scenes/Maps/::1773503605
+::res://Scenes/Maps/::1773603620
 Game.tscn::PackedScene::2786390309312205499::1773500464::0::1::::<><><>0<>0<><>::uid://bxncbsqm60ce2::::res://Scenes/Maps/Test.tscn<>uid://dyslkmujlojtn::::res://Scenes/Player.tscn<>uid://bnyeoqhth7m02::::res://Scenes/Enemy.tscn<>uid://cgg8mcye1045r::::res://Assets/Models/Tower_Test.tscn<>uid://cs6eq0y3clcge::::res://Assets/Models/Test-Obstical.tscn<>uid://mxb5i818y2a::::res://Assets/Models/Bridge_Test.tscn<>uid://bylwlafm4f32a::::res://Assets/Models/stack_game.tscn<>uid://c51e164i646x0::::res://Assets/Models/jack.tscn<>uid://doq1n4d7uq7tg::::res://Assets/Models/ball.tscn
-Level_1.tscn::PackedScene::3558855036849931054::1773503605::0::1::::<><><>0<>0<><>::uid://bc6hg3q4n80tw::::res://Assets/Models/block_castle.tscn<>uid://dyslkmujlojtn::::res://Scenes/Player.tscn<>uid://c51e164i646x0::::res://Assets/Models/jack.tscn<>uid://doq1n4d7uq7tg::::res://Assets/Models/ball.tscn<>uid://bylwlafm4f32a::::res://Assets/Models/stack_game.tscn<>uid://bx86fguns3iqa::::res://Assets/Models/floor.tscn<>uid://b82xppm12ln23::::res://Assets/Models/block_gate.tscn
+Level_1.tscn::PackedScene::3558855036849931054::1773603620::0::1::::<><><>0<>0<><>::uid://bc6hg3q4n80tw::::res://Assets/Models/block_castle.tscn<>uid://dyslkmujlojtn::::res://Scenes/Player.tscn<>uid://c51e164i646x0::::res://Assets/Models/jack.tscn<>uid://doq1n4d7uq7tg::::res://Assets/Models/ball.tscn<>uid://bylwlafm4f32a::::res://Assets/Models/stack_game.tscn<>uid://bx86fguns3iqa::::res://Assets/Models/floor.tscn<>uid://b82xppm12ln23::::res://Assets/Models/block_gate.tscn
 Test.tscn::PackedScene::4027725188674870627::1772750494::0::1::::<><><>0<>0<><>::
 ::res://Scenes/Menus/::1772809161
 Main Menu.tscn::PackedScene::7823967014001056183::1772809161::0::1::::<><><>0<>0<><>::uid://yigwgs7sj56v::::res://Assets/Textures/mainlogo.png<>uid://dwjdskdf3qjfx::::res://Scripts/menus/main_menu.gd<>uid://b36imdbak2j3f::::res://Assets/Fonts/Minecraft.ttf
@@ -37,5 +43,5 @@ Main Menu.tscn::PackedScene::7823967014001056183::1772809161::0::1::::<><><>0<>0
 bullet.gd::GDScript::5979012688440471221::1772809161::0::1::::<>Area3D<><>0<>0<><>::
 enemy.gd::GDScript::572432937376623985::1773500464::0::1::::<>CharacterBody3D<><>0<>0<><>::
 player.gd::GDScript::8090036327277169297::1773500464::0::1::::<>CharacterBody3D<><>0<>0<><>::
-::res://Scripts/menus/::1773180542
-main_menu.gd::GDScript::8722210836304289797::1773180542::0::1::::<>VBoxContainer<><>0<>0<><>::
+::res://Scripts/menus/::1773603551
+main_menu.gd::GDScript::8722210836304289797::1773603551::0::1::::<>VBoxContainer<><>0<>0<><>::
