@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://2gpk5gqfxgbx"]
+
+[ext_resource type="PackedScene" uid="uid://bbwnpmiaed8hk" path="res://Assets/Models/Pawn.fbx" id="1_w0o8u"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_u6sks"]
+height = 0.24687195
+radius = 0.06738281
+
+[node name="Tower_Pawn" type="RigidBody3D" unique_id=1731102997]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=53491054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12258148, 0)
+shape = SubResource("CylinderShape3D_u6sks")
+
+[node name="Pawn" parent="." unique_id=815211104 instance=ExtResource("1_w0o8u")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

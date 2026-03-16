@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b02dtsby83h58"]
+
+[ext_resource type="PackedScene" uid="uid://dqdos0ge6byns" path="res://Assets/Models/King.fbx" id="1_u6sks"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_u6sks"]
+height = 0.47421265
+radius = 0.09423828
+
+[node name="Tower_King" type="RigidBody3D" unique_id=1731102997]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=53491054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23625183, 0)
+shape = SubResource("CylinderShape3D_u6sks")
+
+[node name="King" parent="." unique_id=62765342 instance=ExtResource("1_u6sks")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)

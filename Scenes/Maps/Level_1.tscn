@@ -5,14 +5,15 @@
 [ext_resource type="PackedScene" uid="uid://c51e164i646x0" path="res://Assets/Models/jack.tscn" id="3_fpiv6"]
 [ext_resource type="PackedScene" uid="uid://doq1n4d7uq7tg" path="res://Assets/Models/ball.tscn" id="4_c5yqn"]
 [ext_resource type="PackedScene" uid="uid://bylwlafm4f32a" path="res://Assets/Models/stack_game.tscn" id="5_8hx5n"]
-[ext_resource type="PackedScene" uid="uid://bx86fguns3iqa" path="res://Assets/Models/floor.tscn" id="6_c5yqn"]
 [ext_resource type="PackedScene" uid="uid://b82xppm12ln23" path="res://Assets/Models/block_gate.tscn" id="7_8hx5n"]
-[ext_resource type="PackedScene" uid="uid://d0sw8qgiroovj" path="res://Assets/Models/Rook.fbx" id="8_7l4iu"]
-[ext_resource type="PackedScene" uid="uid://bbwnpmiaed8hk" path="res://Assets/Models/Pawn.fbx" id="9_6jl7n"]
-[ext_resource type="PackedScene" uid="uid://dqdos0ge6byns" path="res://Assets/Models/King.fbx" id="10_tserq"]
-[ext_resource type="PackedScene" uid="uid://bo3wvst4l3bpy" path="res://Assets/Models/Queen.fbx" id="11_hldq7"]
-[ext_resource type="PackedScene" uid="uid://88bbi1h8asqn" path="res://Assets/Models/Bishop.fbx" id="12_gw16w"]
-[ext_resource type="PackedScene" uid="uid://dg8ttymo5r5fy" path="res://Assets/Models/Knight.fbx" id="13_enq7t"]
+[ext_resource type="PackedScene" uid="uid://dslwouglqtbqc" path="res://Assets/Models/Tower_Knight.tscn" id="8_0wpdb"]
+[ext_resource type="PackedScene" uid="uid://2gpk5gqfxgbx" path="res://Assets/Models/Tower_Pawn.tscn" id="9_hsg7j"]
+[ext_resource type="PackedScene" uid="uid://dpj3jl2na1v" path="res://Assets/Models/Tower_Queen.tscn" id="10_whd0v"]
+[ext_resource type="PackedScene" uid="uid://cvk6vhdqdogo8" path="res://Assets/Models/Tower_Rook.tscn" id="11_o2f2p"]
+[ext_resource type="PackedScene" uid="uid://b02dtsby83h58" path="res://Assets/Models/Tower_King.tscn" id="13_7l4iu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7l4iu"]
+size = Vector3(14.22644, 15.46106, 3.6068726)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0wpdb"]
 
@@ -52,10 +53,35 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gw16w"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_6jl7n"]
+size = Vector3(115.47266, 25.770452, 19.032227)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l5vqw"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6jl7n"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7l4iu"]
+
+[sub_resource type="Sky" id="Sky_ko2s7"]
+sky_material = SubResource("ProceduralSkyMaterial_7l4iu")
+
+[sub_resource type="Environment" id="Environment_6jl7n"]
+background_mode = 2
+background_energy_multiplier = 1.4
+sky = SubResource("Sky_ko2s7")
+
 [node name="Node3D" type="Node3D" unique_id=141912920]
 
 [node name="Block Castle" parent="." unique_id=2086897729 instance=ExtResource("1_08vas")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -8.635229, 0, -1.6289086)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -8.635229, 0.18301201, -1.6289086)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block Castle" unique_id=1543360788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.584413, 7.8781133, -1.0516051)
+shape = SubResource("BoxShape3D_7l4iu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Block Castle" unique_id=1695634349]
 
 [node name="Player" parent="." unique_id=819093483 instance=ExtResource("2_tfsxu")]
 transform = Transform3D(-0.9519532, 0, 0.30624372, 0, 1, 0, -0.30624372, 0, -0.9519532, 2.5928838, 1.8369, 4.832082)
@@ -80,10 +106,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.61458, 0, 18.398197)
 
 [node name="Stack Game" parent="." unique_id=768094112 instance=ExtResource("5_8hx5n")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 33.0372, 0, -16.839497)
-
-[node name="Floor" parent="." unique_id=1540816269 instance=ExtResource("6_c5yqn")]
-transform = Transform3D(100, 0, 0, 0, 1.23, 0, 0, 0, 200, 0, -0.6418867, 95.94361)
-disable_mode = 1
 
 [node name="Block Gate" parent="." unique_id=1547261018 instance=ExtResource("7_8hx5n")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.5263109, 198.99377)
@@ -200,20 +222,37 @@ transform = Transform3D(35.062878, 0, 0, 0, 2, 0, 0, 0, 6, -57.308975, 12.701352
 mesh = SubResource("BoxMesh_whd0v")
 surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
 
-[node name="Tower" parent="." unique_id=282655405 instance=ExtResource("8_7l4iu")]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -0.1631198, 78.99584)
+[node name="StaticBody3D" type="StaticBody3D" parent="Front wall" unique_id=721912663]
 
-[node name="Pawn" parent="Tower" unique_id=1613013594 instance=ExtResource("9_6jl7n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0016311979, -0.06544262)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Front wall" unique_id=481138860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.988281, 12.385226, -3.5825195)
+shape = SubResource("BoxShape3D_6jl7n")
 
-[node name="King" parent="Tower" unique_id=2025817652 instance=ExtResource("10_tserq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.12270004)
+[node name="Ground" type="Node3D" parent="." unique_id=1628396861]
+transform = Transform3D(3.5, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 110)
 
-[node name="Queen" parent="Tower" unique_id=2039765904 instance=ExtResource("11_hldq7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.046541594)
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=1424644676]
 
-[node name="Bishop" parent="Tower" unique_id=1289870624 instance=ExtResource("12_gw16w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.19450995)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=1103013067]
+shape = SubResource("BoxShape3D_l5vqw")
 
-[node name="Knight" parent="Tower" unique_id=455603633 instance=ExtResource("13_enq7t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.26389503)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/StaticBody3D" unique_id=765497253]
+mesh = SubResource("BoxMesh_6jl7n")
+
+[node name="Tower_King" parent="." unique_id=1731102997 instance=ExtResource("13_7l4iu")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0.5, 30)
+
+[node name="Tower_Knight" parent="." unique_id=364284648 instance=ExtResource("8_0wpdb")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0.5, 40)
+
+[node name="Tower_Pawn" parent="." unique_id=340518782 instance=ExtResource("9_hsg7j")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0.5, 50)
+
+[node name="Tower_Queen" parent="." unique_id=357172571 instance=ExtResource("10_whd0v")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0.5, 60)
+
+[node name="Tower_Rook" parent="." unique_id=198154808 instance=ExtResource("11_o2f2p")]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0.5, 70)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1563618005]
+environment = SubResource("Environment_6jl7n")
