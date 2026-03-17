@@ -1,8 +1,1 @@
 res://Scenes/Maps/Level_1.tscn
-res://Assets/Models/Tower_King.tscn
-res://Assets/Models/Tower_Knight.tscn
-res://Assets/Models/Tower_Pawn.tscn
-res://Assets/Models/Tower_Queen.tscn
-res://Assets/Models/Tower_Rook.tscn
-res://Scenes/Enemy.tscn
-res://Scenes/Enemy_Pathing.tscn

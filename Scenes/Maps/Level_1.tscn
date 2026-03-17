@@ -72,6 +72,10 @@ background_mode = 2
 background_energy_multiplier = 1.4
 sky = SubResource("Sky_ko2s7")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_o2f2p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tserq"]
+
 [node name="Node3D" type="Node3D" unique_id=141912920]
 
 [node name="Block Castle" parent="." unique_id=2086897729 instance=ExtResource("1_08vas")]
@@ -105,7 +109,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5265484, 0, 9.942833)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.61458, 0, 18.398197)
 
 [node name="Stack Game" parent="." unique_id=768094112 instance=ExtResource("5_8hx5n")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 33.0372, 0, -16.839497)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.8207207, 0, 101.85341)
 
 [node name="Block Gate" parent="." unique_id=1547261018 instance=ExtResource("7_8hx5n")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, -0.5263109, 198.99377)
@@ -140,7 +144,7 @@ mesh = SubResource("CylinderMesh_tserq")
 surface_material_override/0 = SubResource("StandardMaterial3D_hldq7")
 
 [node name="Front wall" type="RigidBody3D" parent="." unique_id=2018012943]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.166206, 0, 197.27286)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.166206, 0.74147415, 197.27286)
 
 [node name="Big block" type="MeshInstance3D" parent="Front wall" unique_id=904501053]
 transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 6, -1.0637779, 5.7516313, 1.7346649)
@@ -183,7 +187,7 @@ mesh = SubResource("BoxMesh_8hx5n")
 surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
 
 [node name="Tower block" type="MeshInstance3D" parent="Front wall" unique_id=709284856]
-transform = Transform3D(6, 0, 0, 0, 15, 0, 0, 0, 6, 32.039967, 7.320204, 1.7742004)
+transform = Transform3D(6, 0, 0, 0, 15, 0, 0, 0, 6, 32.039967, 7.320202, 1.7742004)
 mesh = SubResource("BoxMesh_hsg7j")
 surface_material_override/0 = SubResource("StandardMaterial3D_o2f2p")
 
@@ -213,19 +217,19 @@ mesh = SubResource("PrismMesh_6jl7n")
 surface_material_override/0 = SubResource("StandardMaterial3D_tserq")
 
 [node name="Long block" type="MeshInstance3D" parent="Front wall" unique_id=1963562730]
-transform = Transform3D(35.062878, 0, 0, 0, 2, 0, 0, 0, 6, 10.960987, 12.701352, 1.7050629)
+transform = Transform3D(35.062878, 0, 0, 0, 2, 0, 0, 0, 6, 10.960987, 12.811533, 1.7050629)
 mesh = SubResource("BoxMesh_whd0v")
 surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
 
 [node name="Long block2" type="MeshInstance3D" parent="Front wall" unique_id=1676694101]
-transform = Transform3D(35.062878, 0, 0, 0, 2, 0, 0, 0, 6, -57.308975, 12.701352, 1.7050629)
+transform = Transform3D(35.062878, 0, 0, 0, 2, 0, 0, 0, 6, -57.308975, 12.8214445, 1.7050629)
 mesh = SubResource("BoxMesh_whd0v")
 surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Front wall" unique_id=721912663]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Front wall" unique_id=481138860]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.988281, 12.385226, -3.5825195)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.2845704, -17.988281, 12.385226, 1.3025208)
 shape = SubResource("BoxShape3D_6jl7n")
 
 [node name="Ground" type="Node3D" parent="." unique_id=1628396861]
@@ -234,25 +238,347 @@ transform = Transform3D(3.5, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 110)
 [node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=1424644676]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=1103013067]
+transform = Transform3D(1.0686891, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_l5vqw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ground/StaticBody3D" unique_id=765497253]
+transform = Transform3D(1.06831, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.13601401, 0)
 mesh = SubResource("BoxMesh_6jl7n")
 
-[node name="Tower_King" parent="." unique_id=1731102997 instance=ExtResource("13_7l4iu")]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0.5, 30)
-
 [node name="Tower_Knight" parent="." unique_id=364284648 instance=ExtResource("8_0wpdb")]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0.5, 40)
-
-[node name="Tower_Pawn" parent="." unique_id=340518782 instance=ExtResource("9_hsg7j")]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0.5, 50)
-
-[node name="Tower_Queen" parent="." unique_id=357172571 instance=ExtResource("10_whd0v")]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0.5, 60)
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -25.072943, 0.5000019, 40.108578)
 
 [node name="Tower_Rook" parent="." unique_id=198154808 instance=ExtResource("11_o2f2p")]
-transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, 0, 0.5, 70)
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 3.7582088, 0.5000019, 70.10858)
+
+[node name="Tower_Queen" parent="." unique_id=357172571 instance=ExtResource("10_whd0v")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, -20.970024, 0.5000019, 60.108574)
+
+[node name="Tower_Pawn" parent="." unique_id=340518782 instance=ExtResource("9_hsg7j")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 27.62987, 0.5000019, 76.85687)
+
+[node name="Tower_King" parent="." unique_id=1731102997 instance=ExtResource("13_7l4iu")]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 26.573132, 0.5000019, 51.26269)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1563618005]
 environment = SubResource("Environment_6jl7n")
+
+[node name="Wall side" type="RigidBody3D" parent="." unique_id=780195317]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08006668, 0.9126854, 0)
+
+[node name="Big block20" type="MeshInstance3D" parent="Wall side" unique_id=1198296081]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.18199, 5.75, -3.7254562)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block19" type="MeshInstance3D" parent="Wall side" unique_id=1665046004]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.16274, 5.749649, 8.354286)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block5" type="MeshInstance3D" parent="Wall side" unique_id=949898950]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.162746, 5.749649, 177.88255)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block6" type="MeshInstance3D" parent="Wall side" unique_id=1549574194]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.182, 5.75, 165.80281)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block7" type="MeshInstance3D" parent="Wall side" unique_id=114514980]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.162746, 5.749649, 153.63403)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block8" type="MeshInstance3D" parent="Wall side" unique_id=945772805]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.182, 5.75, 141.55429)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block9" type="MeshInstance3D" parent="Wall side" unique_id=1434553597]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.162743, 5.749649, 129.46675)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block10" type="MeshInstance3D" parent="Wall side" unique_id=90287911]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.181995, 5.75, 117.38701)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block11" type="MeshInstance3D" parent="Wall side" unique_id=1982147605]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.162743, 5.749649, 105.21823)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block12" type="MeshInstance3D" parent="Wall side" unique_id=391582876]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.181995, 5.75, 93.13849)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block13" type="MeshInstance3D" parent="Wall side" unique_id=1094359164]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.162743, 5.749649, 81.01861)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block14" type="MeshInstance3D" parent="Wall side" unique_id=1188393825]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.181995, 5.75, 68.938866)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block15" type="MeshInstance3D" parent="Wall side" unique_id=1240111593]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.162743, 5.749649, 56.77009)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block16" type="MeshInstance3D" parent="Wall side" unique_id=506682597]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.181995, 5.75, 44.690346)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block17" type="MeshInstance3D" parent="Wall side" unique_id=853334333]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.16274, 5.749649, 32.602806)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block18" type="MeshInstance3D" parent="Wall side" unique_id=1854830250]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.18199, 5.75, 20.523064)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Tower block" type="MeshInstance3D" parent="Wall side" unique_id=183341362]
+transform = Transform3D(6, 0, 0, 0, 15, 0, 0, 0, 6, 53.17087, 7.320202, -12.762731)
+mesh = SubResource("BoxMesh_hsg7j")
+surface_material_override/0 = SubResource("StandardMaterial3D_o2f2p")
+
+[node name="Tower" type="MeshInstance3D" parent="Wall side" unique_id=550574481]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 53.272545, 20.928436, -12.858388)
+mesh = SubResource("CylinderMesh_l5vqw")
+surface_material_override/0 = SubResource("StandardMaterial3D_7l4iu")
+
+[node name="Tower top" type="MeshInstance3D" parent="Wall side" unique_id=416474215]
+transform = Transform3D(6, 0, 0, 0, 3, 0, 0, 0, 6, 53.243713, 28.429562, -12.765096)
+mesh = SubResource("PrismMesh_6jl7n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tserq")
+
+[node name="Tower3" type="MeshInstance3D" parent="Wall side" unique_id=407620926]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 53.236794, 18.013632, 32.91645)
+mesh = SubResource("CylinderMesh_l5vqw")
+surface_material_override/0 = SubResource("StandardMaterial3D_7l4iu")
+
+[node name="Tower top3" type="MeshInstance3D" parent="Wall side" unique_id=1186434965]
+transform = Transform3D(6, 0, 0, 0, 3, 0, 0, 0, 6, 53.207962, 25.503939, 33.009743)
+mesh = SubResource("PrismMesh_6jl7n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tserq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall side" unique_id=8509298]
+transform = Transform3D(6, 0, 0, 0, 12, 0, 0, 0, 200, 53.187714, 6.052965, 95.90596)
+shape = SubResource("BoxShape3D_o2f2p")
+
+[node name="Long block" type="MeshInstance3D" parent="Wall side" unique_id=1535550811]
+transform = Transform3D(-1.532647e-06, 0, 6, 0, 2, 0, -35.062878, 0, -2.6226832e-07, 53.15557, 12.811533, 53.70035)
+mesh = SubResource("BoxMesh_whd0v")
+surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
+
+[node name="Long block2" type="MeshInstance3D" parent="Wall side" unique_id=125996077]
+transform = Transform3D(-1.532647e-06, 0, 6, 0, 2, 0, -35.062878, 0, -2.6226832e-07, 53.155575, 12.811533, 104.837685)
+mesh = SubResource("BoxMesh_whd0v")
+surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
+
+[node name="Long block3" type="MeshInstance3D" parent="Wall side" unique_id=1523679212]
+transform = Transform3D(-1.532647e-06, 0, 6, 0, 2, 0, -35.062878, 0, -2.6226832e-07, 53.155567, 12.811533, 9.943562)
+mesh = SubResource("BoxMesh_whd0v")
+surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
+
+[node name="Long block4" type="MeshInstance3D" parent="Wall side" unique_id=578296024]
+transform = Transform3D(-1.532647e-06, 0, 6, 0, 2, 0, -35.062878, 0, -2.6226832e-07, 53.15558, 12.811533, 177.16895)
+mesh = SubResource("BoxMesh_whd0v")
+surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
+
+[node name="Wall side2" type="RigidBody3D" parent="." unique_id=1827700641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.29649, 1.0101871, 0)
+
+[node name="Big block20" type="MeshInstance3D" parent="Wall side2" unique_id=1629796756]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.18199, 5.75, -3.7254562)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block19" type="MeshInstance3D" parent="Wall side2" unique_id=1701256593]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.16274, 5.749649, 8.354286)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block5" type="MeshInstance3D" parent="Wall side2" unique_id=19533569]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.162746, 5.749649, 177.88255)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block6" type="MeshInstance3D" parent="Wall side2" unique_id=908658532]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.182, 5.75, 165.80281)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block7" type="MeshInstance3D" parent="Wall side2" unique_id=1778060147]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.162746, 5.749649, 153.63403)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block8" type="MeshInstance3D" parent="Wall side2" unique_id=2132152310]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.182, 5.75, 141.55429)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block9" type="MeshInstance3D" parent="Wall side2" unique_id=796549424]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.162743, 5.749649, 129.46675)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block10" type="MeshInstance3D" parent="Wall side2" unique_id=1995663072]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.181995, 5.75, 117.38701)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block11" type="MeshInstance3D" parent="Wall side2" unique_id=409759289]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.162743, 5.749649, 105.21823)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block12" type="MeshInstance3D" parent="Wall side2" unique_id=2017741157]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.181995, 5.75, 93.13849)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block13" type="MeshInstance3D" parent="Wall side2" unique_id=518992536]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.162743, 5.749649, 81.01861)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block14" type="MeshInstance3D" parent="Wall side2" unique_id=241165365]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.181995, 5.75, 68.938866)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block15" type="MeshInstance3D" parent="Wall side2" unique_id=1971214058]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.162743, 5.749649, 56.77009)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block16" type="MeshInstance3D" parent="Wall side2" unique_id=1376832912]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.181995, 5.75, 44.690346)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block17" type="MeshInstance3D" parent="Wall side2" unique_id=282402536]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.16274, 5.749649, 32.602806)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block18" type="MeshInstance3D" parent="Wall side2" unique_id=1047236146]
+transform = Transform3D(-5.245367e-07, 0, 6.0000005, 0, 12, 0, -12.000001, 0, -2.6226834e-07, 53.18199, 5.75, 20.523064)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Tower block" type="MeshInstance3D" parent="Wall side2" unique_id=103112245]
+transform = Transform3D(6, 0, 0, 0, 15, 0, 0, 0, 6, 53.23102, 7.320202, -12.901577)
+mesh = SubResource("BoxMesh_hsg7j")
+surface_material_override/0 = SubResource("StandardMaterial3D_o2f2p")
+
+[node name="Tower" type="MeshInstance3D" parent="Wall side2" unique_id=743503795]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 53.332695, 20.928436, -12.997234)
+mesh = SubResource("CylinderMesh_l5vqw")
+surface_material_override/0 = SubResource("StandardMaterial3D_7l4iu")
+
+[node name="Tower top" type="MeshInstance3D" parent="Wall side2" unique_id=710618778]
+transform = Transform3D(6, 0, 0, 0, 3, 0, 0, 0, 6, 53.303864, 28.429562, -12.903942)
+mesh = SubResource("PrismMesh_6jl7n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tserq")
+
+[node name="Tower2" type="MeshInstance3D" parent="Wall side2" unique_id=645198857]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 53.355858, 18.013632, 154.38553)
+mesh = SubResource("CylinderMesh_l5vqw")
+surface_material_override/0 = SubResource("StandardMaterial3D_7l4iu")
+
+[node name="Tower top2" type="MeshInstance3D" parent="Wall side2" unique_id=1585699174]
+transform = Transform3D(6, 0, 0, 0, 3, 0, 0, 0, 6, 53.327026, 25.503939, 154.47882)
+mesh = SubResource("PrismMesh_6jl7n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tserq")
+
+[node name="Tower3" type="MeshInstance3D" parent="Wall side2" unique_id=447197473]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 53.355858, 18.013632, 32.91645)
+mesh = SubResource("CylinderMesh_l5vqw")
+surface_material_override/0 = SubResource("StandardMaterial3D_7l4iu")
+
+[node name="Tower top3" type="MeshInstance3D" parent="Wall side2" unique_id=782004618]
+transform = Transform3D(6, 0, 0, 0, 3, 0, 0, 0, 6, 53.327026, 25.503939, 33.009743)
+mesh = SubResource("PrismMesh_6jl7n")
+surface_material_override/0 = SubResource("StandardMaterial3D_tserq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall side2" unique_id=282945787]
+transform = Transform3D(6, 0, 0, 0, 12, 0, 0, 0, 200, 53.187714, 7.166479, 95.90596)
+shape = SubResource("BoxShape3D_o2f2p")
+
+[node name="Long block" type="MeshInstance3D" parent="Wall side2" unique_id=938982908]
+transform = Transform3D(-1.532647e-06, 0, 6, 0, 2, 0, -35.062878, 0, -2.6226832e-07, 53.15557, 12.811533, 53.70035)
+mesh = SubResource("BoxMesh_whd0v")
+surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
+
+[node name="Long block2" type="MeshInstance3D" parent="Wall side2" unique_id=514089648]
+transform = Transform3D(-1.532647e-06, 0, 6, 0, 2, 0, -35.062878, 0, -2.6226832e-07, 53.155575, 12.811533, 104.837685)
+mesh = SubResource("BoxMesh_whd0v")
+surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
+
+[node name="Long block3" type="MeshInstance3D" parent="Wall side2" unique_id=192032199]
+transform = Transform3D(-1.532647e-06, 0, 6, 0, 2, 0, -35.062878, 0, -2.6226832e-07, 53.155567, 12.811533, 9.943562)
+mesh = SubResource("BoxMesh_whd0v")
+surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
+
+[node name="Long block4" type="MeshInstance3D" parent="Wall side2" unique_id=940822972]
+transform = Transform3D(-1.532647e-06, 0, 6, 0, 2, 0, -35.062878, 0, -2.6226832e-07, 53.15558, 12.811533, 177.16895)
+mesh = SubResource("BoxMesh_whd0v")
+surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
+
+[node name="Back wall" type="RigidBody3D" parent="." unique_id=1825816026]
+
+[node name="Big block" type="MeshInstance3D" parent="Back wall" unique_id=132102454]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 6, 19.921852, 6.7348275, -12.94772)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block2" type="MeshInstance3D" parent="Back wall" unique_id=499403265]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 6, -19.690273, 6.662108, -12.94772)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block3" type="MeshInstance3D" parent="Back wall" unique_id=530929664]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 6, 31.976892, 6.7348275, -12.94772)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block4" type="MeshInstance3D" parent="Back wall" unique_id=1004503955]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 6, -31.771336, 6.662108, -12.94772)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block5" type="MeshInstance3D" parent="Back wall" unique_id=558358823]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 6, 43.997288, 6.7348275, -12.94772)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Big block6" type="MeshInstance3D" parent="Back wall" unique_id=2028027707]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 6, -43.844757, 6.662108, -12.94772)
+mesh = SubResource("BoxMesh_8hx5n")
+surface_material_override/0 = SubResource("StandardMaterial3D_0wpdb")
+
+[node name="Long block" type="MeshInstance3D" parent="Back wall" unique_id=1469876017]
+transform = Transform3D(35.062878, 0, 0, 0, 2, 0, 0, 0, 6, 31.863731, 13.671677, -12.977322)
+mesh = SubResource("BoxMesh_whd0v")
+surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
+
+[node name="Long block2" type="MeshInstance3D" parent="Back wall" unique_id=860447961]
+transform = Transform3D(35.062878, 0, 0, 0, 2, 0, 0, 0, 6, -31.578857, 13.678073, -13.001888)
+mesh = SubResource("BoxMesh_whd0v")
+surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Back wall" unique_id=1302770923]
+transform = Transform3D(100, 0, 0, 0, 6, 0, 0, 0, 6, -0.2964859, 3.8476076, -12.940683)
+shape = SubResource("BoxShape3D_tserq")
