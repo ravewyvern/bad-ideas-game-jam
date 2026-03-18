@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dv6mvjcetisxc"]
+
+[ext_resource type="Shader" uid="uid://yjdvqht8dktq" path="res://new_shader.gdshader" id="1_ov8il"]
+
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_rcqr6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_stutu"]
+render_priority = 0
+shader = ExtResource("1_ov8il")
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_8wq01"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrej7"]
+render_priority = 10
+next_pass = SubResource("ShaderMaterial_stutu")
+diffuse_mode = 2
+vertex_color_use_as_albedo = true
+roughness_texture = SubResource("PlaceholderTexture2D_8wq01")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_54rhf"]
+
+[node name="Tower Location" type="Node3D" unique_id=1873387341]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=255190908]
+transform = Transform3D(2, 0, 0, 0, 0.2, 0, 0, 0, 2, 0, 0, 0)
+mesh = SubResource("TubeTrailMesh_rcqr6")
+surface_material_override/0 = SubResource("StandardMaterial3D_yrej7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=903249199]
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("CylinderShape3D_54rhf")

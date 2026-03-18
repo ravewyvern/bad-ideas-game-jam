@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1773783365
+::res://::1773871324
 icon.svg::CompressedTexture2D::5351679731990098842::1772667260::1772750512::1::::<><><>0<>0<>921279a2e71f78c91ebe6d5dd18a9c7a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 README.md::TextFile::-1::1772667260::0::1::::<><><>0<>0<><>::
 ::res://Assets/::1772915212
@@ -39,9 +39,9 @@ Bullet.tscn::PackedScene::3763494950343912783::1772750494::0::1::::<><><>0<>0<><
 Enemy.tscn::PackedScene::3348689438231824173::1772750494::0::1::::<><><>0<>0<><>::uid://ifj5fgta41yr::::res://Scripts/enemy.gd
 Enemy_Pathing.tscn::PackedScene::1552722065688464649::1773783344::0::1::::<><><>0<>0<><>::
 Player.tscn::PackedScene::8881639504425106295::1773092203::0::1::::<><><>0<>0<><>::uid://dni4ymdcqd65b::::res://Scripts/player.gd<>uid://btvchhbuy1n5p::::res://Scenes/Bullet.tscn
-::res://Scenes/Maps/::1773783344
+::res://Scenes/Maps/::1773786160
 Game.tscn::PackedScene::2786390309312205499::1773500464::0::1::::<><><>0<>0<><>::uid://bxncbsqm60ce2::::res://Scenes/Maps/Test.tscn<>uid://dyslkmujlojtn::::res://Scenes/Player.tscn<>uid://bnyeoqhth7m02::::res://Scenes/Enemy.tscn<>uid://cgg8mcye1045r::::res://Assets/Models/Tower_Test.tscn<>uid://cs6eq0y3clcge::::res://Assets/Models/Test-Obstical.tscn<>uid://mxb5i818y2a::::res://Assets/Models/Bridge_Test.tscn<>uid://bylwlafm4f32a::::res://Assets/Models/stack_game.tscn<>uid://c51e164i646x0::::res://Assets/Models/jack.tscn<>uid://doq1n4d7uq7tg::::res://Assets/Models/ball.tscn
-Level_1.tscn::PackedScene::3558855036849931054::1773783344::0::1::::<><><>0<>0<><>::uid://bc6hg3q4n80tw::::res://Assets/Models/block_castle.tscn<>uid://dyslkmujlojtn::::res://Scenes/Player.tscn<>uid://c51e164i646x0::::res://Assets/Models/jack.tscn<>uid://doq1n4d7uq7tg::::res://Assets/Models/ball.tscn<>uid://bylwlafm4f32a::::res://Assets/Models/stack_game.tscn<>uid://b82xppm12ln23::::res://Assets/Models/block_gate.tscn<>uid://dslwouglqtbqc::::res://Assets/Models/Tower_Knight.tscn<>uid://2gpk5gqfxgbx::::res://Assets/Models/Tower_Pawn.tscn<>uid://dpj3jl2na1v::::res://Assets/Models/Tower_Queen.tscn<>uid://cvk6vhdqdogo8::::res://Assets/Models/Tower_Rook.tscn<>uid://b02dtsby83h58::::res://Assets/Models/Tower_King.tscn
+Level_1.tscn::PackedScene::3558855036849931054::1773786160::0::1::::<><><>0<>0<><>::uid://bc6hg3q4n80tw::::res://Assets/Models/block_castle.tscn<>uid://dyslkmujlojtn::::res://Scenes/Player.tscn<>uid://c51e164i646x0::::res://Assets/Models/jack.tscn<>uid://doq1n4d7uq7tg::::res://Assets/Models/ball.tscn<>uid://bylwlafm4f32a::::res://Assets/Models/stack_game.tscn<>uid://b82xppm12ln23::::res://Assets/Models/block_gate.tscn<>uid://dslwouglqtbqc::::res://Assets/Models/Tower_Knight.tscn<>uid://2gpk5gqfxgbx::::res://Assets/Models/Tower_Pawn.tscn<>uid://dpj3jl2na1v::::res://Assets/Models/Tower_Queen.tscn<>uid://cvk6vhdqdogo8::::res://Assets/Models/Tower_Rook.tscn<>uid://b02dtsby83h58::::res://Assets/Models/Tower_King.tscn
 Test.tscn::PackedScene::4027725188674870627::1772750494::0::1::::<><><>0<>0<><>::
 ::res://Scenes/Menus/::1772809161
 Main Menu.tscn::PackedScene::7823967014001056183::1772809161::0::1::::<><><>0<>0<><>::uid://yigwgs7sj56v::::res://Assets/Textures/mainlogo.png<>uid://dwjdskdf3qjfx::::res://Scripts/menus/main_menu.gd<>uid://b36imdbak2j3f::::res://Assets/Fonts/Minecraft.ttf
