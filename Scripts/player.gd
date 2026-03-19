@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+@export var stam : int
 @export var hp : int = 100
 @export var Bullet : PackedScene
 @export var BulletSpawnPoint : Node3D
@@ -9,6 +10,7 @@ extends CharacterBody3D
 
 @onready var Camera = $Head/Camera3D
 @onready var hpbar = $HpBar
+@onready var stambar = $StamBar
 
 class StatusEffect :
 	var name : String
@@ -20,11 +22,13 @@ var Effects : Array[StatusEffect]
 # preview tower instance
 var tower_preview : Node3D
 
-const SPEED = 4.5
+var SPEED = 4.5
 var base_speed : float
 var speed : float
 const JUMP_VELOCITY = 4.5
 const sensitivity = 0.01
+
+var debugmode : bool
 
 # aerial camera movement speed
 const DRAG_SPEED = 0.05
@@ -44,7 +48,10 @@ var burning_cooldown : int
 
 
 func _ready() -> void:
+	stam = 1200
 	hp = 100
+	
+	debugmode = false
 	
 	# captures mouse for FPS camera
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -67,6 +74,23 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_just_pressed("Debug") :
+		if not debugmode :
+			debugmode = true
+			print("debugmode entered")
+		else :
+			debugmode = false
+			print("debugmode exited")
+	
+	if debugmode and Input.is_action_just_pressed("Move.Forward") :
+		SPEED *= 2
+	if debugmode and Input.is_action_just_pressed("Move.Back") :
+		SPEED /= 2
+	
+	# sets hp bar to hp value and stam bar to stam value
+	hpbar.value = hp
+	stambar.value = stam
 	
 	base_speed = SPEED
 	
@@ -93,14 +117,20 @@ func _physics_process(delta: float) -> void:
 		
 		return
 	
+	
+	
 	# Sprints on spacebar held
-	if Input.is_action_pressed("Move.Jump") and is_on_floor():
+	if Input.is_action_pressed("Move.Jump") and is_on_floor() and stam > 0:
 		speed = 1.35 * base_speed
+		stam -= 2
+		print(stam)
 	else :
 		speed = base_speed
+		if stam < 1200 :
+			stam += 1
 	
-	# sets hp bar to hp value
-	hpbar.value = hp
+	if Input.is_action_pressed("Aim") :
+		speed = 0.45 * base_speed
 	
 	# Add the gravity and counts fall length to determine fall damage
 	if not is_on_floor():
