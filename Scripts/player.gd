@@ -11,6 +11,9 @@ extends CharacterBody3D
 @onready var Camera = $Head/Camera3D
 @onready var hpbar = $HpBar
 @onready var stambar = $StamBar
+@onready var Mags = $Mags
+@onready var Ammo = $AmmoInMag
+@onready var reload = $ReloadBar
 
 class StatusEffect :
 	var name : String
@@ -21,6 +24,9 @@ var Effects : Array[StatusEffect]
 
 # preview tower instance
 var tower_preview : Node3D
+
+var ammo_in_dart_mag : int
+var dart_mags : int
 
 var SPEED = 4.5
 var base_speed : float
@@ -46,10 +52,16 @@ var normal_camera_position : Vector3
 var normal_camera_rotation : Vector3
 var burning_cooldown : int
 
+var reload_time : int
+var is_reloading : bool
 
 func _ready() -> void:
 	stam = 1200
 	hp = 100
+	
+	
+	dart_mags = 10
+	ammo_in_dart_mag = 1
 	
 	debugmode = false
 	
@@ -75,6 +87,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	# sets mag count and ammo in mag count 
+	Mags.text = "N° of Mags : " + str(dart_mags)
+	Ammo.text = "Ammo in Mag : " + str(ammo_in_dart_mag)
+	
+	# enters and exits debug mode
 	if Input.is_action_just_pressed("Debug") :
 		if not debugmode :
 			debugmode = true
@@ -83,6 +100,17 @@ func _physics_process(delta: float) -> void:
 			debugmode = false
 			print("debugmode exited")
 	
+	if is_reloading :
+		reload_time -= 1
+	if reload_time == 0 :
+		reload.visible = false
+		is_reloading = false
+		reload_time = -1
+		dart_mags -= 1
+		ammo_in_dart_mag = 1
+	
+	
+	# debug mode actions
 	if debugmode and Input.is_action_just_pressed("Move.Forward") :
 		SPEED *= 2
 	if debugmode and Input.is_action_just_pressed("Move.Back") :
@@ -91,6 +119,8 @@ func _physics_process(delta: float) -> void:
 	# sets hp bar to hp value and stam bar to stam value
 	hpbar.value = hp
 	stambar.value = stam
+	
+	reload.value = reload_time
 	
 	base_speed = SPEED
 	
@@ -123,7 +153,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("Move.Jump") and is_on_floor() and stam > 0:
 		speed = 1.35 * base_speed
 		stam -= 2
-		print(stam)
 	else :
 		speed = base_speed
 		if stam < 1200 :
@@ -156,6 +185,8 @@ func _physics_process(delta: float) -> void:
 		fallheight = 0
 
 	move_and_slide()
+	
+	print(str(reload_time) + str(is_reloading))
 
 
 func _input(event):
@@ -193,8 +224,14 @@ func _input(event):
 		
 		return
 	
-	if event.is_action_pressed("shoot"):
+	if event.is_action_pressed("shoot") and ammo_in_dart_mag:
 		shoot()
+		ammo_in_dart_mag -= 1
+	
+	if Input.is_action_just_pressed("Reload") and dart_mags and not is_reloading :
+		reload_time = 60
+		is_reloading = true
+		reload.visible = true
 
 
 func toggle_top_view():

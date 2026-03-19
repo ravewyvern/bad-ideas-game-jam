@@ -1,3 +1,5 @@
+ProgressBar
+Label
 CollisionShape3D
 MeshInstance3D
 Node3D
@@ -7,8 +9,6 @@ CSGMesh3D
 Marker3D
 CSGBox3D
 CSGCylinder3D
-ProgressBar
 TextureProgressBar
 Control
 Panel
-GPUParticles3D

@@ -75,3 +75,19 @@ step = 1.0
 value = 100.0
 show_percentage = false
 script = SubResource("GDScript_kyqiw")
+
+[node name="Mags" type="Label" parent="." unique_id=303329258]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AmmoInMag" type="Label" parent="." unique_id=1778320033]
+offset_top = 25.0
+offset_right = 40.0
+offset_bottom = 48.0
+
+[node name="ReloadBar" type="ProgressBar" parent="." unique_id=732442174]
+offset_top = 49.0
+offset_right = 78.0
+offset_bottom = 76.0
+max_value = 60.0
+show_percentage = false
