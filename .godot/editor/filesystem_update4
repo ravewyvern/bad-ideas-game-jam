@@ -1,3 +1,8 @@
-res://Scenes/Player.tscn
+res://Scenes/Maps/Level_1.tscn
 res://new_shader.gdshader
 res://Scripts/player.gd
+res://Assets/Models/Tower_King.tscn
+res://Assets/Models/Tower_Knight.tscn
+res://Assets/Models/Tower_Pawn.tscn
+res://Assets/Models/Tower_Queen.tscn
+res://Assets/Models/Tower_Rook.tscn

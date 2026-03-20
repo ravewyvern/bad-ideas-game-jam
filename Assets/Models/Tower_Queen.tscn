@@ -3,13 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://bo3wvst4l3bpy" path="res://Assets/Models/Queen.fbx" id="1_o5cnh"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_u6sks"]
-height = 0.40810394
+height = 0.4350586
 radius = 0.087890625
 
 [node name="Tower_Queen" type="RigidBody3D" unique_id=1731102997]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=53491054]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20319748, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22785568, 0)
 shape = SubResource("CylinderShape3D_u6sks")
 
 [node name="Queen" parent="." unique_id=389756405 instance=ExtResource("1_o5cnh")]
