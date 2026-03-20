@@ -19,8 +19,14 @@ class StatusEffect :
 	var name : String
 	var duration : float
 	var magnitude : int
+	
+class towercall :
+	var input : Array[String]
 
 var Effects : Array[StatusEffect]
+
+var TowerInput : Array[String]
+var AvailableTowers : Array[towercall]
 
 # preview tower instance
 var tower_preview : Node3D
@@ -228,10 +234,31 @@ func _input(event):
 		shoot()
 		ammo_in_dart_mag -= 1
 	
-	if Input.is_action_just_pressed("Reload") and dart_mags and not is_reloading :
+	if event.is_action_just_pressed("Reload") and dart_mags and not is_reloading :
 		reload_time = 60
 		is_reloading = true
 		reload.visible = true
+		
+	if event.is_action_pressed("Move.Forward") and top_view_enabled :
+		TowerInput.append("U")
+		for tower in AvailableTowers :
+			if not TowerInput[TowerInput.size()-1] == tower.input[TowerInput.size()-1] :
+				TowerInput.clear()
+	if event.is_action_pressed("Move.Back") and top_view_enabled :
+		TowerInput.append("D")
+		for tower in AvailableTowers :
+			if not TowerInput[TowerInput.size()-1] == tower.input[TowerInput.size()-1] :
+				TowerInput.clear()
+	if event.is_action_pressed("Move.Right") and top_view_enabled :
+		TowerInput.append("R")
+		for tower in AvailableTowers :
+			if not TowerInput[TowerInput.size()-1] == tower.input[TowerInput.size()-1] :
+				TowerInput.clear()
+	if event.is_action_pressed("Move.Left") and top_view_enabled :
+		TowerInput.append("L")
+		for tower in AvailableTowers :
+			if not TowerInput[TowerInput.size()-1] == tower.input[TowerInput.size()-1] :
+				TowerInput.clear()
 
 
 func toggle_top_view():

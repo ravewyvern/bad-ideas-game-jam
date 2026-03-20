@@ -1,4 +1,3 @@
 res://Scenes/Player.tscn
 res://new_shader.gdshader
 res://Scripts/player.gd
-res://Scripts/camera_3d.gd
