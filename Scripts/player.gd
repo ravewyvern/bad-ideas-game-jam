@@ -83,6 +83,7 @@ func _ready() -> void:
 
 	dart_mags = 10
 	ammo_in_dart_mag = 1
+	reloadbar.visible = 0
 
 	debugmode = false
 
@@ -111,27 +112,11 @@ func _physics_process(delta: float) -> void:
 
 	reload(3, 1.0)
 
-	if is_tower_input_valid :
-		for tower in AvailableTowers :
-			selected_tower_index = tower.index
+	tower_input_validity()
 
-	# Update UI values
-	Mags.text = "N° of Mags : " + str(dart_mags)
-	Ammo.text = "Ammo in Mag : " + str(ammo_in_dart_mag)
+	UI_update()
 
-	# Toggle debug mode
-	if Input.is_action_just_pressed("Debug"):
-		debugmode = !debugmode
-
-	# Debug speed control
-	if debugmode and Input.is_action_just_pressed("Move.Forward"):
-		SPEED *= 2
-	if debugmode and Input.is_action_just_pressed("Move.Back"):
-		SPEED /= 2
-
-	hpbar.value = hp
-	stambar.value = stam
-	reloadbar.value = max(reload_time.time_left, 0)
+	debug_mode()
 
 	base_speed = SPEED
 
@@ -139,75 +124,22 @@ func _physics_process(delta: float) -> void:
 	if burning_cooldown > 0:
 		burning_cooldown -= 1
 
-	for effect in Effects.duplicate():
-
-		if effect.duration <= 0:
-			Effects.erase(effect)
-
-		# Burning damage over time
-		if effect.name == "burning" and burning_cooldown == 0:
-			hp -= 4 + 1 * effect.magnitude
-
-		if burning_cooldown == 0:
-			burning_cooldown = 60
-
-		# Slow effect
-		if effect.name == "slow":
-			base_speed = (0.95 - 0.05 * effect.magnitude) * SPEED
+	effects_application()
 
 	# Top-down mode logic
 	if top_view_enabled:
 
-		# Move tower preview to mouse position
-		if tower_preview:
-			var pos = get_mouse_world_position()
-			if pos:
-				tower_preview.global_position = pos
-
-		# RTS camera movement (WASD)
-		var cam_dir = camera_input_dir.normalized()
-		Camera.global_position.x += cam_dir.x * CAMERA_SPEED * delta
-		Camera.global_position.z += cam_dir.y * CAMERA_SPEED * delta
-		
-		append_to_tower_input("Move.Forward", "U")
-		append_to_tower_input("Move.Back", "D")
-		append_to_tower_input("Move.Right", "R")
-		append_to_tower_input("Move.Left", "L")
+		top_view_processes(delta)
 
 		return
 
-	# Movement system
-	if Input.is_action_pressed("Move.Jump") and is_on_floor() and stam > 0:
-		speed = 1.35 * base_speed
-		stam -= 2
-	else:
-		speed = base_speed
-		if stam < 1200:
-			stam += 1
+	sprint()
 
-	if Input.is_action_pressed("Aim"):
-		speed = 0.45 * base_speed
+	aim()
 
-	if not is_on_floor():
-		fallheight += 1
-		velocity += get_gravity() * delta
+	gravity(delta)
 
-	var input_dir = Input.get_vector("Move.Left", "Move.Right", "Move.Forward", "Move.Back")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-
-	if direction:
-		velocity.x = direction.x * speed
-		velocity.z = direction.z * speed
-	else:
-		velocity.x = 0
-		velocity.z = 0
-
-	if is_on_floor():
-		if fallheight > 100:
-			hp -= int(0.2 * fallheight)
-		fallheight = 0
-
-	move_and_slide()
+	move()
 
 func _input(event):
 
@@ -335,3 +267,94 @@ func reload(mag_size: int, reload__time: float) :
 		ammo_in_dart_mag = mag_size
 		reloadbar.visible = 0
 		is_reloading = 0
+
+func sprint() :
+	if Input.is_action_pressed("Move.Sprint") and is_on_floor() and stam > 0:
+		speed = 1.35 * base_speed
+		stam -= 2
+	else:
+		speed = base_speed
+		if stam < 1200:
+			stam += 1
+
+func tower_input_validity() :
+	if is_tower_input_valid :
+		for tower in AvailableTowers :
+			selected_tower_index = tower.index
+
+func UI_update() :
+	Mags.text = "N° of Mags : " + str(dart_mags)
+	Ammo.text = "Ammo in Mag : " + str(ammo_in_dart_mag)
+	hpbar.value = hp
+	stambar.value = stam
+	reloadbar.value = max(reload_time.time_left, 0)
+
+func debug_mode() :
+	if Input.is_action_just_pressed("Debug"):
+		debugmode = !debugmode
+
+	# Debug speed control
+	if debugmode and Input.is_action_just_pressed("Move.Forward"):
+		SPEED *= 2
+	if debugmode and Input.is_action_just_pressed("Move.Back"):
+		SPEED /= 2
+
+func effects_application() :
+	for effect in Effects.duplicate():
+
+		if effect.duration <= 0:
+			Effects.erase(effect)
+
+		# Burning damage over time
+		if effect.name == "burning" and burning_cooldown == 0:
+			hp -= 4 + 1 * effect.magnitude
+
+		if burning_cooldown == 0:
+			burning_cooldown = 60
+
+		# Slow effect
+		if effect.name == "slow":
+			base_speed = (0.95 - 0.05 * effect.magnitude) * SPEED
+
+func top_view_processes(delta: float) :
+	# Move tower preview to mouse position
+		if tower_preview:
+			var pos = get_mouse_world_position()
+			if pos:
+				tower_preview.global_position = pos
+
+		# RTS camera movement (WASD)
+		var cam_dir = camera_input_dir.normalized()
+		Camera.global_position.x += cam_dir.x * CAMERA_SPEED * delta
+		Camera.global_position.z += cam_dir.y * CAMERA_SPEED * delta
+		
+		append_to_tower_input("Move.Forward", "U")
+		append_to_tower_input("Move.Back", "D")
+		append_to_tower_input("Move.Right", "R")
+		append_to_tower_input("Move.Left", "L")
+
+func aim() :
+	if Input.is_action_pressed("Aim"):
+		speed = 0.45 * base_speed
+
+func gravity(delta: float) :
+	if not is_on_floor():
+		fallheight += 1
+		velocity += get_gravity() * delta
+
+func fall() :
+	if is_on_floor():
+		if fallheight > 100:
+			hp -= int(0.2 * fallheight)
+		fallheight = 0
+
+func move() : 
+	var input_dir = Input.get_vector("Move.Left", "Move.Right", "Move.Forward", "Move.Back")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
+	velocity.x = direction.x * speed
+	velocity.z = direction.z * speed
+
+	fall()
+
+	move_and_slide()
