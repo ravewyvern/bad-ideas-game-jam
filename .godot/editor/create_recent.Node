@@ -1,3 +1,4 @@
+Timer
 StaticBody3D
 ProgressBar
 Label
@@ -11,4 +12,3 @@ CSGBox3D
 CSGCylinder3D
 TextureProgressBar
 Control
-Panel

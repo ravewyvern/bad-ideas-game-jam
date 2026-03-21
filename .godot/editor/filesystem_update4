@@ -1,3 +1,3 @@
-res://Scenes/Maps/Level_1.tscn
-res://new_shader.gdshader
 res://Scripts/player.gd
+res://Scenes/Player.tscn
+res://new_shader.gdshader

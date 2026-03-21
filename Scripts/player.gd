@@ -14,7 +14,8 @@ var selected_tower_index : int = 0
 @onready var stambar = $StamBar
 @onready var Mags = $Mags
 @onready var Ammo = $AmmoInMag
-@onready var reload = $ReloadBar
+@onready var reloadbar = $ReloadBar
+@onready var reload_time = $Timer
 
 class StatusEffect:
 	var name : String
@@ -73,7 +74,6 @@ var normal_camera_rotation : Vector3
 
 var burning_cooldown : int
 
-var reload_time : int
 var is_reloading : bool
 
 
@@ -87,7 +87,6 @@ func _ready() -> void:
 	debugmode = false
 
 	is_reloading = false
-	reload_time = -1
 	burning_cooldown = 60
 	fallheight = 0
 
@@ -110,6 +109,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 
+	reload(3, 1.0)
+
+	if is_tower_input_valid :
+		for tower in AvailableTowers :
+			selected_tower_index = tower.index
+
 	# Update UI values
 	Mags.text = "N° of Mags : " + str(dart_mags)
 	Ammo.text = "Ammo in Mag : " + str(ammo_in_dart_mag)
@@ -117,16 +122,6 @@ func _physics_process(delta: float) -> void:
 	# Toggle debug mode
 	if Input.is_action_just_pressed("Debug"):
 		debugmode = !debugmode
-
-	# Reload system
-	if is_reloading:
-		reload_time -= 1
-		if reload_time <= 0:
-			reload.visible = false
-			is_reloading = false
-			reload_time = -1
-			dart_mags -= 1
-			ammo_in_dart_mag = 1
 
 	# Debug speed control
 	if debugmode and Input.is_action_just_pressed("Move.Forward"):
@@ -136,7 +131,7 @@ func _physics_process(delta: float) -> void:
 
 	hpbar.value = hp
 	stambar.value = stam
-	reload.value = max(reload_time, 0)
+	reloadbar.value = max(reload_time.time_left, 0)
 
 	base_speed = SPEED
 
@@ -174,29 +169,10 @@ func _physics_process(delta: float) -> void:
 		Camera.global_position.x += cam_dir.x * CAMERA_SPEED * delta
 		Camera.global_position.z += cam_dir.y * CAMERA_SPEED * delta
 		
-		if Input.is_action_just_pressed("Move.Forward") :
-			TowerInput.append("U")
-			for tower in AvailableTowers :
-				if TowerInput[TowerInput.size() - 1] != tower.input[TowerInput.size() - 1] :
-					is_tower_input_valid = false
-					
-		if Input.is_action_just_pressed("Move.Back") :
-			TowerInput.append("D")
-			for tower in AvailableTowers :
-				if TowerInput[TowerInput.size() - 1] != tower.input[TowerInput.size() - 1] :
-					is_tower_input_valid = false
-					
-		if Input.is_action_just_pressed("Move.Right") :
-			TowerInput.append("R")
-			for tower in AvailableTowers :
-				if TowerInput[TowerInput.size() - 1] != tower.input[TowerInput.size() - 1] :
-					is_tower_input_valid = false
-					
-		if Input.is_action_just_pressed("Move.Left") :
-			TowerInput.append("L")
-			for tower in AvailableTowers :
-				if TowerInput[TowerInput.size() - 1] != tower.input[TowerInput.size() - 1] :
-					is_tower_input_valid = false
+		append_to_tower_input("Move.Forward", "U")
+		append_to_tower_input("Move.Back", "D")
+		append_to_tower_input("Move.Right", "R")
+		append_to_tower_input("Move.Left", "L")
 
 		return
 
@@ -265,11 +241,7 @@ func _input(event):
 		shoot()
 		ammo_in_dart_mag -= 1
 
-	# Reload
-	if Input.is_action_just_pressed("Reload") and dart_mags and not is_reloading:
-		reload_time = 60
-		is_reloading = true
-		reload.visible = true
+	
 
 	# Tower input system
 	if TowerInput.size() > 0:
@@ -345,3 +317,21 @@ func shoot():
 	var shoot_direction = -Camera.global_transform.basis.z
 	bullet.look_at(bullet.global_position + shoot_direction, Vector3.UP)
 	bullet.direction = shoot_direction
+
+func append_to_tower_input(key: String, input: String) :
+	if Input.is_action_just_pressed(key) :
+			TowerInput.append(input)
+			for tower in AvailableTowers :
+				if TowerInput[TowerInput.size() - 1] != tower.input[TowerInput.size() - 1] :
+					is_tower_input_valid = false
+
+func reload(mag_size: int, reload__time: float) :
+	if Input.is_action_just_pressed("Reload") and not top_view_enabled and not is_reloading :
+		reloadbar.visible = 1
+		is_reloading = 1
+		reload_time.start(reload__time)
+		await reload_time.timeout
+		dart_mags -= 1
+		ammo_in_dart_mag = mag_size
+		reloadbar.visible = 0
+		is_reloading = 0
