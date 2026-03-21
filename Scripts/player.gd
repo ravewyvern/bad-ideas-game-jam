@@ -23,6 +23,7 @@ class StatusEffect:
 
 class towercall:
 	var input : Array[String]
+	var index : int
 
 # Active status effects list
 var Effects : Array[StatusEffect] = []
@@ -96,17 +97,16 @@ func _ready() -> void:
 	normal_camera_position = Camera.position
 	normal_camera_rotation = Camera.rotation
 
-
 func _unhandled_input(event: InputEvent) -> void:
-	# Disable FPS camera when in top view mode
-	if top_view_enabled:
-		return
 
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and not top_view_enabled:
 		rotate_y(-event.relative.x * sensitivity)
 		Camera.rotate_x(-event.relative.y * sensitivity)
 		Camera.rotation.x = clamp(Camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
-
+	
+	if event is InputEventMouseMotion and top_view_enabled :
+		Camera.position.x += event.relative.x / 5
+		Camera.position.z += event.relative.y / 5
 
 func _physics_process(delta: float) -> void:
 
@@ -209,20 +209,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-
 func _input(event):
-
-	# Select tower (scroll wheel)
-	if event is InputEventMouseButton and event.pressed:
-
-		if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			selected_tower_index += 1
-
-		if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			selected_tower_index -= 1
-
-	# Clamp tower index
-	selected_tower_index = clamp(selected_tower_index, 0, 4)
 
 	# Toggle top view mode
 	if event.is_action_pressed("Toggle.TopView"):
@@ -231,28 +218,9 @@ func _input(event):
 	# Top view controls
 	if top_view_enabled:
 
-		# Camera WASD input capture
-		if event.is_action_pressed("Move.Forward"):
-			camera_input_dir.y -= 1
-		if event.is_action_pressed("Move.Back"):
-			camera_input_dir.y += 1
-		if event.is_action_pressed("Move.Left"):
-			camera_input_dir.x -= 1
-		if event.is_action_pressed("Move.Right"):
-			camera_input_dir.x += 1
-
-		if event.is_action_released("Move.Forward"):
-			camera_input_dir.y += 1
-		if event.is_action_released("Move.Back"):
-			camera_input_dir.y -= 1
-		if event.is_action_released("Move.Left"):
-			camera_input_dir.x += 1
-		if event.is_action_released("Move.Right"):
-			camera_input_dir.x -= 1
-
 		# Place tower
 		if event is InputEventMouseButton:
-
+			
 			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 				var pos = get_mouse_world_position()
 				if pos:
@@ -265,7 +233,7 @@ func _input(event):
 		if event is InputEventMouseMotion and dragging:
 			Camera.global_position.x -= event.relative.x * DRAG_SPEED
 			Camera.global_position.z -= event.relative.y * DRAG_SPEED
-
+			
 		return
 
 	# Shooting
@@ -288,7 +256,6 @@ func _input(event):
 	if not is_tower_input_valid :
 		TowerInput.clear()
 
-
 func toggle_top_view():
 
 	top_view_enabled = !top_view_enabled
@@ -297,9 +264,7 @@ func toggle_top_view():
 
 		Camera.global_position = global_position + Vector3(0, 15, 0)
 		Camera.rotation_degrees = Vector3(-90, 0, 0)
-
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+		
 		if TowerPlaceholders.size() > 0:
 			tower_preview = TowerPlaceholders[selected_tower_index].instantiate()
 			get_tree().current_scene.add_child(tower_preview)
@@ -314,9 +279,6 @@ func toggle_top_view():
 
 		Camera.position = normal_camera_position
 		Camera.rotation = normal_camera_rotation
-
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 
 func get_mouse_world_position():
 
@@ -339,7 +301,6 @@ func get_mouse_world_position():
 
 	return null
 
-
 func place_tower(pos: Vector3):
 
 	if TowerPlaceholders.size() == 0:
@@ -349,7 +310,6 @@ func place_tower(pos: Vector3):
 	get_tree().current_scene.add_child(tower)
 
 	tower.global_position = pos
-
 
 func shoot():
 
