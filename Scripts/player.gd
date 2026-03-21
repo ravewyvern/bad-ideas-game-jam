@@ -29,6 +29,7 @@ var Effects : Array[StatusEffect] = []
 
 # Tower input buffer
 var TowerInput : Array[String] = []
+var is_tower_input_valid : bool
 
 # Available tower patterns
 var AvailableTowers : Array[towercall] = []
@@ -283,7 +284,9 @@ func _input(event):
 		for tower in AvailableTowers:
 			if TowerInput.size() <= tower.input.size():
 				if TowerInput[-1] != tower.input[TowerInput.size() - 1]:
-					TowerInput.clear()
+					is_tower_input_valid = false
+	if not is_tower_input_valid :
+		TowerInput.clear()
 
 
 func toggle_top_view():
