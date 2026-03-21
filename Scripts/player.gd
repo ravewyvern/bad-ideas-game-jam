@@ -173,6 +173,30 @@ func _physics_process(delta: float) -> void:
 		var cam_dir = camera_input_dir.normalized()
 		Camera.global_position.x += cam_dir.x * CAMERA_SPEED * delta
 		Camera.global_position.z += cam_dir.y * CAMERA_SPEED * delta
+		
+		if Input.is_action_just_pressed("Move.Forward") :
+			TowerInput.append("U")
+			for tower in AvailableTowers :
+				if TowerInput[TowerInput.size() - 1] != tower.input[TowerInput.size() - 1] :
+					is_tower_input_valid = false
+					
+		if Input.is_action_just_pressed("Move.Back") :
+			TowerInput.append("D")
+			for tower in AvailableTowers :
+				if TowerInput[TowerInput.size() - 1] != tower.input[TowerInput.size() - 1] :
+					is_tower_input_valid = false
+					
+		if Input.is_action_just_pressed("Move.Right") :
+			TowerInput.append("R")
+			for tower in AvailableTowers :
+				if TowerInput[TowerInput.size() - 1] != tower.input[TowerInput.size() - 1] :
+					is_tower_input_valid = false
+					
+		if Input.is_action_just_pressed("Move.Left") :
+			TowerInput.append("L")
+			for tower in AvailableTowers :
+				if TowerInput[TowerInput.size() - 1] != tower.input[TowerInput.size() - 1] :
+					is_tower_input_valid = false
 
 		return
 
