@@ -300,7 +300,6 @@ func reload(mag_size: int, reload__time: float) :
 
 #endregion
 
-
 func get_mouse_world_position():
 
 	var mouse_pos = get_viewport().get_mouse_position()

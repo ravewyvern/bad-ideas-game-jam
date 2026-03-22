@@ -1,3 +1,4 @@
+TextureProgressBar
 Timer
 StaticBody3D
 ProgressBar
@@ -10,5 +11,4 @@ CSGMesh3D
 Marker3D
 CSGBox3D
 CSGCylinder3D
-TextureProgressBar
 Control

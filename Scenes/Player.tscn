@@ -10,19 +10,27 @@ height = 1.9
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xhfnw"]
 
-[sub_resource type="GDScript" id="GDScript_kyqiw"]
-script/source = "extends ProgressBar
+[sub_resource type="Gradient" id="Gradient_gntrk"]
+colors = PackedColorArray(0, 0, 0, 0.39215687, 0, 0, 0, 0.39215687)
 
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_dewec"]
+gradient = SubResource("Gradient_gntrk")
+width = 256
+height = 25
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gntrk"]
+noise_type = 0
+seed = 100
+frequency = 0.025
+fractal_type = 2
+fractal_octaves = 10
+fractal_lacunarity = 1.0
+domain_warp_enabled = true
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
-	pass
-"
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dewec"]
+width = 256
+height = 25
+noise = SubResource("FastNoiseLite_gntrk")
 
 [node name="Player" type="CharacterBody3D" unique_id=819093483 node_paths=PackedStringArray("BulletSpawnPoint")]
 floor_constant_speed = true
@@ -47,35 +55,6 @@ script = ExtResource("3_gntrk")
 [node name="BulletSpawnPoint" type="Marker3D" parent="." unique_id=1708627793]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.56431794)
 
-[node name="HpBar" type="ProgressBar" parent="." unique_id=203585375]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -97.0
-offset_top = -19.0
-offset_right = 99.0
-grow_horizontal = 2
-grow_vertical = 0
-step = 1.0
-value = 100.0
-show_percentage = false
-script = SubResource("GDScript_kyqiw")
-
-[node name="StamBar" type="ProgressBar" parent="." unique_id=1971322843]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -19.0
-offset_right = 196.0
-grow_vertical = 0
-max_value = 1200.0
-step = 1.0
-value = 100.0
-show_percentage = false
-script = SubResource("GDScript_kyqiw")
-
 [node name="Mags" type="Label" parent="." unique_id=303329258]
 offset_right = 40.0
 offset_bottom = 23.0
@@ -93,3 +72,34 @@ max_value = 1.0
 show_percentage = false
 
 [node name="Timer" type="Timer" parent="." unique_id=1657628232]
+
+[node name="HpBar" type="TextureProgressBar" parent="." unique_id=306509702]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -26.0
+offset_right = 128.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 100.0
+fill_mode = 6
+texture_under = SubResource("GradientTexture2D_dewec")
+texture_progress = SubResource("NoiseTexture2D_dewec")
+tint_progress = Color(1, 0, 0, 1)
+
+[node name="StamBar" type="TextureProgressBar" parent="." unique_id=744846896]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -25.0
+offset_right = 256.0
+grow_vertical = 0
+max_value = 1200.0
+value = 100.0
+texture_under = SubResource("GradientTexture2D_dewec")
+texture_progress = SubResource("NoiseTexture2D_dewec")
+tint_progress = Color(0, 0.49803922, 0, 1)
