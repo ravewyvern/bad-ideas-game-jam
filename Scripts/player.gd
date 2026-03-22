@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+#region export vars
+
 @export var stam : int
 @export var hp : int = 100
 @export var Bullet : PackedScene
@@ -9,6 +11,10 @@ extends CharacterBody3D
 @export var TowerPlaceholders : Array[PackedScene] = []
 var selected_tower_index : int = 0
 
+#endregion
+
+#region child nodes
+
 @onready var Camera = $Head/Camera3D
 @onready var hpbar = $HpBar
 @onready var stambar = $StamBar
@@ -16,6 +22,10 @@ var selected_tower_index : int = 0
 @onready var Ammo = $AmmoInMag
 @onready var reloadbar = $ReloadBar
 @onready var reload_time = $Timer
+
+#endregion
+
+#region classes
 
 class StatusEffect:
 	var name : String
@@ -25,6 +35,10 @@ class StatusEffect:
 class towercall:
 	var input : Array[String]
 	var index : int
+
+#endregion
+
+#region general variables
 
 # Active status effects list
 var Effects : Array[StatusEffect] = []
@@ -46,16 +60,7 @@ var SPEED = 4.5
 var base_speed : float
 var speed : float
 
-const JUMP_VELOCITY = 4.5
-const sensitivity = 0.01
-
 var debugmode : bool
-
-# Aerial camera drag speed
-const DRAG_SPEED = 0.05
-
-# RTS camera movement speed
-const CAMERA_SPEED = 20.0
 
 # Camera movement input vector (RTS mode)
 var camera_input_dir : Vector2 = Vector2.ZERO
@@ -76,6 +81,22 @@ var burning_cooldown : int
 
 var is_reloading : bool
 
+#endregion
+
+#region constants
+
+const JUMP_VELOCITY = 4.5
+const sensitivity = 0.01
+
+# Aerial camera drag speed
+const DRAG_SPEED = 0.05
+
+# RTS camera movement speed
+const CAMERA_SPEED = 20.0
+
+#endregion
+
+#region Engine functions
 
 func _ready() -> void:
 	stam = 1200
@@ -184,6 +205,39 @@ func _input(event):
 	if not is_tower_input_valid :
 		TowerInput.clear()
 
+#endregion
+
+#region Code functions
+
+#region player input functions
+
+func shoot():
+
+	var bullet = Bullet.instantiate()
+	get_tree().current_scene.add_child(bullet)
+
+	bullet.global_transform.origin = BulletSpawnPoint.global_transform.origin
+
+	var shoot_direction = -Camera.global_transform.basis.z
+	bullet.look_at(bullet.global_position + shoot_direction, Vector3.UP)
+	bullet.direction = shoot_direction
+
+func append_to_tower_input(key: String, input: String) :
+	if Input.is_action_just_pressed(key) :
+			TowerInput.append(input)
+			for tower in AvailableTowers :
+				if TowerInput[TowerInput.size() - 1] != tower.input[TowerInput.size() - 1] :
+					is_tower_input_valid = false
+
+func sprint() :
+	if Input.is_action_pressed("Move.Sprint") and is_on_floor() and stam > 0:
+		speed = 1.35 * base_speed
+		stam -= 2
+	else:
+		speed = base_speed
+		if stam < 1200:
+			stam += 1
+
 func toggle_top_view():
 
 	top_view_enabled = !top_view_enabled
@@ -207,6 +261,45 @@ func toggle_top_view():
 
 		Camera.position = normal_camera_position
 		Camera.rotation = normal_camera_rotation
+
+func move() : 
+	var input_dir = Input.get_vector("Move.Left", "Move.Right", "Move.Forward", "Move.Back")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+
+	velocity.x = direction.x * speed
+	velocity.z = direction.z * speed
+
+	fall()
+
+	move_and_slide()
+
+func aim() :
+	if Input.is_action_pressed("Aim"):
+		speed = 0.45 * base_speed
+
+func debug_mode() :
+	if Input.is_action_just_pressed("Debug"):
+		debugmode = !debugmode
+
+	# Debug speed control
+	if debugmode and Input.is_action_just_pressed("Move.Forward"):
+		SPEED *= 2
+	if debugmode and Input.is_action_just_pressed("Move.Back"):
+		SPEED /= 2
+
+func reload(mag_size: int, reload__time: float) :
+	if Input.is_action_just_pressed("Reload") and not top_view_enabled and not is_reloading :
+		reloadbar.visible = 1
+		is_reloading = 1
+		reload_time.start(reload__time)
+		await reload_time.timeout
+		dart_mags -= 1
+		ammo_in_dart_mag = mag_size
+		reloadbar.visible = 0
+		is_reloading = 0
+
+#endregion
+
 
 func get_mouse_world_position():
 
@@ -239,44 +332,6 @@ func place_tower(pos: Vector3):
 
 	tower.global_position = pos
 
-func shoot():
-
-	var bullet = Bullet.instantiate()
-	get_tree().current_scene.add_child(bullet)
-
-	bullet.global_transform.origin = BulletSpawnPoint.global_transform.origin
-
-	var shoot_direction = -Camera.global_transform.basis.z
-	bullet.look_at(bullet.global_position + shoot_direction, Vector3.UP)
-	bullet.direction = shoot_direction
-
-func append_to_tower_input(key: String, input: String) :
-	if Input.is_action_just_pressed(key) :
-			TowerInput.append(input)
-			for tower in AvailableTowers :
-				if TowerInput[TowerInput.size() - 1] != tower.input[TowerInput.size() - 1] :
-					is_tower_input_valid = false
-
-func reload(mag_size: int, reload__time: float) :
-	if Input.is_action_just_pressed("Reload") and not top_view_enabled and not is_reloading :
-		reloadbar.visible = 1
-		is_reloading = 1
-		reload_time.start(reload__time)
-		await reload_time.timeout
-		dart_mags -= 1
-		ammo_in_dart_mag = mag_size
-		reloadbar.visible = 0
-		is_reloading = 0
-
-func sprint() :
-	if Input.is_action_pressed("Move.Sprint") and is_on_floor() and stam > 0:
-		speed = 1.35 * base_speed
-		stam -= 2
-	else:
-		speed = base_speed
-		if stam < 1200:
-			stam += 1
-
 func tower_input_validity() :
 	if is_tower_input_valid :
 		for tower in AvailableTowers :
@@ -288,16 +343,6 @@ func UI_update() :
 	hpbar.value = hp
 	stambar.value = stam
 	reloadbar.value = max(reload_time.time_left, 0)
-
-func debug_mode() :
-	if Input.is_action_just_pressed("Debug"):
-		debugmode = !debugmode
-
-	# Debug speed control
-	if debugmode and Input.is_action_just_pressed("Move.Forward"):
-		SPEED *= 2
-	if debugmode and Input.is_action_just_pressed("Move.Back"):
-		SPEED /= 2
 
 func effects_application() :
 	for effect in Effects.duplicate():
@@ -333,10 +378,6 @@ func top_view_processes(delta: float) :
 		append_to_tower_input("Move.Right", "R")
 		append_to_tower_input("Move.Left", "L")
 
-func aim() :
-	if Input.is_action_pressed("Aim"):
-		speed = 0.45 * base_speed
-
 func gravity(delta: float) :
 	if not is_on_floor():
 		fallheight += 1
@@ -348,13 +389,4 @@ func fall() :
 			hp -= int(0.2 * fallheight)
 		fallheight = 0
 
-func move() : 
-	var input_dir = Input.get_vector("Move.Left", "Move.Right", "Move.Forward", "Move.Back")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-
-	velocity.x = direction.x * speed
-	velocity.z = direction.z * speed
-
-	fall()
-
-	move_and_slide()
+#endregion

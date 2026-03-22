@@ -72,6 +72,9 @@ sky_material = SubResource("ProceduralSkyMaterial_7l4iu")
 background_mode = 2
 background_energy_multiplier = 1.4
 sky = SubResource("Sky_ko2s7")
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o2f2p"]
 
