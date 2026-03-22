@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b46kqwxy7bbve"]
+
+[ext_resource type="Script" uid="uid://c6o7lpsv6hy46" path="res://Scripts/archer_tower.gd" id="1_84d7u"]
+[ext_resource type="PackedScene" uid="uid://d0sw8qgiroovj" path="res://Assets/Models/Rook.fbx" id="1_i7m31"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_557gw"]
+radius = 25.0
+
+[node name="ArcherTower" type="Node3D" unique_id=1277816190]
+script = ExtResource("1_84d7u")
+
+[node name="Rook" parent="." unique_id=368149282 instance=ExtResource("1_i7m31")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+
+[node name="Range" type="Area3D" parent="." unique_id=1265551641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9932692, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Range" unique_id=2053830361]
+shape = SubResource("SphereShape3D_557gw")

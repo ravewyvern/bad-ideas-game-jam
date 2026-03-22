@@ -388,4 +388,7 @@ func fall() :
 			hp -= int(0.2 * fallheight)
 		fallheight = 0
 
+func take_damage(damage : int) :
+	hp -= damage
+
 #endregion

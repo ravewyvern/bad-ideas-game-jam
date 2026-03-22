@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bfx0pae068feh"]
 
-[ext_resource type="PackedScene" uid="uid://bxncbsqm60ce2" path="res://Scenes/Maps/Test.tscn" id="1_o65xm"]
+[ext_resource type="PackedScene" uid="uid://bxncbsqm60ce2" path="res://Scripts/Test.tscn" id="1_o65xm"]
 [ext_resource type="PackedScene" uid="uid://dyslkmujlojtn" path="res://Scenes/Player.tscn" id="2_fgv2n"]
 [ext_resource type="PackedScene" uid="uid://bnyeoqhth7m02" path="res://Scenes/Enemy.tscn" id="3_01cpk"]
 [ext_resource type="PackedScene" uid="uid://cgg8mcye1045r" path="res://Assets/Models/Tower_Test.tscn" id="3_r13up"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bylwlafm4f32a" path="res://Assets/Models/stack_game.tscn" id="6_fgv2n"]
 [ext_resource type="PackedScene" uid="uid://c51e164i646x0" path="res://Assets/Models/jack.tscn" id="7_01cpk"]
 [ext_resource type="PackedScene" uid="uid://doq1n4d7uq7tg" path="res://Assets/Models/ball.tscn" id="8_h5rip"]
+
 
 [node name="Game" type="Node3D" unique_id=1578828073]
 transform = Transform3D(0.99997985, -0.005666307, -0.0028541835, 0.0056724614, 0.9999815, 0.0021514683, 0.0028419334, -0.002167624, 0.9999936, 0, 0, 0)

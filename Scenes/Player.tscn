@@ -58,11 +58,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.56431794)
 [node name="Mags" type="Label" parent="." unique_id=303329258]
 offset_right = 40.0
 offset_bottom = 23.0
+uppercase = true
 
 [node name="AmmoInMag" type="Label" parent="." unique_id=1778320033]
 offset_top = 25.0
 offset_right = 40.0
 offset_bottom = 48.0
+uppercase = true
 
 [node name="ReloadBar" type="ProgressBar" parent="." unique_id=732442174]
 offset_top = 49.0

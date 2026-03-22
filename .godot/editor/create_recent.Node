@@ -1,14 +1,14 @@
+MeshInstance3D
+CollisionShape3D
+Area3D
 TextureProgressBar
 Timer
 StaticBody3D
 ProgressBar
 Label
-CollisionShape3D
-MeshInstance3D
 Node3D
 RigidBody3D
 CSGMesh3D
 Marker3D
 CSGBox3D
 CSGCylinder3D
-Control
