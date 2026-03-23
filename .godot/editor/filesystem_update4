@@ -7,3 +7,5 @@ res://Assets/Models/ball.tscn
 res://Assets/Models/Tower_Location.tscn
 res://Assets/Models/stack_game.tscn
 res://Scenes/Enemy.tscn
+res://Scenes/Menus/Main Menu.tscn
+res://Scenes/Menus/audio_stream_player.gd

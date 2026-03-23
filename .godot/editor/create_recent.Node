@@ -1,4 +1,4 @@
-RigidBody3D
+AudioStreamPlayer
 CollisionShape3D
 Area3D
 StaticBody3D
@@ -8,6 +8,7 @@ Timer
 ProgressBar
 Label
 Node3D
+RigidBody3D
 CSGMesh3D
 Marker3D
 CSGBox3D

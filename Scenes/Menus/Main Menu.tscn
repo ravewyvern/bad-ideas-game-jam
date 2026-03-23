@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://yigwgs7sj56v" path="res://Assets/Textures/mainlogo.png" id="1_a8511"]
 [ext_resource type="Script" uid="uid://dwjdskdf3qjfx" path="res://Scripts/menus/main_menu.gd" id="1_iepif"]
 [ext_resource type="FontFile" uid="uid://b36imdbak2j3f" path="res://Assets/Fonts/Minecraft.ttf" id="1_ow5ef"]
+[ext_resource type="AudioStream" uid="uid://cxh5vw011qcot" path="res://Assets/Sounds/Title Theme 1.mp3" id="4_tcly5"]
+[ext_resource type="Script" uid="uid://d4kitukwkonyv" path="res://Scenes/Menus/audio_stream_player.gd" id="5_m662y"]
 
 [node name="VBoxContainer" type="VBoxContainer" unique_id=321974716]
 anchors_preset = -1
@@ -46,6 +48,12 @@ text = "Quit"
 position = Vector2(218, -74.4)
 scale = Vector2(0.21438622, 0.22657895)
 texture = ExtResource("1_a8511")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1788022893]
+stream = ExtResource("4_tcly5")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("5_m662y")
 
 [connection signal="button_down" from="level" to="." method="_on_level_button_down"]
 [connection signal="button_down" from="options" to="." method="_on_options_button_down"]
