@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://ha1avaqw0sjt"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_p6ket"]
+[ext_resource type="PackedScene" uid="uid://by1qppy6ajfay" path="res://Assets/Models/box.gltf" id="1_xkb4e"]
 
-[node name="Box" type="Node3D" unique_id=190124351]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xkb4e"]
+size = Vector3(1.4621582, 2.1165771, 2.1489563)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1250862984]
-mesh = SubResource("BoxMesh_p6ket")
+[node name="Box" type="StaticBody3D" unique_id=1298030174]
+
+[node name="blockbench_export" parent="." unique_id=1613189773 instance=ExtResource("1_xkb4e")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1032730541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013549805, 1.0650393, -0.0004374981)
+shape = SubResource("BoxShape3D_xkb4e")

@@ -1,9 +1,6 @@
-res://Scenes/Player.tscn
-res://new_shader.gdshader
-res://Scenes/Archer Tower.tscn
-res://Scenes/archer_tower.gd
 res://Scenes/box.tscn
-res://Scenes/Maps/Level_1.tscn
-res://Scripts/bullet.gd
-res://Scripts/player.gd
+res://new_shader.gdshader
+res://Scenes/Player.tscn
 res://Scripts/archer_tower.gd
+res://Scenes/area_3d.gd
+res://Scripts/player.gd

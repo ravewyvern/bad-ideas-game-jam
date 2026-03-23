@@ -9,13 +9,16 @@ var target : Area3D
 
 func _physics_process(_delta: float) -> void:
 	if range_.has_overlapping_areas :
-		print("Target detected")
 		targets = range_.get_overlapping_areas()
+		print("area3D found")
 		for potential_target in targets :
-			if potential_target.has_method("take_damage()") :
-				if potential_target.global_position - box.global_position < target.global_position - box.global_position :
-					target = potential_target
+			var parent = potential_target.get_parent()
+			if potential_target.has_method("take_damage") :
+				print("target found")
+				if parent.global_position - box.global_position < target.global_position - box.global_position :
+					target = parent
 					print("target is : " + str(target))
+			else : print("area doesn't have method")
 		if target :
 			var bullet = arrow.instantiate()
 			get_tree().current_scene.add_child(bullet)
