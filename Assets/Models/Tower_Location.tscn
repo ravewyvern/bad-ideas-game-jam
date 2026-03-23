@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dv6mvjcetisxc"]
 
 [ext_resource type="Shader" uid="uid://yjdvqht8dktq" path="res://new_shader.gdshader" id="1_ov8il"]
+[ext_resource type="Texture2D" uid="uid://bjrbb68mnosvs" path="res://Assets/Textures/5ef86e25a6df.webp" id="1_rcqr6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stutu"]
+albedo_texture = ExtResource("1_rcqr6")
 
 [sub_resource type="TubeTrailMesh" id="TubeTrailMesh_rcqr6"]
 
@@ -23,6 +27,7 @@ roughness_texture = SubResource("PlaceholderTexture2D_8wq01")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=255190908]
 transform = Transform3D(2, 0, 0, 0, 0.2, 0, 0, 0, 2, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_stutu")
 mesh = SubResource("TubeTrailMesh_rcqr6")
 surface_material_override/0 = SubResource("StandardMaterial3D_yrej7")
 

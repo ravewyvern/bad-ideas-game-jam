@@ -1,160 +1,263 @@
 [gd_scene format=3 uid="uid://bc6hg3q4n80tw"]
 
+[ext_resource type="Texture2D" uid="uid://bjrbb68mnosvs" path="res://Assets/Textures/5ef86e25a6df.webp" id="1_ixjir"]
+[ext_resource type="Texture2D" uid="uid://btpxe5ksd8kvv" path="res://Assets/Textures/Blue.jpg" id="2_njxyg"]
+[ext_resource type="Texture2D" uid="uid://tuwvgtxgx5g6" path="res://Assets/Textures/yellow.jpg" id="3_6nhwi"]
+[ext_resource type="Texture2D" uid="uid://bc00jbhgtl4yv" path="res://Assets/Textures/purple.jpg" id="4_hqw3t"]
+[ext_resource type="Texture2D" uid="uid://gqtn1jveoku4" path="res://Assets/Textures/Red.jpg" id="5_57urr"]
+[ext_resource type="Texture2D" uid="uid://bsgoga26eicgr" path="res://Assets/Textures/green.jpg" id="6_njxyg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yklce"]
+albedo_texture = ExtResource("3_6nhwi")
+
 [sub_resource type="PrismMesh" id="PrismMesh_njyfh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njyfh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkh1m"]
+albedo_texture = ExtResource("2_njxyg")
 
 [sub_resource type="BoxMesh" id="BoxMesh_p545a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p545a"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clnkn"]
+albedo_texture = ExtResource("1_ixjir")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idkpr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5s6hd"]
+albedo_texture = ExtResource("2_njxyg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22v06"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brbd2"]
+albedo_texture = ExtResource("3_6nhwi")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quu5m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5vrdx"]
+albedo_texture = ExtResource("5_57urr")
 
 [sub_resource type="PrismMesh" id="PrismMesh_idkpr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixjir"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xb3yx"]
+albedo_texture = ExtResource("5_57urr")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_njxyg"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40kjw"]
+albedo_texture = ExtResource("5_57urr")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6nhwi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ggef6"]
+albedo_texture = ExtResource("1_ixjir")
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_22v06"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqw3t"]
+albedo_texture = ExtResource("1_ixjir")
+albedo_texture_force_srgb = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17uxl"]
+albedo_texture = ExtResource("1_ixjir")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57urr"]
+albedo_texture = ExtResource("1_ixjir")
+albedo_texture_force_srgb = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1umv"]
+albedo_texture = ExtResource("4_hqw3t")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssdfh"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r4d2"]
+albedo_texture = ExtResource("2_njxyg")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4p3u7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d4rnb"]
+albedo_texture = ExtResource("6_njxyg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2watb"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0alt"]
+albedo_texture = ExtResource("4_hqw3t")
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dh8tp"]
+albedo_texture = ExtResource("4_hqw3t")
+albedo_texture_force_srgb = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t8n4v"]
+albedo_texture = ExtResource("2_njxyg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u74bm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d25xl"]
+albedo_texture = ExtResource("6_njxyg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jb00f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxcc0"]
+albedo_texture = ExtResource("1_ixjir")
+albedo_texture_force_srgb = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3iq2"]
+albedo_texture = ExtResource("1_ixjir")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttt8w"]
+albedo_texture = ExtResource("2_njxyg")
+albedo_texture_force_srgb = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gajrs"]
+albedo_texture = ExtResource("1_ixjir")
+albedo_texture_force_srgb = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjrew"]
+albedo_texture = ExtResource("3_6nhwi")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3rgv"]
+albedo_texture = ExtResource("3_6nhwi")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kqam"]
+albedo_texture = ExtResource("1_ixjir")
+albedo_texture_force_srgb = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrxla"]
+albedo_texture = ExtResource("1_ixjir")
+albedo_texture_force_srgb = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1g26v"]
+albedo_texture = ExtResource("1_ixjir")
+albedo_texture_force_srgb = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpphs"]
+albedo_texture = ExtResource("4_hqw3t")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tn67o"]
+albedo_texture = ExtResource("4_hqw3t")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d2xft"]
+albedo_texture = ExtResource("2_njxyg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rchfi"]
+albedo_texture = ExtResource("2_njxyg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruoua"]
+albedo_texture = ExtResource("5_57urr")
 
 [sub_resource type="TubeTrailMesh" id="TubeTrailMesh_quu5m"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rygje"]
+albedo_texture = ExtResource("2_njxyg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_prc1o"]
+albedo_texture = ExtResource("2_njxyg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hao33"]
+albedo_texture = ExtResource("3_6nhwi")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ehsjv"]
+albedo_texture = ExtResource("3_6nhwi")
 
 [node name="Block Castle" type="RigidBody3D" unique_id=2086897729]
 
 [node name="Triangle" type="CSGMesh3D" parent="." unique_id=526351971]
 transform = Transform3D(-2.1213202, 1.0606601, 0, -2.1213202, -1.0606601, 0, 0, 0, 1.5, 0, 0.4992119, 0)
+material_override = SubResource("StandardMaterial3D_yklce")
 mesh = SubResource("PrismMesh_njyfh")
 material = SubResource("StandardMaterial3D_njyfh")
 
 [node name="Block" type="CSGMesh3D" parent="." unique_id=1367620472]
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1.5, 1.024186, 1.4621731, 0)
+material_override = SubResource("StandardMaterial3D_tkh1m")
 mesh = SubResource("BoxMesh_p545a")
 material = SubResource("StandardMaterial3D_p545a")
 
 [node name="Block2" type="CSGMesh3D" parent="." unique_id=2066878491]
 transform = Transform3D(4, 0, 0, 0, 3, 0, 0, 0, 1.5, 3.5335398, 1.4621731, 0)
+material_override = SubResource("StandardMaterial3D_clnkn")
 mesh = SubResource("BoxMesh_p545a")
 material = SubResource("StandardMaterial3D_idkpr")
 
 [node name="Block3" type="CSGMesh3D" parent="." unique_id=1473176349]
 transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1.5, 6.0254955, 1.4621731, 0)
+material_override = SubResource("StandardMaterial3D_5s6hd")
 mesh = SubResource("BoxMesh_p545a")
 material = SubResource("StandardMaterial3D_22v06")
 
 [node name="Triangle2" type="CSGMesh3D" parent="." unique_id=368699492]
 transform = Transform3D(-2.1213202, -1.0606601, 0, 2.1213202, -1.0606601, 0, 0, 0, 1.5, 7.0577025, 0.48417124, -0.0020397902)
+material_override = SubResource("StandardMaterial3D_brbd2")
 mesh = SubResource("PrismMesh_njyfh")
 material = SubResource("StandardMaterial3D_quu5m")
 
 [node name="Front Top" type="CSGMesh3D" parent="." unique_id=353048425]
 transform = Transform3D(4, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.6048884, 3.71672, 0)
+material_override = SubResource("StandardMaterial3D_5vrdx")
 mesh = SubResource("PrismMesh_idkpr")
 material = SubResource("StandardMaterial3D_ixjir")
 
 [node name="Block4" type="CSGMesh3D" parent="." unique_id=520990700]
 transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, -2.5913634, 1.4621731, -1.7957976)
+material_override = SubResource("StandardMaterial3D_xb3yx")
 mesh = SubResource("BoxMesh_p545a")
 material = SubResource("StandardMaterial3D_njxyg")
 
 [node name="Block5" type="CSGMesh3D" parent="." unique_id=436221649]
 transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, 9.632738, 1.4621731, -1.7839296)
+material_override = SubResource("StandardMaterial3D_40kjw")
 mesh = SubResource("BoxMesh_p545a")
 material = SubResource("StandardMaterial3D_6nhwi")
 
 [node name="Cylinder" type="CSGMesh3D" parent="." unique_id=1605784416]
-transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, -2.560618, 4.4724307, -1.7667205)
+transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, -2.5347247, 4.472431, -1.7628162)
+material_override = SubResource("StandardMaterial3D_ggef6")
 mesh = SubResource("CylinderMesh_22v06")
 material = SubResource("StandardMaterial3D_hqw3t")
 
 [node name="Cylinder2" type="CSGMesh3D" parent="." unique_id=2007338943]
 transform = Transform3D(2, 0, 0, 0, 1.5, 0, 0, 0, 2, 9.622485, 4.4695954, -1.7667205)
+material_override = SubResource("StandardMaterial3D_17uxl")
 mesh = SubResource("CylinderMesh_22v06")
 material = SubResource("StandardMaterial3D_57urr")
 
 [node name="Block6" type="CSGMesh3D" parent="." unique_id=2105802605]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 0.4250369, 2.461947, -1.7957976)
+material_override = SubResource("StandardMaterial3D_m1umv")
 mesh = SubResource("BoxMesh_p545a")
 material = SubResource("StandardMaterial3D_ssdfh")
 
 [node name="Block7" type="CSGMesh3D" parent="." unique_id=1674696496]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 0.4250369, 1.4566312, -1.7957976)
+material_override = SubResource("StandardMaterial3D_7r4d2")
 mesh = SubResource("BoxMesh_p545a")
 material = SubResource("StandardMaterial3D_4p3u7")
 
 [node name="Block8" type="CSGMesh3D" parent="." unique_id=1004019939]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 0.4250369, 0.449358, -1.7957976)
+material_override = SubResource("StandardMaterial3D_d4rnb")
 mesh = SubResource("BoxMesh_p545a")
 material = SubResource("StandardMaterial3D_2watb")
 
 [node name="Block9" type="CSGMesh3D" parent="." unique_id=1718883872]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 6.611895, 2.461947, -1.7957976)
+material_override = SubResource("StandardMaterial3D_s0alt")
 mesh = SubResource("BoxMesh_p545a")
 material = SubResource("StandardMaterial3D_dh8tp")
 
 [node name="Block10" type="CSGMesh3D" parent="." unique_id=335427343]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 6.611895, 1.4566312, -1.7957976)
+material_override = SubResource("StandardMaterial3D_t8n4v")
 mesh = SubResource("BoxMesh_p545a")
 material = SubResource("StandardMaterial3D_u74bm")
 
 [node name="Block11" type="CSGMesh3D" parent="." unique_id=1693986598]
 transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 2, 6.611895, 0.449358, -1.7957976)
+material_override = SubResource("StandardMaterial3D_d25xl")
 mesh = SubResource("BoxMesh_p545a")
 material = SubResource("StandardMaterial3D_jb00f")
 
@@ -165,6 +268,7 @@ material = SubResource("StandardMaterial3D_lxcc0")
 
 [node name="Block15" type="CSGMesh3D" parent="." unique_id=704015511]
 transform = Transform3D(4.956717, 0, 0, 0, 3, 0, 0, 0, 2, 3.4985378, 4.4830036, -1.7957976)
+material_override = SubResource("StandardMaterial3D_d3iq2")
 mesh = SubResource("BoxMesh_p545a")
 material = SubResource("StandardMaterial3D_ttt8w")
 

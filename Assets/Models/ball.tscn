@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://doq1n4d7uq7tg"]
 
+[ext_resource type="Texture2D" uid="uid://gqtn1jveoku4" path="res://Assets/Textures/Red.jpg" id="1_00oik"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sg8xr"]
+albedo_texture = ExtResource("1_00oik")
+
 [sub_resource type="SphereMesh" id="SphereMesh_fvmuc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_00oik"]
@@ -14,6 +19,7 @@ albedo_texture = SubResource("CompressedTexture2D_00oik")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=995564499]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41881967, 0)
+material_override = SubResource("StandardMaterial3D_sg8xr")
 mesh = SubResource("SphereMesh_fvmuc")
 surface_material_override/0 = SubResource("StandardMaterial3D_jmuks")
 

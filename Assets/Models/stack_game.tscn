@@ -1,11 +1,24 @@
 [gd_scene format=3 uid="uid://bylwlafm4f32a"]
 
+[ext_resource type="Texture2D" uid="uid://gqtn1jveoku4" path="res://Assets/Textures/Red.jpg" id="1_xhitf"]
+[ext_resource type="Texture2D" uid="uid://ikaov5b2b5ih" path="res://Assets/Textures/Orange.jpg" id="2_u202o"]
+[ext_resource type="Texture2D" uid="uid://btpxe5ksd8kvv" path="res://Assets/Textures/Blue.jpg" id="3_djm47"]
+[ext_resource type="Texture2D" uid="uid://bsgoga26eicgr" path="res://Assets/Textures/green.jpg" id="4_q6ni2"]
+[ext_resource type="Texture2D" uid="uid://bc00jbhgtl4yv" path="res://Assets/Textures/purple.jpg" id="5_0e1si"]
+[ext_resource type="Texture2D" uid="uid://tuwvgtxgx5g6" path="res://Assets/Textures/yellow.jpg" id="6_ht4a3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dkau"]
+albedo_texture = ExtResource("1_xhitf")
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_nqs6g"]
 height = 2.971
 radial_segments = 100
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dab70"]
 albedo_color = Color(0.92941177, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5b6s4"]
+albedo_texture = ExtResource("2_u202o")
 
 [sub_resource type="TorusMesh" id="TorusMesh_gs7hq"]
 
@@ -15,11 +28,17 @@ albedo_color = Color(0.92941177, 0, 0, 1)
 albedo_color = Color(1, 0, 1, 1)
 albedo_texture = SubResource("CompressedTexture2D_m7jxa")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aikrw"]
+albedo_texture = ExtResource("3_djm47")
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sdh8g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhitf"]
 albedo_color = Color(0, 1, 1, 1)
 albedo_texture = SubResource("CompressedTexture2D_sdh8g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ttlq"]
+albedo_texture = ExtResource("4_q6ni2")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u202o"]
 
@@ -27,11 +46,17 @@ albedo_texture = SubResource("CompressedTexture2D_sdh8g")
 albedo_color = Color(0.90466815, 0.29797977, 0, 1)
 albedo_texture = SubResource("CompressedTexture2D_u202o")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ia58i"]
+albedo_texture = ExtResource("5_0e1si")
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q6ni2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0e1si"]
 albedo_color = Color(0.58681494, 0.26359025, 0.9575727, 1)
 albedo_texture = SubResource("CompressedTexture2D_q6ni2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vlp7w"]
+albedo_texture = ExtResource("1_xhitf")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ht4a3"]
 
@@ -46,6 +71,9 @@ albedo_texture = SubResource("CompressedTexture2D_ht4a3")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbiig"]
 albedo_color = Color(0.42241505, 0.14528012, 0.09283126, 1)
 albedo_texture = SubResource("CompressedTexture2D_5b6s4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oq7lg"]
+albedo_texture = ExtResource("6_ht4a3")
 
 [sub_resource type="SphereMesh" id="SphereMesh_aikrw"]
 
@@ -67,31 +95,37 @@ height = 6.4311523
 [node name="Base" type="MeshInstance3D" parent="." unique_id=122789060]
 transform = Transform3D(4.5, 0, 0, 0, 0.086, 0, 0, 0, 4.5, 0, 0, 0)
 rotation_edit_mode = 1
+material_override = SubResource("StandardMaterial3D_5dkau")
 mesh = SubResource("CylinderMesh_nqs6g")
 surface_material_override/0 = SubResource("StandardMaterial3D_dab70")
 
 [node name="Ring 1" type="MeshInstance3D" parent="." unique_id=1565712907]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.50853956, 0)
+material_override = SubResource("StandardMaterial3D_5b6s4")
 mesh = SubResource("TorusMesh_gs7hq")
 surface_material_override/0 = SubResource("StandardMaterial3D_hnhrg")
 
 [node name="Ring 2" type="MeshInstance3D" parent="." unique_id=48681424]
 transform = Transform3D(1.7, 0, 0, 0, 2, 0, 0, 0, 1.7, 0, 1.4606806, 0)
+material_override = SubResource("StandardMaterial3D_aikrw")
 mesh = SubResource("TorusMesh_gs7hq")
 surface_material_override/0 = SubResource("StandardMaterial3D_xhitf")
 
 [node name="Ring 3" type="MeshInstance3D" parent="." unique_id=1278060335]
 transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 0, 2.3847666, 0)
+material_override = SubResource("StandardMaterial3D_6ttlq")
 mesh = SubResource("TorusMesh_gs7hq")
 surface_material_override/0 = SubResource("StandardMaterial3D_djm47")
 
 [node name="Ring 4" type="MeshInstance3D" parent="." unique_id=9736935]
 transform = Transform3D(1.3, 0, 0, 0, 2, 0, 0, 0, 1.3, 0, 3.331277, 0)
+material_override = SubResource("StandardMaterial3D_ia58i")
 mesh = SubResource("TorusMesh_gs7hq")
 surface_material_override/0 = SubResource("StandardMaterial3D_0e1si")
 
 [node name="Ring 5" type="MeshInstance3D" parent="." unique_id=1085403134]
 transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 4.2237363, 0)
+material_override = SubResource("StandardMaterial3D_vlp7w")
 mesh = SubResource("TorusMesh_gs7hq")
 surface_material_override/0 = SubResource("StandardMaterial3D_5lh4g")
 
@@ -102,6 +136,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_jbiig")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=917266559]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 5.6932125, 0)
+material_override = SubResource("StandardMaterial3D_oq7lg")
 mesh = SubResource("SphereMesh_aikrw")
 surface_material_override/0 = SubResource("StandardMaterial3D_0tcvm")
 
