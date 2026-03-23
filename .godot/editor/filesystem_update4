@@ -4,3 +4,4 @@ res://Scenes/Player.tscn
 res://Scripts/archer_tower.gd
 res://Scenes/area_3d.gd
 res://Scripts/player.gd
+res://Scenes/Enemy.tscn

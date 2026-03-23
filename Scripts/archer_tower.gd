@@ -5,7 +5,7 @@ extends Node3D
 @onready var range_ : Area3D = get_node("Range")
 
 var targets : Array[Area3D]
-var target : Area3D
+var target : CharacterBody3D
 
 func _physics_process(_delta: float) -> void:
 	if range_.has_overlapping_areas :
@@ -15,7 +15,11 @@ func _physics_process(_delta: float) -> void:
 			var parent = potential_target.get_parent()
 			if potential_target.has_method("take_damage") :
 				print("target found")
-				if parent.global_position - box.global_position < target.global_position - box.global_position :
+				if target :
+					if parent.global_position - box.global_position < target.global_position - box.global_position :
+						target = parent
+						print("target is : " + str(target))
+				else : 
 					target = parent
 					print("target is : " + str(target))
 			else : print("area doesn't have method")
