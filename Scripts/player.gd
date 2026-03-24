@@ -37,7 +37,7 @@ class towercall:
 	var input : Array[String] = []
 	var index : int = 0
 	var is_unlocked : bool = 0
-	func create(i1 : Array[String], i2 : int, u : bool) :
+	func _init(i1 : Array[String], i2 : int, u : bool) :
 		input = i1
 		index = i2
 		is_unlocked = u
@@ -54,7 +54,8 @@ var TowerInput : Array[String] = []
 var is_tower_input_valid : bool
 
 # Available tower patterns
-var AvailableTowers : Array[towercall] = []
+var archer_tower = towercall.new(["U", "D", "R", "L"], 1, 1)
+var AvailableTowers : Array[towercall] = [archer_tower]
 
 # Tower preview instance
 var tower_preview : Node3D
@@ -105,10 +106,6 @@ const CAMERA_SPEED = 20.0
 #region Engine functions
 
 func _ready() -> void:
-	# define available towers
-	var archer_tower : towercall
-	archer_tower.create(["U", "D", "R", "L"], 1, 1)
-	AvailableTowers[1] = archer_tower
 	
 	stam = 1200
 	hp = 100

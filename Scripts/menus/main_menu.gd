@@ -11,8 +11,7 @@ func _on_level_button_down() -> void:
 	get_tree().change_scene_to_file("res://Scenes/Maps/Level_1.tscn")
 
 func _on_options_button_down() -> void:
-	 # many add options menu eventually? if not just delete this and the button
-	print("options not implemented yet")
+	get_tree().change_scene_to_file("res://Scenes/Settings.tscn")
 
 func _on_credits_button_down() -> void:
 	# menu with credits to everyone

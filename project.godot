@@ -15,6 +15,10 @@ run/main_scene="uid://djp8ugh3coxpn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalVariables="*uid://dfe37gr5ctk8q"
+
 [dotnet]
 
 project/assembly_name="bad-ideas-game-jam"

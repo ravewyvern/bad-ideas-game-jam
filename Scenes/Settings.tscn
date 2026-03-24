@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bj8myjmyd6kr3"]
+
+[ext_resource type="Script" uid="uid://e4is0mdyosr3" path="res://Scenes/settings.gd" id="1_646k0"]
+[ext_resource type="FontFile" uid="uid://b36imdbak2j3f" path="res://Assets/Fonts/Minecraft.ttf" id="1_flfri"]
+[ext_resource type="Script" uid="uid://bi66ivh7f1kma" path="res://Scripts/music_volume_slider.gd" id="2_yrknh"]
+[ext_resource type="Script" uid="uid://b5q74kkkd4sou" path="res://Scripts/Sound_Effects_volume_slider.gd" id="3_ipgag"]
+[ext_resource type="AudioStream" uid="uid://bi2g07cdknky8" path="res://Assets/Sounds/Title Theme 2.mp3" id="3_w1nw0"]
+[ext_resource type="Script" uid="uid://d4kitukwkonyv" path="res://Scripts/music_player.gd" id="4_mjqtt"]
+[ext_resource type="AudioStream" uid="uid://b0yplswpah5i" path="res://Assets/Sounds/3-Dart Thwamp +1.wav" id="5_mjqtt"]
+[ext_resource type="Script" uid="uid://ds5kgptjvggf2" path="res://Scripts/player_shoot_sound.gd" id="6_ppjuv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w1nw0"]
+font = ExtResource("1_flfri")
+font_size = 26
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
+
+[node name="Settings" type="Control" unique_id=2002590499]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_646k0")
+
+[node name="Music Volume Label" type="Label" parent="." unique_id=933674432]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 93.0
+offset_right = 210.0
+offset_bottom = 120.0
+text = "Music Volume : "
+label_settings = SubResource("LabelSettings_w1nw0")
+
+[node name="Music Volume Slider" type="HSlider" parent="." unique_id=1027675740]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.025
+offset_left = 331.0
+offset_top = 96.0
+offset_right = 780.936
+offset_bottom = 95.8
+max_value = 10.0
+script = ExtResource("2_yrknh")
+
+[node name="Sound Effects Volume Label" type="Label" parent="." unique_id=1755615772]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 140.0
+offset_right = 210.0
+offset_bottom = 167.0
+text = "Sound Effects Volume : "
+label_settings = SubResource("LabelSettings_w1nw0")
+
+[node name="Sound Effects Volume Slider" type="HSlider" parent="." unique_id=1548836303]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.007
+anchor_bottom = 0.025
+offset_left = 331.0
+offset_top = 145.0
+offset_right = 780.936
+offset_bottom = 144.8
+max_value = 10.0
+script = ExtResource("3_ipgag")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=821429665]
+stream = ExtResource("3_w1nw0")
+volume_db = -25.0
+autoplay = true
+script = ExtResource("4_mjqtt")
+
+[node name="TestSounds" type="AudioStreamPlayer" parent="." unique_id=1618637201]
+stream = ExtResource("5_mjqtt")
+script = ExtResource("6_ppjuv")
+
+[node name="Back" type="Button" parent="." unique_id=339792233]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 23.0
+offset_right = 71.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("1_flfri")
+theme_override_font_sizes/font_size = 16
+text = "Back
+"
+
+[connection signal="button_down" from="Back" to="." method="_on_back_button_down"]

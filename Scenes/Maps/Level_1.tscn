@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://lxhkyx27em0c" path="res://Assets/Textures/Ground.jpg" id="18_3feek"]
 [ext_resource type="PackedScene" uid="uid://bnyeoqhth7m02" path="res://Scenes/Enemy.tscn" id="21_obulj"]
 [ext_resource type="Script" uid="uid://dfacrwq0sicnu" path="res://Scenes/Maps/enemy_spawner.gd" id="22_we16n"]
+[ext_resource type="AudioStream" uid="uid://cxh5vw011qcot" path="res://Assets/Sounds/Title Theme 1.mp3" id="23_m01ey"]
+[ext_resource type="Script" uid="uid://d4kitukwkonyv" path="res://Scripts/music_player.gd" id="24_kvqy7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7l4iu"]
 size = Vector3(14.22644, 15.46106, 3.6068726)
@@ -832,3 +834,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94008255, 0, -188.9154)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 199.16513)
 script = ExtResource("22_we16n")
 difficulty = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1720453158]
+stream = ExtResource("23_m01ey")
+volume_db = -10.0
+autoplay = true
+script = ExtResource("24_kvqy7")

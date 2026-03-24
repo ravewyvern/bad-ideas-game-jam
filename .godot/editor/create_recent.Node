@@ -1,4 +1,7 @@
+Button
 AudioStreamPlayer
+HSlider
+Label
 Marker3D
 CollisionShape3D
 Area3D
@@ -8,7 +11,5 @@ MeshInstance3D
 TextureProgressBar
 Timer
 ProgressBar
-Label
 RigidBody3D
 CSGMesh3D
-CSGBox3D

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ifj5fgta41yr" path="res://Scripts/enemy.gd" id="1_m1htj"]
 [ext_resource type="Texture2D" uid="uid://gqtn1jveoku4" path="res://Assets/Textures/Red.jpg" id="2_wovta"]
-[ext_resource type="Script" uid="uid://tolp2x51k71j" path="res://Scenes/enemy_hit_box.gd" id="3_xeo28"]
+[ext_resource type="Script" uid="uid://tolp2x51k71j" path="res://Scripts/enemy_hit_box.gd" id="3_xeo28"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_xeo28"]
 
