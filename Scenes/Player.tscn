@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://btvchhbuy1n5p" path="res://Scenes/Bullet.tscn" id="2_kyqiw"]
 [ext_resource type="Script" uid="uid://dchl7p16wyyfc" path="res://Scripts/camera_3d.gd" id="3_gntrk"]
 [ext_resource type="Script" uid="uid://cmsff7y2l1lob" path="res://Scenes/area_3d.gd" id="4_dewec"]
+[ext_resource type="AudioStream" uid="uid://b0yplswpah5i" path="res://Assets/Sounds/3-Dart Thwamp +1.wav" id="5_5ixxa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
 radius = 0.45
@@ -109,8 +110,11 @@ texture_under = SubResource("GradientTexture2D_dewec")
 texture_progress = SubResource("NoiseTexture2D_dewec")
 tint_progress = Color(0, 0.49803922, 0, 1)
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1955203330]
+[node name="Player_hit_box" type="Area3D" parent="." unique_id=1955203330]
 script = ExtResource("4_dewec")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=183875342]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player_hit_box" unique_id=183875342]
 shape = SubResource("CapsuleShape3D_5ixxa")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1612729909]
+stream = ExtResource("5_5ixxa")

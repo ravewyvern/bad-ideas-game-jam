@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ifj5fgta41yr" path="res://Scripts/enemy.gd" id="1_m1htj"]
 [ext_resource type="Texture2D" uid="uid://gqtn1jveoku4" path="res://Assets/Textures/Red.jpg" id="2_wovta"]
+[ext_resource type="Script" uid="uid://tolp2x51k71j" path="res://Scenes/enemy_hit_box.gd" id="3_xeo28"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_xeo28"]
 
@@ -14,8 +15,9 @@ emission_energy_multiplier = 10.32
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1exfc"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_wovta"]
+
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=2108781441]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.256923, 0)
 collision_mask = 2
 script = ExtResource("1_m1htj")
 
@@ -25,3 +27,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_kpr8r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=893549936]
 shape = SubResource("SphereShape3D_1exfc")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=505884960]
+script = ExtResource("3_xeo28")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=238870956]
+shape = SubResource("SphereShape3D_wovta")

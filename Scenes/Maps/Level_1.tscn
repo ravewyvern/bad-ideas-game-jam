@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://tuwvgtxgx5g6" path="res://Assets/Textures/yellow.jpg" id="17_x4cc2"]
 [ext_resource type="Texture2D" uid="uid://lxhkyx27em0c" path="res://Assets/Textures/Ground.jpg" id="18_3feek"]
 [ext_resource type="PackedScene" uid="uid://bnyeoqhth7m02" path="res://Scenes/Enemy.tscn" id="21_obulj"]
+[ext_resource type="Script" uid="uid://dfacrwq0sicnu" path="res://Scenes/Maps/enemy_spawner.gd" id="22_we16n"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7l4iu"]
 size = Vector3(14.22644, 15.46106, 3.6068726)
@@ -66,6 +67,7 @@ albedo_texture_force_srgb = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gw16w"]
 albedo_texture = ExtResource("15_o56cr")
 albedo_texture_force_srgb = true
+uv1_scale = Vector3(20, 3, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_obulj"]
 
@@ -74,6 +76,9 @@ albedo_texture_force_srgb = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wpdb"]
 albedo_texture = ExtResource("16_kvqy7")
 albedo_texture_force_srgb = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 1.8
+uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_we16n"]
 
@@ -116,6 +121,7 @@ size = Vector3(30, 1, 30)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rerwq"]
 albedo_texture = ExtResource("18_3feek")
 albedo_texture_force_srgb = true
+uv1_scale = Vector3(50, 50, 50)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7l4iu"]
 
@@ -801,3 +807,28 @@ transform = Transform3D(-2.6226832e-07, 0, 6, 0, 6, 0, -6, 0, -2.6226832e-07, 2.
 
 [node name="Enemy 1" parent="." unique_id=2108781441 instance=ExtResource("21_obulj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9019842, 229.51837)
+
+[node name="Enemy_Path" type="Node3D" parent="." unique_id=788820806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 199.32216)
+
+[node name="Marker3D" type="Marker3D" parent="Enemy_Path" unique_id=1875564452]
+
+[node name="Marker3D2" type="Marker3D" parent="Enemy_Path" unique_id=1947737123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.151642, 0, -27.291946)
+
+[node name="Marker3D3" type="Marker3D" parent="Enemy_Path" unique_id=2052299035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.151642, 0, -91.46777)
+
+[node name="Marker3D4" type="Marker3D" parent="Enemy_Path" unique_id=958614053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.297764, 0, -110.806335)
+
+[node name="Marker3D5" type="Marker3D" parent="Enemy_Path" unique_id=1624446552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.297764, 0, -159.63321)
+
+[node name="Marker3D6" type="Marker3D" parent="Enemy_Path" unique_id=575773735]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94008255, 0, -188.9154)
+
+[node name="Enemy_spawner" type="Marker3D" parent="." unique_id=128308549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 199.16513)
+script = ExtResource("22_we16n")
+difficulty = 1

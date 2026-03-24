@@ -1,11 +1,11 @@
-res://Scenes/Maps/Level_1.tscn
+res://Scenes/Enemy_Pathing.tscn
 res://new_shader.gdshader
-res://Assets/Models/block_castle.tscn
-res://Assets/Models/block_gate.tscn
-res://Assets/Models/jack.tscn
-res://Assets/Models/ball.tscn
-res://Assets/Models/Tower_Location.tscn
-res://Assets/Models/stack_game.tscn
+res://Scripts/enemy.gd
+res://Scenes/Maps/Level_1.tscn
 res://Scenes/Enemy.tscn
-res://Scenes/Menus/Main Menu.tscn
-res://Scenes/Menus/audio_stream_player.gd
+res://Scenes/Player.tscn
+res://Scenes/enemy_hit_box.gd
+res://Scenes/box.tscn
+res://Scenes/box.gd
+res://Scenes/Maps/enemy_spawner.gd
+res://Scripts/player.gd

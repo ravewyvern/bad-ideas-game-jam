@@ -22,6 +22,7 @@ var selected_tower_index : int = 0
 @onready var Ammo = $AmmoInMag
 @onready var reloadbar = $ReloadBar
 @onready var reload_time = $Timer
+@onready var sound = $AudioStreamPlayer
 
 #endregion
 
@@ -213,6 +214,7 @@ func _input(event):
 
 func shoot():
 
+	sound.play()
 	var bullet = Bullet.instantiate()
 	get_tree().current_scene.add_child(bullet)
 

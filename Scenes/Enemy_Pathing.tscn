@@ -5,13 +5,13 @@
 [node name="Path_A" type="Node3D" parent="." unique_id=1481164522]
 
 [node name="Marker3D" type="Marker3D" parent="Path_A" unique_id=566334290]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.450581e-09, 3.7252903e-09, -26.914675)
+transform = Transform3D(0.9999464, 0.010349618, 0, -0.010349618, 0.9999464, 0, 0, 0, 1, 7.450581e-09, 3.7252903e-09, 39.30085)
 
 [node name="Marker3D2" type="Marker3D" parent="Path_A" unique_id=1044935807]
-transform = Transform3D(1, -4.9021764e-10, -2.3283064e-10, 1.4097168e-11, 1, -2.3283064e-10, 2.3283064e-10, -2.3283064e-10, 1, 13.386168, 1.1921604e-08, -20.783035)
+transform = Transform3D(1, -4.9021764e-10, -2.3283064e-10, 1.4097168e-11, 1, -2.3283064e-10, 2.3283064e-10, -2.3283064e-10, 1, 13.386168, 1.1921604e-08, 24.165741)
 
 [node name="Marker3D3" type="Marker3D" parent="Path_A" unique_id=1054380468]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5426662, 3.3251126e-09, -13.290558)
+transform = Transform3D(-0.5869739, 0.62117296, -0.51923573, 0.7540248, 0.6529725, -0.07122809, 0.29480165, -0.43332562, -0.8516576, 2.5426662, 3.3251126e-09, -50.463238)
 
 [node name="Marker3D4" type="Marker3D" parent="Path_A" unique_id=2119323920]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.154501, -4.3437467e-09, -11.277381)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.155968, -4.3437467e-09, -11.277381)

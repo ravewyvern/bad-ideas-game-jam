@@ -11,14 +11,19 @@ extends CharacterBody3D
 # node that contains the path markers
 @export var Path_A : Node3D
 
+@onready var box = get_parent().get_node("box")
+
 # path points the enemy will follow
-var PathPoints : Array[Node3D] = []
+var PathPoints : Array[Marker3D] = []
 
 # current point in the path
 var current_point : int = 0
 
 
 func _ready():
+
+	# define Path_A
+	Path_A = get_parent().get_node("Enemy_Path")
 
 	# Get all markers inside Path_A
 	for child in Path_A.get_children():
@@ -73,3 +78,6 @@ func take_damage(amount):
 
 func die():
 	queue_free()
+
+func reach_box() :
+	velocity.y = 6
