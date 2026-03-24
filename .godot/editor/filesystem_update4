@@ -1,15 +1,3 @@
-res://Scenes/Menus/Main Menu.tscn
-res://new_shader.gdshader
 res://Scenes/Maps/Level_1.tscn
-res://Scenes/Settings.tscn
-res://Scenes/music_volume_slider.gd
-res://Scripts/menus/main_menu.gd
-res://Scenes/Player.tscn
-res://Scenes/Enemy.tscn
-res://Scenes/box.tscn
-res://Scripts/audio_stream_player.gd
-res://Scripts/music_volume_slider.gd
-res://Scripts/Global_variables.gd
-res://Scenes/player_shoot_sound.gd
-res://Scenes/settings.gd
-res://Scripts/player.gd
+res://new_shader.gdshader
+res://Assets/Models/Tower_Rook.tscn

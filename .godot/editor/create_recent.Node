@@ -1,3 +1,4 @@
+MeshInstance3D
 Button
 AudioStreamPlayer
 HSlider
@@ -7,9 +8,7 @@ CollisionShape3D
 Area3D
 Node3D
 StaticBody3D
-MeshInstance3D
 TextureProgressBar
 Timer
 ProgressBar
 RigidBody3D
-CSGMesh3D
