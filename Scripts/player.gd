@@ -34,8 +34,13 @@ class StatusEffect:
 	var magnitude : int
 
 class towercall:
-	var input : Array[String]
-	var index : int
+	var input : Array[String] = []
+	var index : int = 0
+	var is_unlocked : bool = 0
+	func create(i1 : Array[String], i2 : int, u : bool) :
+		input = i1
+		index = i2
+		is_unlocked = u
 
 #endregion
 
@@ -100,6 +105,11 @@ const CAMERA_SPEED = 20.0
 #region Engine functions
 
 func _ready() -> void:
+	# define available towers
+	var archer_tower : towercall
+	archer_tower.create(["U", "D", "R", "L"], 1, 1)
+	AvailableTowers[1] = archer_tower
+	
 	stam = 1200
 	hp = 100
 
