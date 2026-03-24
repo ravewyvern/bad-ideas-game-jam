@@ -12,3 +12,4 @@ res://Scripts/music_volume_slider.gd
 res://Scripts/Global_variables.gd
 res://Scenes/player_shoot_sound.gd
 res://Scenes/settings.gd
+res://Scripts/player.gd

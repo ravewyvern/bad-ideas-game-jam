@@ -131,7 +131,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and not top_view_enabled:
 		rotate_y(-event.relative.x * sensitivity)
 		Camera.rotate_x(-event.relative.y * sensitivity)
-		Camera.rotation.x = clamp(Camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		Camera.rotation.x = clamp(Camera.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 	
 	if event is InputEventMouseMotion and top_view_enabled :
 		Camera.position.x += event.relative.x / 5
@@ -220,16 +220,16 @@ func _input(event):
 #region player input functions
 
 func shoot():
+	if not is_reloading :
+		sound.play()
+		var bullet = Bullet.instantiate()
+		get_tree().current_scene.add_child(bullet)
 
-	sound.play()
-	var bullet = Bullet.instantiate()
-	get_tree().current_scene.add_child(bullet)
+		bullet.global_transform.origin = BulletSpawnPoint.global_transform.origin
 
-	bullet.global_transform.origin = BulletSpawnPoint.global_transform.origin
-
-	var shoot_direction = -Camera.global_transform.basis.z
-	bullet.look_at(bullet.global_position + shoot_direction, Vector3.UP)
-	bullet.direction = shoot_direction
+		var shoot_direction = -Camera.global_transform.basis.z
+		bullet.look_at(bullet.global_position + shoot_direction, Vector3.UP)
+		bullet.direction = shoot_direction
 
 func append_to_tower_input(key: String, input: String) :
 	if Input.is_action_just_pressed(key) :
