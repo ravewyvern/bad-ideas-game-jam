@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://cmsff7y2l1lob" path="res://Scripts/area_3d.gd" id="4_dewec"]
 [ext_resource type="AudioStream" uid="uid://b0yplswpah5i" path="res://Assets/Sounds/3-Dart Thwamp +1.wav" id="5_5ixxa"]
 [ext_resource type="Script" uid="uid://ds5kgptjvggf2" path="res://Scripts/player_shoot_sound.gd" id="6_52ee3"]
-[ext_resource type="Texture2D" uid="uid://b52f1xvu32umd" path="res://Assets/Textures/Arrow_Down.png" id="6_nn08x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0rwas"]
 radius = 0.45
@@ -121,7 +120,3 @@ shape = SubResource("CapsuleShape3D_5ixxa")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1612729909]
 stream = ExtResource("5_5ixxa")
 script = ExtResource("6_52ee3")
-
-[node name="ArrowDown" type="Sprite2D" parent="." unique_id=1158626049]
-position = Vector2(23, 152)
-texture = ExtResource("6_nn08x")

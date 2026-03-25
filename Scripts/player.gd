@@ -8,7 +8,7 @@ extends CharacterBody3D
 @export var BulletSpawnPoint : Node3D
 
 # Tower list (5 towers)
-@export var TowerPlaceholders : Array[PackedScene] = []
+@export var TowerPlaceholders : Array[PackedScene] = [null, ]
 var selected_tower_index : int = 0
 
 #endregion
@@ -235,8 +235,15 @@ func append_to_tower_input(key: String, input: String) :
 	if Input.is_action_just_pressed(key) :
 			TowerInput.append(input)
 			for tower in AvailableTowers :
+				if tower.input.size() < TowerInput.size() :
+					is_tower_input_valid = false
+					break
 				if TowerInput[TowerInput.size() - 1] != tower.input[TowerInput.size() - 1] :
 					is_tower_input_valid = false
+					break
+	if not is_tower_input_valid :
+		TowerInput.clear()
+		is_tower_input_valid = true
 
 func sprint() :
 	if Input.is_action_pressed("Move.Sprint") and is_on_floor() and stam > 0:
@@ -385,6 +392,7 @@ func top_view_processes(delta: float) :
 		append_to_tower_input("Move.Back", "D")
 		append_to_tower_input("Move.Right", "R")
 		append_to_tower_input("Move.Left", "L")
+		print(TowerInput)
 
 func gravity(delta: float) :
 	if not is_on_floor():

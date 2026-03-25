@@ -1,4 +1,2 @@
-res://Assets/Models/stack_game.tscn
+res://Scenes/Player.tscn
 res://new_shader.gdshader
-res://Scenes/Maps/Level_1.tscn
-res://Assets/Models/block_castle.tscn

@@ -11,7 +11,7 @@ extends CharacterBody3D
 # node that contains the path markers
 @export var Path_A : Node3D
 
-@onready var box = get_parent().get_node("box")
+@onready var box = get_parent().get_node("Box")
 
 # path points the enemy will follow
 var PathPoints : Array[Marker3D] = []
