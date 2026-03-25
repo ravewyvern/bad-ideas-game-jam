@@ -785,31 +785,31 @@ surface_material_override/0 = SubResource("StandardMaterial3D_gw16w")
 transform = Transform3D(100, 0, 0, 0, 6, 0, 0, 0, 6, -0.2964859, 3.8476076, -12.940683)
 shape = SubResource("BoxShape3D_tserq")
 
-[node name="Tower Location" parent="." unique_id=1873387341 groups=["tower_location"] instance=ExtResource("7_0wpdb")]
+[node name="Tower Location" parent="." unique_id=1873387341 groups=["build_spot"] instance=ExtResource("7_0wpdb")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 28.050854, 0.7577903, 160.47821)
 
-[node name="Tower Location2" parent="." unique_id=2115132155 groups=["tower_location"] instance=ExtResource("7_0wpdb")]
+[node name="Tower Location2" parent="." unique_id=2115132155 groups=["build_spot"] instance=ExtResource("7_0wpdb")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, -31.910685, 0.7577903, 160.47821)
 
-[node name="Tower Location3" parent="." unique_id=1644865171 groups=["tower_location"] instance=ExtResource("7_0wpdb")]
+[node name="Tower Location3" parent="." unique_id=1644865171 groups=["build_spot"] instance=ExtResource("7_0wpdb")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 28.050854, 0.7577903, 129.88959)
 
-[node name="Tower Location4" parent="." unique_id=599096556 groups=["tower_location"] instance=ExtResource("7_0wpdb")]
+[node name="Tower Location4" parent="." unique_id=599096556 groups=["build_spot"] instance=ExtResource("7_0wpdb")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, -31.254559, 0.7577903, 129.88959)
 
-[node name="Tower Location5" parent="." unique_id=1063823341 groups=["tower_location"] instance=ExtResource("7_0wpdb")]
+[node name="Tower Location5" parent="." unique_id=1063823341 groups=["build_spot"] instance=ExtResource("7_0wpdb")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 2.1379395, 0.7577903, 106.67124)
 
-[node name="Tower Location6" parent="." unique_id=201346367 groups=["tower_location"] instance=ExtResource("7_0wpdb")]
+[node name="Tower Location6" parent="." unique_id=201346367 groups=["build_spot"] instance=ExtResource("7_0wpdb")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 28.050854, 0.7577903, 71.03354)
 
-[node name="Tower Location7" parent="." unique_id=1991639681 groups=["tower_location"] instance=ExtResource("7_0wpdb")]
+[node name="Tower Location7" parent="." unique_id=1991639681 groups=["build_spot"] instance=ExtResource("7_0wpdb")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 28.050854, 0.7577903, 40.444916)
 
-[node name="Tower Location8" parent="." unique_id=1792522166 groups=["tower_location"] instance=ExtResource("7_0wpdb")]
+[node name="Tower Location8" parent="." unique_id=1792522166 groups=["build_spot"] instance=ExtResource("7_0wpdb")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, -31.910685, 0.7577903, 72.196365)
 
-[node name="Tower Location9" parent="." unique_id=1788672118 groups=["tower_location"] instance=ExtResource("7_0wpdb")]
+[node name="Tower Location9" parent="." unique_id=1788672118 groups=["build_spot"] instance=ExtResource("7_0wpdb")]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, -31.254559, 0.7577903, 41.607742)
 
 [node name="Box" parent="." unique_id=190124351 instance=ExtResource("13_7l4iu")]

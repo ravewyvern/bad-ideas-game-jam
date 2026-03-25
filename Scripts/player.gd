@@ -88,6 +88,23 @@ var burning_cooldown : int
 
 var is_reloading : bool
 
+# Click detection area (manual XY/XZ check)
+var target_click_position : Vector3 = Vector3(0, 0, 0)
+var click_area_size : Vector2 = Vector2(2, 2) # width (X) and depth (Z)
+
+# Clickable positions (only X and Z are relevant)
+var target_positions : Array[Vector3] = [
+	Vector3(28.051, 0, 160.478),
+	Vector3(-31.911, 0, 160.478),
+	Vector3(28.051, 0, 129.89),
+	Vector3(-31.255, 0, 129.89),
+	Vector3(2.138, 0, 106.671),
+	Vector3(28.051, 0, 71.034),
+	Vector3(28.051, 0, 40.445),
+	Vector3(-31.911, 0, 72.196),
+	Vector3(-31.255, 0, 41.608)
+]
+
 #endregion
 
 #region constants
@@ -185,7 +202,13 @@ func _input(event):
 			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 				var pos = get_mouse_world_position()
 				if pos:
-					place_tower(pos)
+					var clicked_index = get_clicked_area_index(pos)
+					
+					if clicked_index != -1:
+						var center_pos = target_positions[clicked_index]
+						if is_click_in_range(pos, center_pos.x - 2, center_pos.x + 2, center_pos.z - 2, center_pos.z + 2):
+							print("Clicked inside area index: ", clicked_index)
+							on_specific_area_clicked(clicked_index)
 
 			# Drag camera with right mouse button
 			if event.button_index == MOUSE_BUTTON_RIGHT:
@@ -313,6 +336,29 @@ func reload(mag_size: int, reload__time: float) :
 		ammo_in_dart_mag = mag_size
 		reloadbar.visible = 0
 		is_reloading = 0
+		
+# Check if a world position is inside a defined area
+func is_click_inside_area(click_pos: Vector3) -> bool:
+	
+	var min_x = target_click_position.x
+	var max_x = target_click_position.x + click_area_size.x
+	
+	var min_z = target_click_position.z
+	var max_z = target_click_position.z + click_area_size.y
+	
+	if click_pos.x > min_x and click_pos.x < max_x \
+	and click_pos.z > min_z and click_pos.z < max_z:
+		return true
+	
+	return false
+
+
+# Action executed when clicking the target area
+func on_target_clicked():
+
+	var tower = TowerPlaceholders[selected_tower_index].instantiate()
+	get_tree().current_scene.add_child(tower)
+	tower.global_position = target_click_position
 
 #endregion
 
@@ -336,6 +382,42 @@ func get_mouse_world_position():
 		return result.position
 
 	return null
+	
+# Check if click is inside a custom rectangular range
+func is_click_in_range(click_pos: Vector3, min_x: float, max_x: float, min_z: float, max_z: float) -> bool:
+	if click_pos.x >= min_x and click_pos.x <= max_x \
+	and click_pos.z >= min_z and click_pos.z <= max_z:
+		return true
+	return false
+	
+# Returns the index of the clicked area, or -1 if none
+func get_clicked_area_index(click_pos: Vector3) -> int:
+	
+	for i in range(target_positions.size()):
+		
+		var pos = target_positions[i]
+		
+		var min_x = pos.x - click_area_size.x / 2
+		var max_x = pos.x + click_area_size.x / 2
+
+		var min_z = pos.z - click_area_size.y / 2
+		var max_z = pos.z + click_area_size.y / 2
+		
+		if click_pos.x > min_x and click_pos.x < max_x \
+		and click_pos.z > min_z and click_pos.z < max_z:
+			return i
+	
+	return -1
+	
+# Executes action based on which area was clicked
+func on_specific_area_clicked(index: int):
+	
+	print("Something happened on area: ", index)
+	
+	var tower = TowerPlaceholders[selected_tower_index].instantiate()
+	get_tree().current_scene.add_child(tower)
+	
+	tower.global_position = target_positions[index]
 
 func place_tower(pos: Vector3):
 

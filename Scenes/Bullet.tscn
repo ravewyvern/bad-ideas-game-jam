@@ -4,17 +4,17 @@
 [ext_resource type="PackedScene" uid="uid://b5kqrcsnu3uvq" path="res://Assets/Models/dart_projectile.glb" id="2_14k46"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qvus8"]
-size = Vector3(1.2893066, 0.20758057, 0.17016602)
+size = Vector3(0.48736572, 0.5016556, 0.4982586)
 
 [node name="Area3D" type="Area3D" unique_id=824319216]
 collision_layer = 2
 script = ExtResource("1_vlxeq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1220154731]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08728027, -0.007232666, -0.00036621094)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0018005371, 0.03246689, -0.2617197)
 shape = SubResource("BoxShape3D_qvus8")
 
 [node name="blockbench_export" parent="." unique_id=1398169011 instance=ExtResource("2_14k46")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.53, 0)
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 0, -0.5, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
