@@ -98,12 +98,14 @@ uv1_scale = Vector3(10, 10, 10)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2f2p"]
 albedo_texture = ExtResource("14_we16n")
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_l5vqw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7l4iu"]
 albedo_texture = ExtResource("15_m01ey")
 albedo_texture_force_srgb = true
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="PrismMesh" id="PrismMesh_6jl7n"]
 
@@ -139,6 +141,12 @@ sky = SubResource("Sky_ko2s7")
 ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.07
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.001
+volumetric_fog_emission = Color(0.34117648, 0.3529412, 0.50980395, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o2f2p"]
 

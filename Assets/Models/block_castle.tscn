@@ -61,6 +61,7 @@ albedo_texture = ExtResource("1_ixjir")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hqw3t"]
 albedo_texture = ExtResource("1_ixjir")
 albedo_texture_force_srgb = true
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17uxl"]
 albedo_texture = ExtResource("1_ixjir")
@@ -68,6 +69,7 @@ albedo_texture = ExtResource("1_ixjir")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57urr"]
 albedo_texture = ExtResource("1_ixjir")
 albedo_texture_force_srgb = true
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1umv"]
 albedo_texture = ExtResource("4_hqw3t")
@@ -104,6 +106,7 @@ albedo_texture = ExtResource("6_njxyg")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxcc0"]
 albedo_texture = ExtResource("1_ixjir")
 albedo_texture_force_srgb = true
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3iq2"]
 albedo_texture = ExtResource("1_ixjir")
@@ -115,6 +118,7 @@ albedo_texture_force_srgb = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gajrs"]
 albedo_texture = ExtResource("1_ixjir")
 albedo_texture_force_srgb = true
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjrew"]
 albedo_texture = ExtResource("3_6nhwi")
@@ -125,14 +129,17 @@ albedo_texture = ExtResource("3_6nhwi")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kqam"]
 albedo_texture = ExtResource("1_ixjir")
 albedo_texture_force_srgb = true
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mrxla"]
 albedo_texture = ExtResource("1_ixjir")
 albedo_texture_force_srgb = true
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1g26v"]
 albedo_texture = ExtResource("1_ixjir")
 albedo_texture_force_srgb = true
+uv1_scale = Vector3(10, 5, 5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fpphs"]
 albedo_texture = ExtResource("4_hqw3t")
@@ -148,6 +155,7 @@ albedo_texture = ExtResource("2_njxyg")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ruoua"]
 albedo_texture = ExtResource("5_57urr")
+uv1_scale = Vector3(5, 5, 5)
 
 [sub_resource type="TubeTrailMesh" id="TubeTrailMesh_quu5m"]
 
