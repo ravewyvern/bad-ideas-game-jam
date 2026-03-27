@@ -1,3 +1,5 @@
+TextEdit
+VBoxContainer
 MeshInstance3D
 Button
 AudioStreamPlayer
@@ -11,4 +13,3 @@ StaticBody3D
 TextureProgressBar
 Timer
 ProgressBar
-RigidBody3D

@@ -1,12 +1,12 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1774475834
+::res://::1774651980
 icon.svg::CompressedTexture2D::5351679731990098842::1773094817::1773095988::1::::<><><>0<>0<>921279a2e71f78c91ebe6d5dd18a9c7a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-new_shader.gdshader::Shader::1703332151844352902::1774047614::0::1::::<><><>0<>0<><>::
+new_shader.gdshader::Shader::1703332151844352902::1774476006::0::1::::<><><>0<>0<><>::
 README.md::TextFile::-1::1773094817::0::1::::<><><>0<>0<><>::
 ::res://Assets/::1773094817
 ::res://Assets/Fonts/::1773095988
 Minecraft.ttf::FontFile::4416211340532142105::1773094817::1773095988::1::::<><><>0<>0<>0cb8781569ae121ffc2c84e38a08d59d<>res://.godot/imported/Minecraft.ttf-5f6638f398155e2f47c5ecdd9b344f48.fontdata::
-::res://Assets/Models/::1774475635
+::res://Assets/Models/::1774475838
 ball.tscn::PackedScene::8176539292502298892::1774475635::0::1::::<><><>0<>0<><>::uid://gqtn1jveoku4::::res://Assets/Textures/Red.jpg
 Bishop.fbx::PackedScene::2384419269439597029::1773701686::1773701713::1::::<><><>0<>0<>f389cc8ad523b071229af2057180920d<>res://.godot/imported/Bishop.fbx-53b63c4bf7af6dff5d1099f24f94d495.scn::
 block_castle.tscn::PackedScene::2591231311764814456::1774475635::0::1::::<><><>0<>0<><>::uid://bjrbb68mnosvs::::res://Assets/Textures/5ef86e25a6df.webp<>uid://btpxe5ksd8kvv::::res://Assets/Textures/Blue.jpg<>uid://tuwvgtxgx5g6::::res://Assets/Textures/yellow.jpg<>uid://bc00jbhgtl4yv::::res://Assets/Textures/purple.jpg<>uid://gqtn1jveoku4::::res://Assets/Textures/Red.jpg<>uid://bsgoga26eicgr::::res://Assets/Textures/green.jpg
@@ -33,7 +33,7 @@ Tower_Pawn.tscn::PackedScene::1908415243285669209::1774049900::0::1::::<><><>0<>
 Tower_Queen.tscn::PackedScene::7121445392246721::1774049919::0::1::::<><><>0<>0<><>::uid://bo3wvst4l3bpy::::res://Assets/Models/Queen.fbx
 Tower_Rook.tscn::PackedScene::6269370962802640885::1774049925::0::1::::<><><>0<>0<><>::uid://d0sw8qgiroovj::::res://Assets/Models/Rook.fbx
 Tower_Test.tscn::PackedScene::5208385928366417001::1773094817::0::1::::<><><>0<>0<><>::
-::res://Assets/Sounds/::1774475636
+::res://Assets/Sounds/::1774475836
 3-Dart Thwamp +1.wav::AudioStreamWAV::123282888807459920::1773094817::1773095988::1::::<><><>0<>0<>cdc9cfb201bdc2af5d7c91c65bbffa94<>res://.godot/imported/3-Dart Thwamp +1.wav-84cfa993479d5daec9169fa3d2afec36.sample::
 freesound_community-suspense-6002.mp3::AudioStreamMP3::1860554654959477618::1774475636::1774475836::1::::<><><>0<>0<>da88ab2f28e27ab0a8e9b7fd2278f224<>res://.godot/imported/freesound_community-suspense-6002.mp3-e856060f50c81a9eacfb908b2a298a20.mp3str::
 fronbondi_skegs-drone-dark-and-moody-atmospheric-ambient-background-236509.mp3::AudioStreamMP3::7717285095315039527::1774475636::1774475836::1::::<><><>0<>0<>638ad5407748ee282a8f12106829f3ce<>res://.godot/imported/fronbondi_skegs-drone-dark-and-moody-atmospheric-ambient-background-236509.mp3-a6ef4b013c50ef27c779e650ffaf1ce6.mp3str::
@@ -41,7 +41,7 @@ Music Prototype.mp3::AudioStreamMP3::7093385909554294326::1774475635::1774475836
 soundreality-explosion-8-bit-1-314687.mp3::AudioStreamMP3::2700178471752586251::1774475636::1774475836::1::::<><><>0<>0<>e82c87f4e822602aefeae04770a76acd<>res://.godot/imported/soundreality-explosion-8-bit-1-314687.mp3-d19223c8b39aee80ff1e36a10806f863.mp3str::
 Title Theme 1.mp3::AudioStreamMP3::6403495622144873111::1774475636::1774475836::1::::<><><>0<>0<>eb131d9227c9b79d943c84b566e5b9c4<>res://.godot/imported/Title Theme 1.mp3-ed334d6ba27dc63506f9b02142c38a52.mp3str::
 Title Theme 2.mp3::AudioStreamMP3::3004080262948201697::1774475636::1774475836::1::::<><><>0<>0<>41112e8c0e0598ce71bcd806ce7896af<>res://.godot/imported/Title Theme 2.mp3-22ac234e5b26c2a8285942acca58d76f.mp3str::
-::res://Assets/Textures/::1774475756
+::res://Assets/Textures/::1774475838
 5ef86e25a6df.webp::CompressedTexture2D::3053278880806649508::1774475636::1774475838::1::::<><><>0<>0<>57952fefc850797500cd8e629b3ba693<>res://.godot/imported/5ef86e25a6df.webp-d7f3c1cbf9196085c9e10c8e770e01e1.s3tc.ctex::
 Arrow_Down.png::CompressedTexture2D::4548175449224202819::1774475636::1774475836::1::::<><><>0<>0<>43a9fe7a81c9fb279bab10609867c0ef<>res://.godot/imported/Arrow_Down.png-caefa44c010b24636ba032c4e89370a5.ctex::
 Arrow_Down_clear.png::CompressedTexture2D::1000603958784606783::1774475755::1774475836::1::::<><><>0<>0<>a5673774e3aa88eb34f2c9a7899c8d65<>res://.godot/imported/Arrow_Down_clear.png-264a0aa886f887da81a4955a8300513a.ctex::
@@ -66,22 +66,22 @@ stuffing.png::CompressedTexture2D::8015622674598456031::1774475636::1774475838::
 white.jpg::CompressedTexture2D::2624561990182129749::1774475636::1774475838::1::::<><><>0<>0<>799bc96413392bf7e31e8908de57d53b<>res://.godot/imported/white.jpg-fefd0a31723bda03cc0b673302e44535.s3tc.ctex::
 wire.png::CompressedTexture2D::5435551710716931628::1774475636::1774475836::1::::<><><>0<>0<>6c6ad1e637719fbcc7b8056c8b48fb9f<>res://.godot/imported/wire.png-cd83e8042286407cd4684508b5e5e492.ctex::
 yellow.jpg::CompressedTexture2D::1376249205262032283::1774475636::1774475838::1::::<><><>0<>0<>5bb104a42a4574dcb7b3789f993473db<>res://.godot/imported/yellow.jpg-6528e1f13598408112d75838a656a6c0.s3tc.ctex::
-::res://Scenes/::1774475756
+::res://Scenes/::1774476127
 Archer Tower.tscn::PackedScene::4486529794379495066::1774475636::0::1::::<><><>0<>0<><>::uid://c6o7lpsv6hy46::::res://Scripts/archer_tower.gd<>uid://d0sw8qgiroovj::::res://Assets/Models/Rook.fbx
 box.tscn::PackedScene::492901651025877685::1774475636::0::1::::<><><>0<>0<><>::uid://bp26604fbqqsm::::res://Scripts/box.gd<>uid://by1qppy6ajfay::::res://Assets/Models/box.gltf
-Bullet.tscn::PackedScene::3763494950343912783::1773094817::0::1::::<><><>0<>0<><>::uid://crgjp3bod45mn::::res://Scripts/bullet.gd<>uid://b5kqrcsnu3uvq::::res://Assets/Models/dart_projectile.glb
+Bullet.tscn::PackedScene::3763494950343912783::1774476127::0::1::::<><><>0<>0<><>::uid://crgjp3bod45mn::::res://Scripts/bullet.gd<>uid://b5kqrcsnu3uvq::::res://Assets/Models/dart_projectile.glb
 Enemy.tscn::PackedScene::3348689438231824173::1774475636::0::1::::<><><>0<>0<><>::uid://ifj5fgta41yr::::res://Scripts/enemy.gd<>uid://gqtn1jveoku4::::res://Assets/Textures/Red.jpg<>uid://tolp2x51k71j::::res://Scripts/enemy_hit_box.gd
 Enemy_Pathing.tscn::PackedScene::1552722065688464649::1774475636::0::1::::<><><>0<>0<><>::
 Player.tscn::PackedScene::8881639504425106295::1774475756::0::1::::<><><>0<>0<><>::uid://dni4ymdcqd65b::::res://Scripts/player.gd<>uid://btvchhbuy1n5p::::res://Scenes/Bullet.tscn<>uid://dchl7p16wyyfc::::res://Scripts/camera_3d.gd<>uid://cmsff7y2l1lob::::res://Scripts/area_3d.gd<>uid://b0yplswpah5i::::res://Assets/Sounds/3-Dart Thwamp +1.wav<>uid://ds5kgptjvggf2::::res://Scripts/player_shoot_sound.gd
 settings.gd::GDScript::341141541442639478::1774475636::0::1::::<>Control<><>0<>0<><>::
 Settings.tscn::PackedScene::3087016697629774254::1774475636::0::1::::<><><>0<>0<><>::uid://e4is0mdyosr3::::res://Scenes/settings.gd<>uid://b36imdbak2j3f::::res://Assets/Fonts/Minecraft.ttf<>uid://bi66ivh7f1kma::::res://Scripts/music_volume_slider.gd<>uid://b5q74kkkd4sou::::res://Scripts/Sound_Effects_volume_slider.gd<>uid://bi2g07cdknky8::::res://Assets/Sounds/Title Theme 2.mp3<>uid://d4kitukwkonyv::::res://Scripts/music_player.gd<>uid://b0yplswpah5i::::res://Assets/Sounds/3-Dart Thwamp +1.wav<>uid://ds5kgptjvggf2::::res://Scripts/player_shoot_sound.gd
-::res://Scenes/Maps/::1774475636
+::res://Scenes/Maps/::1774478597
 enemy_spawner.gd::GDScript::7510359243142211926::1774475636::0::1::::<>Marker3D<><>0<>0<><>::
 Game.tscn::PackedScene::2786390309312205499::1774475636::0::1::::<><><>0<>0<><>::uid://bxncbsqm60ce2::::res://Scripts/Test.tscn<>uid://dyslkmujlojtn::::res://Scenes/Player.tscn<>uid://bnyeoqhth7m02::::res://Scenes/Enemy.tscn<>uid://cgg8mcye1045r::::res://Assets/Models/Tower_Test.tscn<>uid://cs6eq0y3clcge::::res://Assets/Models/Test-Obstical.tscn<>uid://mxb5i818y2a::::res://Assets/Models/Bridge_Test.tscn<>uid://bylwlafm4f32a::::res://Assets/Models/stack_game.tscn<>uid://c51e164i646x0::::res://Assets/Models/jack.tscn<>uid://doq1n4d7uq7tg::::res://Assets/Models/ball.tscn
-Level_1.tscn::PackedScene::3558855036849931054::1774475636::0::1::::<><><>0<>0<><>::uid://bc6hg3q4n80tw::::res://Assets/Models/block_castle.tscn<>uid://dyslkmujlojtn::::res://Scenes/Player.tscn<>uid://c51e164i646x0::::res://Assets/Models/jack.tscn<>uid://b02dtsby83h58::::res://Assets/Models/Tower_King.tscn<>uid://dslwouglqtbqc::::res://Assets/Models/Tower_Knight.tscn<>uid://doq1n4d7uq7tg::::res://Assets/Models/ball.tscn<>uid://2gpk5gqfxgbx::::res://Assets/Models/Tower_Pawn.tscn<>uid://bylwlafm4f32a::::res://Assets/Models/stack_game.tscn<>uid://dpj3jl2na1v::::res://Assets/Models/Tower_Queen.tscn<>uid://dv6mvjcetisxc::::res://Assets/Models/Tower_Location.tscn<>uid://b82xppm12ln23::::res://Assets/Models/block_gate.tscn<>uid://cvk6vhdqdogo8::::res://Assets/Models/Tower_Rook.tscn<>uid://btpxe5ksd8kvv::::res://Assets/Textures/Blue.jpg<>uid://ha1avaqw0sjt::::res://Scenes/box.tscn<>uid://ikaov5b2b5ih::::res://Assets/Textures/Orange.jpg<>uid://bjrbb68mnosvs::::res://Assets/Textures/5ef86e25a6df.webp<>uid://bsgoga26eicgr::::res://Assets/Textures/green.jpg<>uid://gqtn1jveoku4::::res://Assets/Textures/Red.jpg<>uid://tuwvgtxgx5g6::::res://Assets/Textures/yellow.jpg<>uid://lxhkyx27em0c::::res://Assets/Textures/Ground.jpg<>uid://bnyeoqhth7m02::::res://Scenes/Enemy.tscn<>uid://dfacrwq0sicnu::::res://Scenes/Maps/enemy_spawner.gd<>uid://cxh5vw011qcot::::res://Assets/Sounds/Title Theme 1.mp3<>uid://d4kitukwkonyv::::res://Scripts/music_player.gd
+Level_1.tscn::PackedScene::3558855036849931054::1774478597::0::1::::<><><>0<>0<><>::uid://bc6hg3q4n80tw::::res://Assets/Models/block_castle.tscn<>uid://dyslkmujlojtn::::res://Scenes/Player.tscn<>uid://c51e164i646x0::::res://Assets/Models/jack.tscn<>uid://b02dtsby83h58::::res://Assets/Models/Tower_King.tscn<>uid://dslwouglqtbqc::::res://Assets/Models/Tower_Knight.tscn<>uid://doq1n4d7uq7tg::::res://Assets/Models/ball.tscn<>uid://2gpk5gqfxgbx::::res://Assets/Models/Tower_Pawn.tscn<>uid://bylwlafm4f32a::::res://Assets/Models/stack_game.tscn<>uid://dpj3jl2na1v::::res://Assets/Models/Tower_Queen.tscn<>uid://dv6mvjcetisxc::::res://Assets/Models/Tower_Location.tscn<>uid://b82xppm12ln23::::res://Assets/Models/block_gate.tscn<>uid://cvk6vhdqdogo8::::res://Assets/Models/Tower_Rook.tscn<>uid://btpxe5ksd8kvv::::res://Assets/Textures/Blue.jpg<>uid://ha1avaqw0sjt::::res://Scenes/box.tscn<>uid://ikaov5b2b5ih::::res://Assets/Textures/Orange.jpg<>uid://bjrbb68mnosvs::::res://Assets/Textures/5ef86e25a6df.webp<>uid://bsgoga26eicgr::::res://Assets/Textures/green.jpg<>uid://gqtn1jveoku4::::res://Assets/Textures/Red.jpg<>uid://tuwvgtxgx5g6::::res://Assets/Textures/yellow.jpg<>uid://lxhkyx27em0c::::res://Assets/Textures/Ground.jpg<>uid://bnyeoqhth7m02::::res://Scenes/Enemy.tscn<>uid://dfacrwq0sicnu::::res://Scenes/Maps/enemy_spawner.gd<>uid://cxh5vw011qcot::::res://Assets/Sounds/Title Theme 1.mp3<>uid://d4kitukwkonyv::::res://Scripts/music_player.gd
 ::res://Scenes/Menus/::1774475636
 Main Menu.tscn::PackedScene::7823967014001056183::1774475636::0::1::::<><><>0<>0<><>::uid://yigwgs7sj56v::::res://Assets/Textures/mainlogo.png<>uid://dwjdskdf3qjfx::::res://Scripts/menus/main_menu.gd<>uid://b36imdbak2j3f::::res://Assets/Fonts/Minecraft.ttf<>uid://bi2g07cdknky8::::res://Assets/Sounds/Title Theme 2.mp3<>uid://d4kitukwkonyv::::res://Scripts/music_player.gd
-::res://Scripts/::1774475756
+::res://Scripts/::1774478597
 archer_tower.gd::GDScript::6979560212876129441::1774475636::0::1::::<>Node3D<><>0<>0<><>::
 area_3d.gd::GDScript::5652580523614025321::1774475636::0::1::::<>Area3D<><>0<>0<><>::
 box.gd::GDScript::3496930482122256032::1774475636::0::1::::<>StaticBody3D<><>0<>0<><>::
@@ -92,7 +92,7 @@ enemy_hit_box.gd::GDScript::1363185446567650541::1774475636::0::1::::<>Area3D<><
 Global_variables.gd::GDScript::7520221344256392658::1774475636::0::1::::<>Node<><>0<>0<><>::
 music_player.gd::GDScript::9215903027077720649::1774475636::0::1::::<>AudioStreamPlayer<><>0<>0<><>::
 music_volume_slider.gd::GDScript::3013824771565845792::1774475636::0::1::::<>HSlider<><>0<>0<><>::
-player.gd::GDScript::8090036327277169297::1774475756::0::1::::<>CharacterBody3D<><>0<>0<><>::
+player.gd::GDScript::8090036327277169297::1774478597::0::1::::<>CharacterBody3D<><>0<>0<><>::
 player_shoot_sound.gd::GDScript::8485211271515534269::1774475636::0::1::::<>AudioStreamPlayer<><>0<>0<><>::
 Sound_Effects_volume_slider.gd::GDScript::4527111309831867792::1774475636::0::1::::<>HSlider<><>0<>0<><>::
 Test.tscn::PackedScene::4027725188674870627::1774475636::0::1::::<><><>0<>0<><>::

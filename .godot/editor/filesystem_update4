@@ -1,4 +1,9 @@
-res://Scenes/Bullet.tscn
+res://Scenes/box.tscn
 res://new_shader.gdshader
+res://Scripts/box.gd
+res://Scripts/enemy.gd
+res://Scenes/Menus/GameOver.tscn
 res://Scenes/Maps/Level_1.tscn
-res://Scripts/player.gd
+res://Scenes/Maps/enemy_spawner.gd
+res://Scenes/Enemy.tscn
+res://Scenes/Menus/Victory.tscn

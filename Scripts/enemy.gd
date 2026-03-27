@@ -13,6 +13,8 @@ extends CharacterBody3D
 
 @onready var box = get_parent().get_node("Box")
 
+var has_attacked := false
+
 # path points the enemy will follow
 var PathPoints : Array[Marker3D] = []
 
@@ -81,3 +83,10 @@ func die():
 
 func reach_box() :
 	velocity.y = 6
+	if has_attacked:
+		return
+	
+	has_attacked = true
+	
+	box.take_damage(10)
+	die()
