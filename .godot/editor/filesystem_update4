@@ -1,9 +1,10 @@
-res://Scenes/box.tscn
-res://new_shader.gdshader
-res://Scripts/box.gd
-res://Scripts/enemy.gd
-res://Scenes/Menus/GameOver.tscn
 res://Scenes/Maps/Level_1.tscn
+res://new_shader.gdshader
+res://Scripts/enemy.gd
+res://Scenes/Menus/Main Menu.tscn
+res://Scripts/menus/main_menu.gd
 res://Scenes/Maps/enemy_spawner.gd
 res://Scenes/Enemy.tscn
-res://Scenes/Menus/Victory.tscn
+res://Scenes/box.tscn
+res://Scripts/box.gd
+res://Scenes/Enemy_Pathing.tscn
