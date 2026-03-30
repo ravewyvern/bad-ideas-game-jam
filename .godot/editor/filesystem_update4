@@ -1,8 +1,6 @@
-res://Scenes/Player.tscn
-res://new_shader.gdshader
-res://Scenes/Enemy.tscn
 res://Scenes/Maps/Level_1.tscn
-res://Scenes/Bullet.tscn
-res://Scripts/player.gd
-res://Scripts/box.gd
+res://new_shader.gdshader
 res://Scripts/enemy.gd
+res://Scenes/box.tscn
+res://Scripts/box.gd
+res://Scenes/Enemy.tscn
