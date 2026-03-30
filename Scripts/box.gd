@@ -15,8 +15,9 @@ func _physics_process(_delta: float) -> void:
 		for body in area.get_overlapping_bodies():
 			if body.is_in_group("enemies"):
 				body.reach_box()
+				take_damage(body.power)
 				
-func take_damage(amount: float):
+func take_damage(amount: int):
 	hp -= amount
 
 	if hp <= 0:

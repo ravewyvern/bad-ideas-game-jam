@@ -452,6 +452,8 @@ shape = SubResource("BoxShape3D_6jl7n")
 transform = Transform3D(3.5, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 110)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Ground" unique_id=1424644676]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D" unique_id=1103013067]
 transform = Transform3D(1.0686891, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22867393, 0)
@@ -839,7 +841,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.297764, 0, -159.63321)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94008255, 0, -188.9154)
 
 [node name="Enemy_spawner" type="Marker3D" parent="." unique_id=128308549]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 166.41043)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.626949, 166.41043)
 script = ExtResource("22_we16n")
 enemy_scene = ExtResource("21_obulj")
 

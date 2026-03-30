@@ -3,7 +3,7 @@ extends CharacterBody3D
 #region export vars
 
 @export var stam : int
-@export var hp : int = 100
+@onready var hp : int = get_parent().get_node("Box").hp
 @export var Bullet : PackedScene
 @export var BulletSpawnPoint : Node3D
 
@@ -45,6 +45,8 @@ class towercall:
 #endregion
 
 #region general variables
+
+var shoot_cooldown : int = 0
 
 # Active status effects list
 var Effects : Array[StatusEffect] = []
@@ -128,7 +130,7 @@ func _ready() -> void:
 	hp = 100
 
 	dart_mags = 10
-	ammo_in_dart_mag = 1
+	ammo_in_dart_mag = 5
 	reloadbar.visible = 0
 
 	debugmode = false
@@ -156,7 +158,10 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 
-	reload(3, 1.0)
+	if Input.is_action_pressed("shoot") and ammo_in_dart_mag:
+		shoot()
+
+	reload(5, 1.0)
 
 	tower_input_validity()
 
@@ -221,9 +226,6 @@ func _input(event):
 		return
 
 	# Shooting
-	if event.is_action_pressed("shoot") and ammo_in_dart_mag:
-		shoot()
-		ammo_in_dart_mag -= 1
 
 	
 
@@ -243,7 +245,8 @@ func _input(event):
 #region player input functions
 
 func shoot():
-	if not is_reloading :
+	if not is_reloading and not shoot_cooldown :
+		ammo_in_dart_mag -= 1
 		sound.play()
 		var bullet = Bullet.instantiate()
 		get_tree().current_scene.add_child(bullet)
@@ -253,6 +256,9 @@ func shoot():
 		var shoot_direction = -Camera.global_transform.basis.z
 		bullet.look_at(bullet.global_position + shoot_direction, Vector3.UP)
 		bullet.direction = shoot_direction
+		shoot_cooldown = 20
+		return
+	shoot_cooldown -= 1
 
 func append_to_tower_input(key: String, input: String) :
 	if Input.is_action_just_pressed(key) :

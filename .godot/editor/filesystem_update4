@@ -1,10 +1,8 @@
-res://Scenes/Maps/Level_1.tscn
+res://Scenes/Player.tscn
 res://new_shader.gdshader
-res://Scripts/enemy.gd
-res://Scenes/Menus/Main Menu.tscn
-res://Scripts/menus/main_menu.gd
-res://Scenes/Maps/enemy_spawner.gd
 res://Scenes/Enemy.tscn
-res://Scenes/box.tscn
+res://Scenes/Maps/Level_1.tscn
+res://Scenes/Bullet.tscn
+res://Scripts/player.gd
 res://Scripts/box.gd
-res://Scenes/Enemy_Pathing.tscn
+res://Scripts/enemy.gd
